@@ -1,47 +1,61 @@
 ## Under consideration
 
-### POC: Signeren van data  
+### POC: Use encryption to sign data and check signature on:  
   - iOS
   - Android
   - Browser
-  -
+
 ### POC: Generate a keypair on android   
   
-### POC: Authenticate on node with keypair in app > perform transactions without sending private key to server
+### POC: Authenticate on node with keypair in app > perform transactions without sending private key to server.
  
-### POC: (light)Client in app. Perform transactions locally
+### POC: (light)Client in app. Perform transactions locally.
 
-### POC: Interactie tussen smart contract en IPFS
+### POC: Interaction between smart contract and IPFS.
 
-### POC: Interactie tussen smart contract en swarm
+### POC: Interaction between smart contract and Swarm.
 
-### POC: Interactie tussen smart contract en data op client #data 
+### POC: Interaction between smart contract and local data on client-side.
 
-### POC: End-to-end encryptie en decryptie #cryptografie
+### POC: End-to-end encryption and decryption on:
   - iOS
   - Android
   - Browser
-  - 
 
-### POC: Tijdelijke toegang tot informatie op IPFS/Swarm
+### POC: Temporary access to data on IPFS/Swarm.
+  - smart contract that manages who has access to what.
+  - Temporary keys, can keys be made unusable?
 
-### POC: Validatie functie, volledig in ethereum smart contract
+### POC: Updates of smart contracts
+  - proxy contracts
 
-### POC: Validatie functie, ethereum smart contract + data in IPFS
+### POC: Validation functionality
+  - Data entirely in ethereum smart contract
+  - Data in Swarm/IPFS, signatures and validation process in smart contract
+  - Data and signatures in Swarm/IPFD, validation process in smart contract
 
-### POC: Validatie functie, ethereum smart contract + data in Swarm
+### POC: Validation functionality, end to end / off chain
 
-### POC: Validatie functie, end to end / off chain
-
-### POC: Validatie functie met zero knowledge
+### POC: Validation functionality met zero knowledge
   - ZKSnarks
-  - 
-### POC: Proxy contract voor herstellen van toegang tot identiteit
-  - uPort bekijken
-  - 
-### POC: Proxy contract voor upgradability van smart contracts
+  - What kind of data can be validated?
 
-### POC: Kosten: transacties / opslag
+### POC: Restoration of access to identity
+  - proxy contract
+  - check uPort functionality
+
+### POC: Up-to-date access management
+  - How to deal with people that for example leave a company?
+
+### POC: Key management with derived keys
+  - Top issuer knows *lower* keys
+  - *Lower* keys do **not** know *higher* keys
+
+### POC: Costs & Benefits
+  - Transactions/Computing
+  - Storage/Memory
+  - Network/Server
+  - Who pays for what in centralized and decentralized scenario?
 
 ### POC: API design
  
@@ -50,55 +64,55 @@
   - welke voor- en nadelen hebben deze? #smart-contracts
 
 ### POC: Host frontend on IPFS
+  - how to update decentralised front-end?
 
 ### POC: Host frontend on Swarm
+  - how to update decentralised front-end?
+
+### POC: IPNS (nameserver IPFS)
+  - Is it possible to change IPFS data without having to change the linkhash in smart contract?
 
 ### POC: Pay transaction fees for other contract
 
 ### POC: Blockchain platform comparison
-- Contenders
-  - Ethereum
-  - Bitcoin
+  - Contenders
+    - Ethereum
+    - Bitcoin
 
-- Requirements
-  - Open source community
-  - Permissionless consensus algoritme
-  - Schaalbaarheid
-  - Smart Contracts
-    "Turing completeness?"
-  - Betaalbaar (kosten)
+  - Requirements
+    - Open source community
+    - Permissionless consensus algorithm
+    - Scalability
+    - Smart Contracts & *Turing completeness*
+    - Low costs
 
 ### POC: Ethereum scalability
+  - transaction speed
 
+### POC: Structure of decentralize data.
+  - Use part of same IPFS data in multiple dapps
+
+### POC: state/payment channels
+  - Perform safe transactions off-chain, backed by a transaction on-chain. 
+
+### POC: Generic usable identities
+  - One identity for multiple different dapps
+  - Uport
+
+### POC: Incentivize validators
+  - Validator inception: validation of validators
+
+### POC: Zero knowledge proofing (zk-snarks)
+  - What kind of data can be proofed with ZK-snarks?
+  - booleans
+  - numbers
+  - signatures
 
 # Proposals
-  - Waaraan moeten identiteiten voldoen om bruikbaar te blijven voor alle toepassingen op het platform? #identiteit #please-clearify
-
-  - Hoe maak je de validator rol zo decentraal mogelijk? Wat is het incentivesysteem om validatoren te bewegen en eerlijk te houden? Wie valideert de validatoren? #validatie-functie #incentives
-
-  - Hoe regel je tijdelijke toegang tot private informatie? Kun je een systeem verzinnen waarbij keys onbruikbaar worden gemaakt? #privacy-by-design
-
-  - ZK-snarks (zero knowledge proofing) #privacy-by-design
-    - wat houdt zero knowledge precies in? compleet begrip van mogelijkheden noodzakelijk. #privacy-by-design
-
-    - Kan zk-snarks gebruikt worden voor vragen over alle type data, of alleen voor booleans? #privacy-by-design
 
   - Wat is er nodig om het platform GDPR-compliant by design te maken? #privacy-by-design
-
     - i.e.: zodanig inrichten dat aan front-end kant zo min mogelijk privacykeuzes gemaakt hoeven worden. #privacy-by-design
-  - Hoe hou je rechten/toegang tot het platform up-to-date? Is er een manier om decentraal en automatisch toegang te blokkeren wanneer iemand bijvoorbeeld niet meer bij een partij werkt? #privacy-by-design
-  - Het compleet decentraal laten functioneren van de front-end applicaties. #front-end
-    - Wat is er nodig om de front-end ook compleet decentraal te maken? #front-end
-    - Hoe wordt de front-end dan beheerd? #front-end
-  - Kosten #schaalbaarheid
-  - Kosten: transacties. Wie betaalt wat? #schaalbaarheid
-  - wat zijn de kosten en baten van een blockchain-based systeem. #schaalbaarheid
-  - baten: bijvoorbeeld besparen van serverkosten en onderhoud. #schaalbaarheid
-  - Hoe ga je om met de huidige transactiesnelheid van Ethereum? Kunnen we bepaalde handelingen beter offchain doen? #schaalbaarheid
-    - Computatie #schaalbaarheid
-  - Hoe structureer je data in decentrale opslag? #decentrale-opslag
-  - fundamenteel anders dan in conventionele database? #decentrale-opslag
-    - welke mogelijkheden zijn er? IPFS/Swarm/..... #decentrale-opslag
+
   - Welke platformen voldoen aan welke vereisten?
     "grid met platformen en hoe het voldoet aan vereisten + tijdlijn/roadmap
     

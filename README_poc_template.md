@@ -14,7 +14,7 @@
 ### Method
 *documentation/code*
 
-### Resultaat
+### Result
 *present findings*
 
 ### Recommendation

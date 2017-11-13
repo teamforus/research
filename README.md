@@ -11,7 +11,7 @@
 
 ## In progress
 
-### POC1: [Generate a keypair on android](https://github.com/teamforus/proofs-of-concept/tree/master/android_keypair) 
+### POC1: [Generate a keypair on android](https://github.com/teamforus/proofs-of-concept/tree/master/poc1_android_keypair) 
 
 
 ## Under consideration

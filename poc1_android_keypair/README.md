@@ -16,7 +16,7 @@ It is possible to do it with python using https://github.com/vkobel/ethereum-gen
 ### Method
 *documentation/code*
 
-### Resultaat
+### Result
 *present findings*
 
 ### Recommendation

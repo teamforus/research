@@ -15,8 +15,3 @@ When it is assigned, the assignee can create a **feature branch** with a **proje
 
 
 ## Completed 
-
-
-## In progress
-
-### POC1: [Generate a keypair on android](https://github.com/teamforus/proofs-of-concept/tree/master/poc1_android_keypair) 

@@ -1,4 +1,4 @@
-## Method
+## poc1-android-keypair
 
 ### Background / Context
 **Goal:** Generate an ethereum keypair on an android client. It is possible to genereate these off-chain. This is needed so that we dont have to send the private key to the server. 

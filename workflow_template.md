@@ -1,15 +1,11 @@
-## Method
+## poc
 
 ### Background / Context
 **Goal/user story:**
 
-**More info:**
+**More:**
 
 ### Hypothesis:
-
-**Other option:**
-
-### Assignee: 
 
 ### Method
 *documentation/code*

@@ -1,17 +1,18 @@
-## poc
+# poc
+### v0.0
 
-### Background / Context
+## Background / Context
 **Goal/user story:**
 
 **More:**
 
-### Hypothesis:
+## Hypothesis:
 
-### Method
+## Method
 *documentation/code*
 
-### Result
+## Result
 *present findings*
 
-### Recommendation
+## Recommendation
 *write recomendation*

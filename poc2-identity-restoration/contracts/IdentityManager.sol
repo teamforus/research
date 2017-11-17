@@ -34,7 +34,7 @@ contract IdentityManager {
         _identities[index].validators.push(valIndex);
     }
 
-    function convertIdentity(address account) public returns (uint) {
+    function convertAddress(address account) public returns (uint) {
         if (!addressKnown(account)) {
             createIdentity(account);
         }
@@ -112,54 +112,3 @@ contract IdentityManager {
         }
     } 
 }
-
-/*contract Identity {
-
-    address private _address;
-    // allow null-checks
-    bool private _exists = false;
-    address[] private _validators;
-
-    function Identity(address identity) public payable {
-        _address = identity;
-        _validators = [identity];
-        _exists = true;
-    }
-
-    function addValidator(address validator) public {
-        _validators.push(validator);
-    }
-
-    function exists() public view returns (bool) {
-        return _exists;
-    }
-
-    function matches(address addr) public view returns (bool equals) {
-        return _address == addr;
-    }
-
-    function recoverIdentity(address newIdentity) public returns (bool success) {
-        bool allowed = false;
-        for (uint index = 0; index < _validators.length; index ++) {
-            if (_validators[index] == msg.sender) {
-                allowed = true;
-            }
-        }
-        if (allowed) {
-            _address = newIdentity;
-            return true;
-        }
-        return false;
-    }
-
-    function removeValidator(address validator) public returns (bool success) {
-        for (uint index = 0; index < _validators.length; index ++) {
-            if (_validators[index] == validator) {
-                delete _validators[index];
-                return true;
-            }
-        }
-        return false;
-    }
-    
-}*/

@@ -16,6 +16,9 @@ Jakko de Jong
 I will follow the method as described in the Colony whitepaper version 20170920, commit 0446a15e5def7378923fe0eee3ce269a4e8cd224, section 2.1: 
 https://github.com/JoinColony/Colony-Whitepaper/blob/master/network/network.tex
 
+Another interesting method is described here:
+https://www.reddit.com/r/ethereum/comments/4kt1zp/mad_blockchain_science_a_100_upgradeable_contract/
+
 ### Result
 *pending*
 

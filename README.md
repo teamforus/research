@@ -9,7 +9,7 @@ First, an **issue** is created:
 2: <kbd>[fill-template](https://github.com/teamforus/proofs-of-concept/issues?q=is%3Aopen+is%3Aissue+label%3Afill-template)</kbd> ([example-template](https://github.com/teamforus/proofs-of-concept/blob/master/workflow_template.md))  
 3: <kbd>[unassigned](https://github.com/teamforus/proofs-of-concept/issues?utf8=✓&q=is%3Aopen%20is%3Aissue%20label%3Aunassigned%20)</kbd>
 
-Then, when the issue is assigned, the assignee can create a **feature branch** with a **project folder** and a **readme** where the POC can be built and documented. ([example-project](https://github.com/teamforus/proofs-of-concept/tree/poc0-example/poc0-example)) 
+Then, when the issue is assigned, the assignee can create a **feature branch** with a **project folder** and a **readme** where the POC can be built and documented ([example-project](https://github.com/teamforus/proofs-of-concept/tree/poc0-example/poc0-example)). Ask for a POC number [here](https://github.com/teamforus/proofs-of-concept/issues/51).  
  
 4: <kbd>[work-in-progress](https://github.com/teamforus/proofs-of-concept/issues?utf8=✓&q=is%3Aopen%20is%3Aissue%20label%3Awork-in-progress%20)</kbd>  
 5: <kbd>[waiting-for-review](https://github.com/teamforus/proofs-of-concept/issues?q=is%3Aopen+is%3Aissue+label%3Awaiting-for-review)</kbd>   

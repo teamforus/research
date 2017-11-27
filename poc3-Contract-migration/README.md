@@ -81,3 +81,6 @@ With Embark you can:
 ## Recommendation
 *write recomendation*
 
+## Side-note
+There used to be 2 demo projects including in this poc. However it's easier to just create a demo project from the console. Therefor I have removed the 2 demo projects.
+

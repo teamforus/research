@@ -1,30 +1,23 @@
-## About
-The goal of this repository is to create and improve the building blocks of Platform Forus or any other fully decentralized platform.
+## poc_ethereum_contracts_platform_roles
 
-## POC stages
-The stages are marked with the following <kbd>labels</kbd>  
+### Background / Context
+**Goal/user story:** To enable the interactions between sponsor/validator/requester/provider in ethereum smart contracts.
 
-First, an **issue** is created:  
-1: <kbd>[proposal](https://github.com/teamforus/proofs-of-concept/issues?q=is%3Aopen+is%3Aissue+label%3Aproposal)</kbd> ([example-issue](https://github.com/teamforus/proofs-of-concept/issues/36))  
-2: <kbd>[fill-template](https://github.com/teamforus/proofs-of-concept/issues?q=is%3Aopen+is%3Aissue+label%3Afill-template)</kbd> ([example-template](https://github.com/teamforus/proofs-of-concept/blob/master/workflow_template.md))  
-3: <kbd>[unassigned](https://github.com/teamforus/proofs-of-concept/issues?utf8=✓&q=is%3Aopen%20is%3Aissue%20label%3Aunassigned%20)</kbd>
-
-Then, when the issue is assigned, the assignee can create a **feature branch** with a **project folder** and a **readme** where the POC can be built and documented. ([example-project](https://github.com/teamforus/proofs-of-concept/tree/poc0-example/poc0-example)) 
- 
-4: <kbd>[work-in-progress](https://github.com/teamforus/proofs-of-concept/issues?utf8=✓&q=is%3Aopen%20is%3Aissue%20label%3Awork-in-progress%20)</kbd>  
-5: <kbd>[waiting-for-review](https://github.com/teamforus/proofs-of-concept/issues?q=is%3Aopen+is%3Aissue+label%3Awaiting-for-review)</kbd>   
-6: <kbd>[completed](https://github.com/teamforus/proofs-of-concept/issues?utf8=✓&q=is%3Aissue%20label%3Acompleted%20)</kbd>  
-
-## How to contribute (draft)
-
-### Looking for a POC to work on *right now*?  
-Look no further than the <kbd>[unassigned](https://github.com/teamforus/proofs-of-concept/issues?utf8=✓&q=is%3Aopen%20is%3Aissue%20label%3Aunassigned%20)</kbd> issues. 
-
-### Want to help define a POC?  
-Look for issues with the <kbd>[fill-template](https://github.com/teamforus/proofs-of-concept/issues?q=is%3Aopen+is%3Aissue+label%3Afill-template)</kbd> label and make suggestions in the comments. 
-
-### Is there POC you'd like to see built?  
-Simply open an issue and fill the [template](#).
-
-### Want to contribute to a POC?
-Look for the <kbd>[help-wanted](https://github.com/teamforus/proofs-of-concept/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)</kbd> label, or just look at the [branches](https://github.com/teamforus/proofs-of-concept/branches) or <kbd>[work-in-progress](https://github.com/teamforus/proofs-of-concept/issues?q=is%3Aopen+is%3Aissue+label%3Awork-in-progress)</kbd> label to see what's being worked on.
+**More:**
+The script yields the use of specific tokens. Tokens are used to pay with, and only certain things (artifacts) can be bought with 
+certain tokens. Restrict the purchase of certain artifacts.
+### Hypothesis:
+Although complex and thus expensive, this should be more than doable. 
+### Method
+A poc is created implemented these four roles. The requester/applicant is able to spend token that a sponsor has created. 
+This can be any address as of now, and in the future could be restricted to only a certain type of contract.
+### Result
+The code works and the script allows the four roles to do their thing. Consider the current version as a 0.9 version, being 
+close to deployable/production, but should still be refined. Some access modifiers have been changed to public to allow better
+debugging. Also note that artifact validation is not yet enabled.
+### Recommendation
+The script can interact in multiple ways. When requesting certain data, you can use the public 'view' methods. When handling a 
+transaction involving one of the four roles (for example, validating a requester), when successful, an event will trigger. 
+When making (frontend)-applications for this script, remember to handle these events.
+Perhaps it is also welcome to trigger an event when an action is unsuccessful. Remember though, that every client listening to 
+event will get ALL events, not just events bound to the user.

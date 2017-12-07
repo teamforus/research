@@ -1,4 +1,4 @@
-## poc-social-consensus-network
+## poc008-social-consensus-network
 
 ### Background / Context
 **Goal:** Create a network of identities, that people can use to verify attributes of other people. This way, social consensus can be assured. 

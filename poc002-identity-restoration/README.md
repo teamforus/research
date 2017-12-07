@@ -1,4 +1,4 @@
-## poc2-identity-restoration
+## poc002-identity-restoration
 
 ### Background / Context
 **Goal:** Allow users who lost their keys to recover their accounts by allowing certain accounts to set his address.

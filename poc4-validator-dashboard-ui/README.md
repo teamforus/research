@@ -1,7 +1,7 @@
 # poc-validator-generic-ui
 ### v0.1
 
-## Asignee: @jamalv
+## Asignee: [jamalv](https://github.com/jamalv)
 
 ## Background / Context
 **Goal:** To create a concept for a generic user interface for the validator role as defined [on this page](https://foundation.forus.io/en/platform/).

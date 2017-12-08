@@ -1,5 +1,5 @@
 ## About
-The goal of this repository is to create and improve the building blocks of Platform Forus or any other fully decentralized platform.
+The goal of this repository is to create and improve the building blocks of [Platform Forus](https://foundation.forus.io/en/platform/) or any other fully decentralized platform.
 
 ## POC stages
 The stages are marked with the following <kbd>labels</kbd>  

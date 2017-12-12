@@ -5,26 +5,8 @@ A comparison between blockchain platform.
 ## Hypothesis:
 There is alot of hype around Ethereum. 
 
-### Longlist
 
-Public blockchain platform
----
-- Blockchain
-- Ethereum
-- EOS
-- NEO
-- NEM
-
-
-Private blockchain platform
----
-- Multichain      
-- Hyperledger    
-- COCO           
-- IBM Blockchain  
-
-
-### Shortlist Public
+#### Public
 
 - Rootstock (Bitcoin doesnt support building dApps, checking out sidechain rootstock instead.)
 - Ethereum
@@ -32,7 +14,7 @@ Private blockchain platform
 - NEO
 
 
-### Shortlist Private
+#### Shortlist Private
 
 - Multichain      
 - Hyperledger     
@@ -41,9 +23,9 @@ Private blockchain platform
 
 
 
-### Method
+## Method
 
-#### Public Platform Market Cap
+### Public Platform Market Cap
 
 | Name       | Market Cap          | Circulating supply  |
 | ------------- |:-------------:| -----:|
@@ -55,13 +37,13 @@ Private blockchain platform
 
 *Not Mineable
 
-#### Backers
+### Funders, developers
 
 ##### Rootstock, company
 RSK Labs, a New York based company
 
 ##### Ethereum, non-profit
-Enterprise Ethereum Alliance (EEA)
+Ethereum Foundation, Enterprise Ethereum Alliance (EEA)
 
 ##### EOS, company
 block.one, Dan Larrimer (STEEM, BitShares)
@@ -72,14 +54,29 @@ Onchain, chinese investers
 ##### NEM, non-profit
 NEM.io foundation founded in Singapore, non-profit
 
-#### Consensus mechanism
-##### Rootstock
+### Consensus mechanism
+##### Rootstock, PoW
 Proof of Work. Rootstock is a Sidechain of Bitcoin and can be merge-mined.
 The merge-mining functionality allows Bitcoin miners to mine in both chains with almost no extra cost. This will provide them extra revenues based on fees and allow them to participate in the smart contracts business.
-##### Fueling the blockchain (incentive)
-##### Programming language
-##### Community / Audience
-##### Scalability
+
+##### Ethereum, PoW
+Proof of Work.
+
+##### EOS, PoS
+Proof of Stake.
+
+#### NEO, PoS
+Proof of Stake.
+
+#### NEM, PoS
+Proof of Stake.
+
+#### Fueling the blockchain (incentive)
+
+
+#### Programming language
+#### Community / Audience
+#### Scalability
 
 ### Result
 *present findings*

@@ -43,7 +43,7 @@ Private blockchain platform
 
 ### Method
 
-## Public Platform Market Cap
+#### Public Platform Market Cap
 
 | Name       | Market Cap          | Circulating supply  |
 | ------------- |:-------------:| -----:|
@@ -55,27 +55,31 @@ Private blockchain platform
 
 *Not Mineable
 
-## Backers
-# Rootstock, company
+#### Backers
+
+##### Rootstock, company
 RSK Labs, a New York based company
-# Ethereum, non-profit
+
+##### Ethereum, non-profit
 Enterprise Ethereum Alliance (EEA)
-https://entethalliance.org/members/
-# EOS, company
+
+##### EOS, company
 block.one, Dan Larrimer (STEEM, BitShares)
-# NEO, company
-Onchain, chinese investers;
-CEO: Da Hongfei
-# NEM, non-profit
+
+##### NEO, company
+Onchain, chinese investers
+
+##### NEM, non-profit
 NEM.io foundation founded in Singapore, non-profit
-## Consensus mechanism
-# Rootstock
+
+#### Consensus mechanism
+##### Rootstock
 Proof of Work. Rootstock is a Sidechain of Bitcoin and can be merge-mined.
 The merge-mining functionality allows Bitcoin miners to mine in both chains with almost no extra cost. This will provide them extra revenues based on fees and allow them to participate in the smart contracts business.
-## Fueling the blockchain (incentive)
-## Programming language
-## Community / Audience
-## Scalability
+##### Fueling the blockchain (incentive)
+##### Programming language
+##### Community / Audience
+##### Scalability
 
 ### Result
 *present findings*

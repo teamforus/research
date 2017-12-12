@@ -1,7 +1,7 @@
-##Research: Blockchain platform comparison
+## Research: Blockchain platform comparison
 
 A comparison between blockchain platforms. 
 
-##Public
+## Public
 
-##Private
+## Private

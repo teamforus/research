@@ -16,6 +16,35 @@ Public blockchain platform
 - NEM
 
 
+Private blockchain platform
+---
+- Multichain      
+- Hyperledger    
+- COCO           
+- IBM Blockchain  
+
+
+### Shortlist Public
+
+- Rootstock (Bitcoin doesnt support building dApps, checking out sidechain rootstock instead.)
+- Ethereum
+- EOS
+- NEO
+
+
+### Shortlist Private
+
+- Multichain      
+- Hyperledger     
+- COCO            
+- IBM Blockchain  
+
+
+
+### Method
+
+## Public Platform Market Cap
+
 | Name       | Market Cap          | Circulating supply  |
 | ------------- |:-------------:| -----:|
 | Bitcoin      | $284,762,874,568 | 16,736,225 BTC |
@@ -26,24 +55,27 @@ Public blockchain platform
 
 *Not Mineable
 
-Private blockchain platform
----
-- Multichain
-- Hyperledger
-- COCO
-- BigchainDB
-
-### Shortlist Public
-
-### Shortlist Private
-
-
-
-
-
-
-### Method
-*documentation/code*
+## Backers
+# Rootstock, company
+RSK Labs, a New York based company
+# Ethereum, non-profit
+Enterprise Ethereum Alliance (EEA)
+https://entethalliance.org/members/
+# EOS, company
+block.one, Dan Larrimer (STEEM, BitShares)
+# NEO, company
+Onchain, chinese investers;
+CEO: Da Hongfei
+# NEM, non-profit
+NEM.io foundation founded in Singapore, non-profit
+## Consensus mechanism
+# Rootstock
+Proof of Work. Rootstock is a Sidechain of Bitcoin and can be merge-mined.
+The merge-mining functionality allows Bitcoin miners to mine in both chains with almost no extra cost. This will provide them extra revenues based on fees and allow them to participate in the smart contracts business.
+## Fueling the blockchain (incentive)
+## Programming language
+## Community / Audience
+## Scalability
 
 ### Result
 *present findings*

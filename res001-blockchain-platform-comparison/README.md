@@ -25,6 +25,10 @@ There is alot of hype around Ethereum.
 
 ## Method
 
+
+
+## Results
+
 ### Public Platform Market Cap
 
 | Name       | Market Cap          | Circulating supply  |
@@ -55,14 +59,14 @@ Onchain, chinese investers
 NEM.io foundation founded in Singapore, non-profit
 
 ### Consensus mechanism
-##### Rootstock, PoW
+#### Rootstock, PoW
 Proof of Work. Rootstock is a Sidechain of Bitcoin and can be merge-mined.
 The merge-mining functionality allows Bitcoin miners to mine in both chains with almost no extra cost. This will provide them extra revenues based on fees and allow them to participate in the smart contracts business.
 
-##### Ethereum, PoW
+#### Ethereum, PoW
 Proof of Work.
 
-##### EOS, PoS
+#### EOS, PoS
 Proof of Stake.
 
 #### NEO, PoS
@@ -71,15 +75,58 @@ Proof of Stake.
 #### NEM, PoS
 Proof of Stake.
 
-#### Fueling the blockchain (incentive)
+### Fueling the blockchain (incentive)
+
+#### Rootstock
+
+#### Ethereum
+
+#### EOS
+
+#### NEO
+
+#### NEM
+
+### Programming language
+
+#### Rootstock, Solidity
+
+#### Ethereum, Solidity
+
+#### EOS, C++
+
+#### NEO, Java
+
+#### NEM, Java
+
+### Community / Audience
+
+#### Rootstock
+
+#### Ethereum
+
+#### EOS
+
+#### NEO
+
+#### NEM
+
+### Scalability
+
+#### Rootstock
+
+400 tx/sec
+
+10 block confirmation time
+
+#### Ethereum
+
+#### EOS
+
+#### NEO
+
+#### NEM
 
 
-#### Programming language
-#### Community / Audience
-#### Scalability
-
-### Result
-*present findings*
-
-### Recommendation
+## Recommendation
 *write recomendation*

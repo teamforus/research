@@ -99,37 +99,15 @@ Proof of Stake.
 
 #### NEM, Java
 
-### Community / Audience
+### Community
 
-#### Rootstock
-
-##### Community
-Twitter: 13k
-reddit: 443
-Contributors: 17
-
-#### Ethereum
-
-##### Community
-Twitter:  229k
-reddit: 194k
-Github: 200
-
-#### EOS
-
-##### Community
-Twitter: 43k
-reddit: 4k
-Github: 51 contributors
-
-#### NEO
-
-##### Community
-Twitter: 148k
-Reddit: 44k
-Github: 17
-
-#### NEM
+| Name       | Twitter         | Reddit  | Github Contributors |
+| ------------- |:-------------:|:-------------:|-----:|
+| Rootstock      | 13k | 443 | 17 |
+| Ethereum     | 229k  | 194k | 200 |
+| EOS          | 148k   | 4k	 | 51 |
+| NEO          | 85k   | 44k | 17 |
+| NEM          | 43k  | 10k | 3 |
 
 ### Scalability
 

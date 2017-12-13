@@ -92,14 +92,26 @@ Proof of Importance. PoI is the algorithm used in NEM to time stamp transactions
 ### Fueling the blockchain (incentive)
 
 #### Rootstock
+Bitcoin rewards when merge mined by bitcoin miners. The smart bitcoins mined through RSK would power the startup's smart contract ecosystem. Whoever owns / ends up owning the RTC on the sidechain can get the Bitcoin back that were locked on the Bitcoin main blockchain to create the RTC. So if a miner gets fees in RTC they actually own Bitcoin as soon as they unlock them again on the mainchain. Bitcoin miners get RTC in the rootstock sidechain that can unlock bitcoins in the main chain.
 
 #### Ethereum
+The fundamental unit of computation is "gas"; usually, a computational step costs 1 gas, but some operations cost higher amounts of gas because they are more computationally expensive, or increase the amount of data that must be stored as part of the state. There is also a fee of 5 gas for every byte in the transaction data. The intent of the fee system is to require an attacker to pay proportionately for every resource that they consume, including computation, bandwidth and storage; hence, any transaction that leads to the network consuming a greater amount of any of these resources must have a gas fee roughly proportional to the increment. 
 
 #### EOS
+Separating Transaction costs from Token Value; One of the major benefits of the EOS.IO software is that the amount of bandwidth available to an application is entirely independent of any token price. If an application owner holds a relevant number of tokens, then the application can run indefinitely within a fixed state and bandwidth usage. Developers and users are unaffected from any price volatility in the token market and therefore not reliant on a price feed. The EOS.IO software enables block producers to naturally increase bandwidth, computation, and storage available per token independent of the token's value.
+
+The EOS.IO software awards block producers tokens every time they produce the block. The value of the tokens will impact the amount of bandwidth, storage, and computation a producer can afford to purchase; this model naturally leverages rising token values to increase network performance.
 
 #### NEO
+GAS is the fuel token for the realization of NEO network resource control, with a maximum total limit of 100 million. The NEO network charges for the operation and storage of tokens and smart contracts, thereby creating economic incentives for bookkeepers and preventing the abuse of resources. The minimum unit of GAS is 0.00000001
 
 #### NEM
+The process of creating new blocks is called harvesting. The harvesting account gets the
+fees for the transactions in the block. This gives the harvester an incentive to add as
+many transactions to the block as possible. Any account that has a vested balance of at
+least 10,000 XEM is eligible to harvest.
+
+NEM also has a supernode program, funded with XEM, set aside during Nemesis block.
 
 ### Programming language Smart Contracts
 

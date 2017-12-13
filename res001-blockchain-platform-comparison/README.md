@@ -2,6 +2,14 @@
 
 A comparison between blockchain platform. 
 
+##### List of terms
+
+Proof of Stake PoS - A type of algorithm which uses network consensus to handle fault tolerance.
+
+Proof of Work PoW - A type of algorithm which uses computing power to handle fault tolerance.
+
+Byzantine Fault BF - A failure in which a node remains functional, but operates in a dishonest manner.
+
 ## Hypothesis:
 There is alot of hype around Ethereum. 
 
@@ -66,14 +74,14 @@ The merge-mining functionality allows Bitcoin miners to mine in both chains with
 #### Ethereum, PoW
 Proof of Work.
 
-#### EOS, PoS
-Proof of Stake.
+#### EOS, dPoS
+Delegated Proof of Stake. Under dPoS, those who hold tokens on a blockchain adopting the EOS.IO software may select block producers through a continuous approval voting system and anyone may choose to participate in block production and will be given an opportunity to produce blocks proportional to the total votes they have received relative to all other producers.
 
-#### NEO, PoS
-Proof of Stake.
+#### NEO, dBFT
+Delegated Byzantine Fault Tolerance. dBFT protocol occurs through a “gamified” form of block verification among professional node operators. All of these professional nodes are appointed by ordinary nodes through a delegated voting process. The professional node broadcasts its version of the blockchain to the network. If 66% of the other nodes agree with the information, consensus is achieved. Should this threshold not be met, a different professional node is appointed to broadcast its blockchain version until consensus can be established.
 
-#### NEM, PoS
-Proof of Stake.
+#### NEM, PoI
+Proof of Importance. PoI is the algorithm used in NEM to time stamp transactions. A NEM user's importance is determined by how many coins they have and the number of transactions made to and from their wallet. POI uses the NCDawareRank network centrality measure, the topology of the transaction graph, as well as a number of other relevant signals to achieve consensus.
 
 ### Fueling the blockchain (incentive)
 
@@ -113,18 +121,29 @@ Proof of Stake.
 
 #### Rootstock
 
+Public testnet
+
 400 tx/sec
 
 10 block confirmation time
 
 #### Ethereum
 
+Production Release
+
+10 tx / sec
+
 #### EOS
+
+Public testnet
 
 #### NEO
 
+Production release
+
 #### NEM
 
+Stable release
 
 ## Recommendation
 *write recomendation*

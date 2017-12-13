@@ -33,6 +33,12 @@ There is alot of hype around Ethereum.
 
 ## Method
 
+- Funders, developers
+- Consensus Mechanism
+- Incentive
+- Programming language
+- Community
+- Scalability
 
 
 ## Results
@@ -95,7 +101,7 @@ Proof of Importance. PoI is the algorithm used in NEM to time stamp transactions
 
 #### NEM
 
-### Programming language
+### Programming language Smart Contracts
 
 #### Rootstock, Solidity
 
@@ -103,9 +109,10 @@ Proof of Importance. PoI is the algorithm used in NEM to time stamp transactions
 
 #### EOS, C++
 
-#### NEO, Java
+#### NEO, C# and Java 
 
-#### NEM, Java
+#### NEM, any language off-chain
+"Smart Contracts are not on blockchain. This is by design as on chain smart contracts have posed serious risk for other blockchains, have presented scalability issues, and can lead to too much resources being wasted on the deployment of it. For NEM, smart contracts can be executed off chain, such as on company servers, and the transactions can be recorded on the blockchain through the NEM API. Instead on chain smart contracts, the below customizable smart assets can be used on chain." 
 
 ### Community
 

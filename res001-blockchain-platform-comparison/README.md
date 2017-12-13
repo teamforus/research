@@ -103,11 +103,31 @@ Proof of Stake.
 
 #### Rootstock
 
+##### Community
+Twitter: 13k
+reddit: 443
+Contributors: 17
+
 #### Ethereum
+
+##### Community
+Twitter:  229k
+reddit: 194k
+Github: 200
 
 #### EOS
 
+##### Community
+Twitter: 43k
+reddit: 4k
+Github: 51 contributors
+
 #### NEO
+
+##### Community
+Twitter: 148k
+Reddit: 44k
+Github: 17
 
 #### NEM
 

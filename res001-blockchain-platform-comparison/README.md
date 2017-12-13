@@ -17,10 +17,15 @@ There is alot of hype around Ethereum.
 #### Public
 
 - Rootstock (Bitcoin doesnt support building dApps, checking out sidechain rootstock instead.)
+http://rsk.co
 - Ethereum
+https://ethereum.org/
 - EOS
+http://eos.io
 - NEO
-
+http://neo.org
+- NEM
+http://nem.io
 
 #### Shortlist Private
 
@@ -142,15 +147,9 @@ NEM also has a supernode program, funded with XEM, set aside during Nemesis bloc
 
 Public testnet
 
-400 tx/sec
-
-10 block confirmation time
-
 #### Ethereum
 
 Production Release
-
-10 tx / sec
 
 #### EOS
 

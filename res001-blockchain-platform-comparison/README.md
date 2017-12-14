@@ -60,24 +60,18 @@ http://nem.io
 
 *Not Mineable
 
-### Funders, developers
+### Funders
 
 #### Public
 
-  ##### Rootstock, company
-  RSK Labs, a New York based company
+| Name       | Funders          | Location  |
+| ------------- |:-------------:| -----:|
+| Rootstock      | RSK Labs, company | Buenos Aires, Argentina |
+| Ethereum     | Ethereum Foundation, non-profit and Enterprise Ethereum Alliance | Zürich, Switzerland |
+| EOS          | block.one, company and Dan Larrimer (STEEM,BitShares) | Canada |
+| NEO          | Onchain, company and chinese investers (alibaba, chinese government)  | Shanghai/Beijing, China |
+| NEM          | NEM.io foundation, non-profit  | Singapore |
 
-  ##### Ethereum, non-profit
-  Ethereum Foundation, Enterprise Ethereum Alliance (EEA)
-
-  ##### EOS, company
-  block.one, Dan Larrimer (STEEM, BitShares)
-
-  ##### NEO, company
-  Onchain, chinese investers (Alibaba, chinese government)
-
-  ##### NEM, non-profit
-  NEM.io foundation founded in Singapore, non-profit
   
 #### Private
 

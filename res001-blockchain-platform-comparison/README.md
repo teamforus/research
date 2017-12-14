@@ -33,7 +33,7 @@ http://nem.io
 - Hyperledger     
 - COCO            
 - IBM Blockchain  
-
+- Mijin
 
 
 ## Method
@@ -62,21 +62,40 @@ http://nem.io
 
 ### Funders, developers
 
-##### Rootstock, company
-RSK Labs, a New York based company
+#### Public
 
-##### Ethereum, non-profit
-Ethereum Foundation, Enterprise Ethereum Alliance (EEA)
+  ##### Rootstock, company
+  RSK Labs, a New York based company
 
-##### EOS, company
-block.one, Dan Larrimer (STEEM, BitShares)
+  ##### Ethereum, non-profit
+  Ethereum Foundation, Enterprise Ethereum Alliance (EEA)
 
-##### NEO, company
-Onchain, chinese investers
+  ##### EOS, company
+  block.one, Dan Larrimer (STEEM, BitShares)
 
-##### NEM, non-profit
-NEM.io foundation founded in Singapore, non-profit
+  ##### NEO, company
+  Onchain, chinese investers (Alibaba, chinese government)
 
+  ##### NEM, non-profit
+  NEM.io foundation founded in Singapore, non-profit
+  
+#### Private
+
+  ##### Multichain
+  Coin Sciences, a Tel Aviv based company (Israel)
+  
+  ##### Hyperledger 
+  Linux Foundation, San Francisco, California
+  
+  ##### CoCo 
+  Microsoft, Redmond, Washington
+  
+  ##### IBM Blockchain
+  IBM, Armonk, New York
+  
+  ##### Mijin
+  Tech Bureau, Osaka, Japan
+  
 ### Consensus mechanism
 #### Rootstock, PoW
 Proof of Work. Rootstock is a Sidechain of Bitcoin and can be merge-mined.

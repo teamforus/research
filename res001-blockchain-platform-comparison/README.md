@@ -75,20 +75,14 @@ http://nem.io
   
 #### Private
 
-  ##### Multichain
-  Coin Sciences, a Tel Aviv based company (Israel)
-  
-  ##### Hyperledger 
-  Linux Foundation, San Francisco, California
-  
-  ##### CoCo 
-  Microsoft, Redmond, Washington
-  
-  ##### IBM Blockchain
-  IBM, Armonk, New York
-  
-  ##### Mijin
-  Tech Bureau, Osaka, Japan
+| Name           | Funders          | Location  |
+| -------------  |:-------------:| -----:|
+| Multichain     | Coin Sciences | Tel Aviv, Israel |
+| Hyperledger    | Linux Foundation | San Francisco, California |
+| CoCo           | Microsoft | Redmond, Washington |
+| IBM Blockchain | IBM  | Armonk, New York |
+| Mijin          | Tech Bureau  | Osaka, Japan |
+
   
 ### Consensus mechanism
 #### Rootstock, PoW

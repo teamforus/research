@@ -1,18 +1,17 @@
-# poc
+# poc000-template
 ### v0.0
+
+### Assignee:
 
 ## Background / Context
 **Goal/user story:**
 
 **More:**
 
-## Hypothesis:
+## Hypothesis
 
 ## Method
-*documentation/code*
 
 ## Result
-*present findings*
 
 ## Recommendation
-*write recomendation*

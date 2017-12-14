@@ -68,7 +68,7 @@ http://nem.io
 | ------------- |:-------------:| -----:|
 | Rootstock      | RSK Labs, company | Buenos Aires, Argentina |
 | Ethereum     | Ethereum Foundation, non-profit and Enterprise Ethereum Alliance | Zürich, Switzerland |
-| EOS          | block.one, company and Dan Larrimer (STEEM,BitShares) | Canada |
+| EOS          | block.one, company and Dan Larrimer (STEEM,BitShares) | George Town, Grand Cayman Islands |
 | NEO          | Onchain, company and chinese investers (alibaba, chinese government)  | Shanghai/Beijing, China |
 | NEM          | NEM.io foundation, non-profit  | Singapore |
 

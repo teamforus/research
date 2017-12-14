@@ -13,8 +13,8 @@ You can also join our [research-and-development](https://chat.forus.io/channel/r
 ## Workflow
 
 Most projects start out as **issues**:  
-1: <kbd>[proposal](https://github.com/teamforus/proofs-of-concept/issues?q=is%3Aopen+is%3Aissue+label%3Aproposal)</kbd> ([example-issue](https://github.com/teamforus/proofs-of-concept/issues/36))  
-2: <kbd>[fill-template](https://github.com/teamforus/proofs-of-concept/issues?q=is%3Aopen+is%3Aissue+label%3Afill-template)</kbd> ([example-template](https://github.com/teamforus/proofs-of-concept/blob/develop/template.md))  
+1: <kbd>[proposal](https://github.com/teamforus/proofs-of-concept/issues?q=is%3Aopen+is%3Aissue+label%3Aproposal)</kbd>  
+2: <kbd>[fill-template](https://github.com/teamforus/proofs-of-concept/issues?q=is%3Aopen+is%3Aissue+label%3Afill-template)</kbd> ([issue-template](https://github.com/teamforus/proofs-of-concept/blob/develop/ISSUE_TEMPLATE.md))  
 3: <kbd>[unassigned](https://github.com/teamforus/proofs-of-concept/issues?utf8=✓&q=is%3Aopen%20is%3Aissue%20label%3Aunassigned%20)</kbd>
 
 Then, when the issue is assigned, the assignee can create a **feature branch** with a **project folder** and a **readme** where it can be built and documented ([example-project](https://github.com/teamforus/proofs-of-concept/tree/poc0-example/poc0-example)). Comment your project name and number [here](https://github.com/teamforus/proofs-of-concept/issues/51).  

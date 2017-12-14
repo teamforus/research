@@ -27,7 +27,7 @@ http://neo.org
 - NEM
 http://nem.io
 
-#### Shortlist Private
+#### Private
 
 - Multichain      
 - Hyperledger     
@@ -146,22 +146,31 @@ NEM also has a supernode program, funded with XEM, set aside during Nemesis bloc
 #### Rootstock
 
 Public testnet
+No record of public heavy use, still in testnet.
 
 #### Ethereum
 
 Production Release
+10 tx/s on heavy use
 
 #### EOS
 
 Public testnet
+No record of public heavy use, still in testnet.
 
 #### NEO
 
 Production release
+no heavy use yet, it now takes 15 a 20 sec to generate a block.
+each block now has around 10 transactions. 
+
+Neo says it can handle up to 1000 tranaction per second.
 
 #### NEM
 
 Stable release
+no heavy use yet. 1 block per minute. There is a 120 transaction per block limit. NEM is handling 2 transactions per second.
+A new version is released soon and can handle more transactions per second.
 
 ## Recommendation
 *write recomendation*

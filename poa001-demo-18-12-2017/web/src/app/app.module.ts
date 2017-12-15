@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { RequestComponent } from './request/request.component';
 import { ProvideComponent } from './provide/provide.component';
 import { AppRoutingModule } from './app-routing.module';
+import { UserService } from './user.service';
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

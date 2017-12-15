@@ -1,4 +1,8 @@
 export class Artifact {
-  id: string;
+  id: number;
   name: string;
+  available: number;
+  limited: boolean;
+  provider: string;
+  prices: number[] = [];
 }

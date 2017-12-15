@@ -1,12 +1,8 @@
 import { Artifact } from './../artifact';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { ArtifactService } from '../artifact.service';
 
-export const ARTIFACTS: Artifact[] = [
-  { id: 'ae1', name: 'Fiets' },
-  { id: 'ae2', name: 'Pianoles' },
-  { id: 'ae3', name: 'Mantelzorg' },
-];
 
 @Component({
   selector: 'app-provide',
@@ -15,11 +11,12 @@ export const ARTIFACTS: Artifact[] = [
 })
 export class ProvideComponent implements OnInit {
 
-  artifacts = ARTIFACTS;
-
   modalArtifact: Artifact;
 
-  constructor(private modalService: NgbModal) { }
+  constructor(
+    private modalService: NgbModal,
+    private artifactService: ArtifactService
+  ) { }
 
   ngOnInit() {
   }
@@ -42,7 +39,7 @@ export class ProvideComponent implements OnInit {
     this.modalArtifact = new Artifact();
 
     this.modalService.open(content).result.then((result) => {
-      this.artifacts.push(this.modalArtifact);
+      this.artifactService.addArtifact(this.modalArtifact.name, false, 0);
       }, (reason) => {}
     );
 

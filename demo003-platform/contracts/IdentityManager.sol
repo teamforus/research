@@ -44,7 +44,7 @@ contract IdentityManager {
         uint index = ++_currentIndex;
         Identity identity = new Identity(account);
         _identities[index] = identity; 
-        _index[address(identity)] = index;
+        _index[account] = index;
         IdentityCreated(identity);
         return identity;
     }

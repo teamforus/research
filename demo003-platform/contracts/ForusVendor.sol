@@ -63,7 +63,8 @@ contract ForusVendor {
     }
 
     modifier requireSponsor(address account, address token) {
-
+        require (isSponsor(account, token));
+        _;
     }
 
     /*** GLOBAL METHODS */
@@ -155,7 +156,7 @@ contract ForusVendor {
         TokenAdded(token, identity);
     }
 
-    function isSponsor(address account, address token) public view returns (bool sponsor) {
+    function isSponsor(address account, address token) public returns (bool sponsor) {
         address identity = _identities.convertToIdentity(account);
         if (_sponsorTokens[identity].length > 0) {
             for (uint i = 0; i < _sponsorTokens[identity].length; i++) {

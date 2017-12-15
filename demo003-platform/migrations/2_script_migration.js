@@ -1,7 +1,9 @@
+var IdentityManager = artifacts.require('./IdentityManager');
 var ForusVendor = artifacts.require('./ForusVendor');
 
+
 module.exports = function(deployer) {
-  deployer.deploy(ForusVendor);
+  // ID Manager address: 0xd8b7a30247b9e6e6bfe9590d8c74daf8a6adfb4d
+  //deployer.deploy(IdentityManager);
+  deployer.deploy(ForusVendor, '0xd8b7a30247b9e6e6bfe9590d8c74daf8a6adfb4d');
 };
-//0x42410072492d0b16e45828c1f357573a3f0f61a6
-//0x3e679f63940141286d374bfae1ef0ad02a583c2d

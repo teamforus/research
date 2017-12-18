@@ -101,6 +101,8 @@ Delegated Proof of Stake. Under dPoS, those who hold tokens on a blockchain adop
 ##### NEO, dBFT
 Delegated Byzantine Fault Tolerance. dBFT protocol occurs through a “gamified” form of block verification among professional node operators. All of these professional nodes are appointed by ordinary nodes through a delegated voting process. The professional node broadcasts its version of the blockchain to the network. If 66% of the other nodes agree with the information, consensus is achieved. Should this threshold not be met, a different professional node is appointed to broadcast its blockchain version until consensus can be established.
 
+The dBFT protocol has not yet proven itself on heavy use. There are still some issues open on the NEO github about the voting system.)
+
 ##### NEM, PoI
 Proof of Importance. PoI is the algorithm used in NEM to time stamp transactions. A NEM user's importance is determined by how many coins they have and the number of transactions made to and from their wallet. POI uses the NCDawareRank network centrality measure, the topology of the transaction graph, as well as a number of other relevant signals to achieve consensus.
 

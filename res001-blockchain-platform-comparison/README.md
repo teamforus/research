@@ -31,8 +31,9 @@ http://nem.io
 
 - Multichain      
 - Hyperledger     
-- COCO            
-- Mijin
+- COCO  
+- Quorom
+- Corda
 
 
 ## Method
@@ -109,7 +110,7 @@ Proof of Importance. PoI is the algorithm used in NEM to time stamp transactions
 It's close to Practical Byzantine Fault Tolerance. Distributed consensus between identified block validators. It's close in spirit to something like PBFT, but instead of multiple validators per block, there is one validator per block, working in a round-robin type of fashion. 
 
 ##### Hyperledger, Modulare
-The consensus algoritme is modulare. Implementations can choose their own. The hyperledger implementation of IBM, Fabric has three consensus mechanisms: Solo, Kafka orderer, pBFT.
+The consensus algoritme is modulare. Implementations can choose their own. The hyperledger implementation of IBM, Fabric has three consensus mechanisms: Solo, Kafka orderer, pBFT. The implementation of Intel utilises a novel consensus mechanism known as "Proof of Elapsed Time". A lottery-design consensus protocol that builds on trusted execution environments.
 
 ##### COCO, Modulare
 While consensus is a fundamental aspect of any distributed network, compared to public blockchain networks, a Coco network is unique in that every VN fully trusts every other VN in the network. Because of this, no need exists to defend against Byzantine faults. The Coco Framework is designed to support pluggable consensus algorithms—with plans to initially integrate Paxos-like consensus algorithms and Caesar consensus, an algorithm from Microsoft Research. Coco networks can be built with other consensus algorithms; to achieve efficient agreement and maximum throughput, ideal implementations should take advantage of the fact that a message received over a secure channel from a trusted VN is itself trusted. 
@@ -151,8 +152,23 @@ NEM also has a supernode program, funded with XEM, set aside during Nemesis bloc
 #### Private
 
 ##### Multichain
+MultiChain 1.0 was released August 2, 2017 and is production-ready. In a MultiChain blockchain, transaction fees and block rewards are zero by default. If the cost of mining a block is negligible, miners need no compensation for providing this service beyond their general stake in the blockchain’s smooth functioning. Alternatively miners might charge network
+participants a fixed annual service fee, paid by traditional off blockchain means.
 
 ##### Hyperledger
+Hyperledger is a umbrella project. Hyperledger incubates and promotes a range of business blockchain technologies, including distributed ledger frameworks, smart contract engines, client libraries, graphical interfaces, utility libraries and sample applications. The Hyperledger umbrella strategy encourages the re-use of common building blocks and enables rapid innovation of DLT components.
+
+Some examples of the range of blockchain technologies / projects hosted by the Linux Company:
+- Burrow is blockchain client (Monax and Intel)
+- Fabric is a permissioned blockchain infrastructure (IBM)
+- Iroha, fabric fork focus on mobile apps. (Soramitsu)
+- Sawtooth is a permissioned blockchain infrastructure (Intel)
+
+Tools:
+- Cello, deployment tooling (IBM)
+- Composer, package management (IBM)
+- Explorer, analytics tooling (Intel, IBM, DTCC)
+- Indy, framework for digital independent identities (Sovrin Foundation)
 
 ##### CoCo
 CoCo is a framework that is not released yet. Microsoft idea is to not make a coin or blockchain platform. Instead they are going to make a service where you can create trusted code excecution environments (TEE's). Approved smart contract manifest (which code can run on the network). Trusted list of validating nodes etc. A dApp request (ethereum transaction for example) goes through CoCo, it decrypts it, then routes it to the appropriate blockchain adaptor for the protocol. The adapter starts a transaction set and interacts with components of the blockchain protocol subsystem (such as block generation logic and Ethereum Virtual Machine, or EVM) to process the transaction. The adapter commits the transaction set via a distributed store, which persists and replicates all state changes across the network using the configured consensus algorithm. Processing of a single transaction may result in several state changes.

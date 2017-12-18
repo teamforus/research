@@ -186,10 +186,14 @@ The notary services validate transaction with “uniqueness consensus”-mechani
 #### Rootstock, Solidity
 
 #### Ethereum, Solidity
+Why Solidity is created: Smart Contracts are excecuted on Ethereum Virtual Machines. The decision was made to develop a language specifically tailored to the EVM execution environment. It is indeed probably a lot more work than porting an existing language syntax (!), but it also results in a usable environment. Where an existing language would result in suboptimal code excecution.
 
 #### EOS, C++
+C++ is a language that most programmers already know. There is a extensive amount of data regarding security and audits of c++.
 
 #### NEO, C# and Java 
+NEO supports C# and Java and wants to support more languages. They do this because they want to be 'programmer friendly'. NEO compiles these languages into their own OP_CODE. For example JAVA isn't compiled to JAVA bytecode. Neo saves the programmer time to learn NEO. This means that NEO doesn't use a JAVA compiler and therefore any JAVA library can't be used. Supporting different languages can also create a security nightmare. (code auditors need to understand different programming languages)
+
 
 #### NEM, any language off-chain
 "Smart Contracts are not on blockchain. This is by design as on chain smart contracts have posed serious risk for other blockchains, have presented scalability issues, and can lead to too much resources being wasted on the deployment of it. For NEM, smart contracts can be executed off chain, such as on company servers, and the transactions can be recorded on the blockchain through the NEM API. Instead on chain smart contracts, the below customizable smart assets can be used on chain." 

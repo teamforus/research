@@ -1,4 +1,4 @@
-# Research: Blockchain platform comparison
+# Research: Blockchain platform comparison v0.1
 
 A comparison between blockchain platform. 
 

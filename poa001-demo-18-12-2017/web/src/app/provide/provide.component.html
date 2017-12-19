@@ -1,0 +1,30 @@
+<div class="card float-left m-1" style="min-width: 14rem; min-height: 8rem;" *ngFor="let artifact of artifactService.artifacts">
+  <div class="card-body">
+    <h4 class="card-title">{{artifact.name}}</h4>
+    <a (click)="onProvide(artifact, modalwindow)" class="btn btn-primary mr-2">Provide</a>
+    <a (click)="onSponsor(artifact)" class="btn btn-success ml-2 float-right">Sponsor</a>
+  </div>
+</div>
+
+<div class="card float-left m-1" style="min-width: 14rem; min-height: 8rem;">
+  <div class="card-body" class="text-center align-middle">
+    <a (click)="onNew(modalwindow)" style="cursor:pointer" class="display-4 font-weight-bold mt-3 d-block">+</a>
+  </div>
+</div>
+
+
+<ng-template #modalwindow let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <input [(ngModel)]="modalArtifact.name">
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="c()">Save changes</button>
+    <button type="button" class="btn btn-secondary" (click)="d()">Close</button>
+  </div>
+</ng-template>

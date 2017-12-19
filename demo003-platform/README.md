@@ -1,5 +1,5 @@
 # Demo December 18th 2017
-### v0.2
+### v0.3
 
 ### Assignee: Martijn Doornik
 

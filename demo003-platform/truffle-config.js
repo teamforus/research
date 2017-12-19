@@ -7,7 +7,7 @@ module.exports = {
       port: 8545,
       network_id: "*",
       //from: '0x174c9b9ff0d93737132eb194430b56dc5ff5f3b2', // TESTRPC  
-      from: '0xb647b9999a23c044bCC047BE3D2A44301F567340', // GETH
+      from: '0x6987f79ed5180Cc2B72B2137A555D9eB18e67780', // GETH
       gas: 4712388 
     }
   }

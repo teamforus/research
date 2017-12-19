@@ -60,7 +60,15 @@ contract IdentityManager {
         return address(_identities[identifier]);
     }
 
-    function getIdentitifier(address account) public view returns (uint identifier) {
+    function getIdentityOf(address account) public view returns (address identity) {
+        uint index = _index[account];
+        if (index == 0) {
+            return 0;
+        }
+        return _identities[index];
+    }
+
+    function getIdentifier(address account) public view returns (uint identifier) {
         return _index[account];
     }
 

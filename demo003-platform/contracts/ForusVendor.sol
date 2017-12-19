@@ -109,6 +109,7 @@ contract ForusVendor {
         identity.addPermission(token);
         if (Token(token).validate(identity)) {
             _wallets[identity].balances[token] += Token(token).getFundSize();
+            TokenGranted(token, Token(token).getOwner(), identity, Token(token).getFundSize());
         }
     }
 
@@ -122,6 +123,7 @@ contract ForusVendor {
 
     function addArtifact(string name, bool limited, uint available) private {
         _list[++_currentIndex] = (Artifact({name: name, limited: limited, available: available, provider: sender()}));
+        _knownArtifacts.push(_currentIndex);
         ArtifactAdded(_currentIndex, sender(), name, limited, available);
     }
 
@@ -131,6 +133,18 @@ contract ForusVendor {
 
     function addUnlimitedArtifact(string name) public {
         addArtifact(name, false, 0);
+    }
+
+    function getBalance(address token) public view returns (uint balance) {
+        address identity = _identities.getIdentityOf(msg.sender);
+        if (identity == 0) {
+            return 0;
+        }
+        return _wallets[identity].balances[token];
+    }
+
+    function getBalanceOf(address identity, address token) public view returns (uint balance) {
+        return _wallets[identity].balances[token];
     }
 
     function setAvailability(uint index, uint newAvailable) public requireProvider(sender(), index) {

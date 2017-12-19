@@ -13,7 +13,7 @@ contract Identity {
     }
 
     modifier requiresPermission(address sender) {
-        require(_approvedCallers[sender] || isOwner(sender));
+        require(hasPermission(sender));
         _;
     }
 
@@ -25,7 +25,7 @@ contract Identity {
     struct Voting {
         // Validator/voter => value
         uint highestVote;
-        mapping (address => uint) votes;
+        mapping (address => uint8) votes;
         address[] validators;
     }
 
@@ -52,29 +52,27 @@ contract Identity {
         return _menders;
     }
 
-    function getValue(string name) public requiresPermission(msg.sender) view returns (uint value, uint voteCount) {
-        uint highestVote = getHighestVote(name);
+    function getValue(string name) public view returns (uint8 value, uint voteCount) {
+        //require (hasPermission(msg.sender));
         // value => votes
-        uint[] memory counting = new uint[](highestVote);
-        // For readabilitiy
-        uint currentValue;
+        uint8[255] memory counting;
         for (uint i = 0; i < _values[name].validators.length; i++) {
-            currentValue = _values[name].votes[_values[name].validators[i]];
-            counting[currentValue]++;
+            address voter = _values[name].validators[i];
+            counting[_values[name].votes[voter]]++;
         }
         uint highestCount = 0;
-        uint highestValue = 0;
-        for (i = 0; i < counting.length; i++) {
-            if (counting[i] > highestCount) {
-                highestValue = i;
-                highestCount = counting[i];
+        uint8 highestValue = 0;
+        for (uint8 j = 0; j < counting.length; j++) {
+            if (counting[j] > highestCount) {
+                highestValue = j;
+                highestCount = counting[j];
             }
         }
         return (highestValue, highestCount);
     }   
 
     function hasPermission(address caller) public view returns(bool has) {
-        return _approvedCallers[caller] || isOwner(caller);
+        return bool(_approvedCallers[caller]) || isOwner(caller);
     }
 
     function isMender(address mender) private view returns (bool) {
@@ -113,7 +111,7 @@ contract Identity {
         _approvedCallers[caller] = false;
     }
 
-    function vote(string name, uint value) public {
+    function vote(string name, uint8 value) public {
         _values[name].validators.push(msg.sender);
         _values[name].votes[msg.sender] = value;
         if (_values[name].highestVote < value) {

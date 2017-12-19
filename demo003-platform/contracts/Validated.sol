@@ -4,9 +4,9 @@ import { Identity } from './Identity.sol';
 
 contract Validated {
 
-    string _validationKey;
-    string _validationOperator;
-    uint _validationValue;
+    string public _validationKey;
+    string public _validationOperator;
+    uint public _validationValue;
 
     modifier requiresPermissionFrom(Identity identity) {
         require(hasPermission(identity));
@@ -31,7 +31,7 @@ contract Validated {
     }
 
     function hasPermission(Identity identity) public view returns (bool has) {
-        return identity.hasPermission(this);
+        return identity.hasPermission(address(this));
     }
 
     function isValidOperator(string operator) public pure returns (bool) {

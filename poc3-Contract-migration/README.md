@@ -2,7 +2,7 @@
 ### v1.0
 
 ## Background / Context
-As a developer I want to use to a framework to manage the migration of the smartcontacts to the blockchain so that I can focus on developing great application.
+As a developer, I want to use to a framework to manage the migration of the smartcontacts to the blockchain so that I can focus on developing great application.
 
 # Truffle
 Truffle is a development environment, testing framework and asset pipeline for Ethereum, aiming to make life as an Ethereum developer easier. With Truffle, you get:
@@ -78,9 +78,29 @@ With Embark you can:
 |1-Click Swarm deploy   |No                     |Yes                    |
 
 
+
+
+
+
+
 ## Recommendation
-*write recomendation*
+For beginners starting out with blockchain I recommend you start with the most basic way of connecting to a blockchain using just the web3 interface. When comfortable calling functions from the console, you can abstract this functionality using a framework like Truffle or Embark. 
+
+Truffle allow’s you to call web3 interface from javascript like this:
+
+import voting_artifacts from '../../build/contracts/Voting.json'
+var Voting = contract(voting_artifacts);
+
+Voting.deployed().then(function(contractInstance) {
+      contractInstance.voteForCandidate(candidateName, {gas: 140000, from: web3.eth.accounts[0]}).then(function() {}
+
+The code is precise but there is still some boilerplate code. Embark abstracts even more code and just makes the contract available as a global variable like so:
+
+SimpleStorage.methods.set(value).send({from: web3.eth.defaultAccount});
+
+Both frameworks are viable options and it comes down to the experience of the developers which framework as preference. Currently I think Embark is more feature proof because the code is cleaner and allows for easy IPFS and Swarm uploading.
 
 ## Side-note
-There used to be 2 demo projects including in this poc. However it's easier to just create a demo project from the console. Therefor I have removed the 2 demo projects.
+There used to be 2 demo projects including in this poc. However, it's easier to just create a demo project from the console. Therefor I have removed the 2 demo projects.
+
 

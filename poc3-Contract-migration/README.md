@@ -1,8 +1,10 @@
-# poc 3 - Contract Migration
-### v1.0
+# poc003-contract-migration
+### v0.1
 
 ## Background / Context
 As a developer, I want to use to a framework to manage the migration of the smartcontacts to the blockchain so that I can focus on developing great application.
+
+## Assignee: Niels Reijn
 
 # Truffle
 Truffle is a development environment, testing framework and asset pipeline for Ethereum, aiming to make life as an Ethereum developer easier. With Truffle, you get:
@@ -76,12 +78,6 @@ With Embark you can:
 |Migration              |Yes                    |Yes                    |
 |1-Click IPFS deploy    |No                     |Yes                    |
 |1-Click Swarm deploy   |No                     |Yes                    |
-
-
-
-
-
-
 
 ## Recommendation
 For beginners starting out with blockchain I recommend you start with the most basic way of connecting to a blockchain using just the web3 interface. When comfortable calling functions from the console, you can abstract this functionality using a framework like Truffle or Embark. 

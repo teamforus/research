@@ -1,5 +1,7 @@
 pragma solidity ^0.4.17;
 
+import { Identity } from './Identity.sol';
+
 contract Owned {
     event NewOwner(address newOwner);
 

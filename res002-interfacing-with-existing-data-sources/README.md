@@ -2,12 +2,18 @@
 
 ### v0.0
 
+##### List of terms
+
+JSON-LD Object - JSON stands for JavaScript Object Notation object for Linked Data
+JSON-LD is a World Wide Web Consortium (W3C) Recommendation. It is an open format to provide context and structure to data.
+https://en.wikipedia.org/wiki/JSON-LD 
+
 ## Background / Context
 **Goal/user story:** 
 
-The Forus platform knows two kind of validators. Validators like 'RDW' or 'Kadaster' register digital assets; An identity can own/control a digital asset. A validator like a goverment agency validates records (birth certificate) of an identity. The difference between the two types of data is that the assets are interchangable and the records are not.
+The Forus platform knows two kinds of validators. Validators like 'RDW' or 'Kadaster' register digital assets; An identity can own/control a digital asset. A validator like a goverment agency validates records (birth certificate) of an identity. The difference between the two types of data is that the assets are interchangable and the records are not.
 
-There are multiple options to add these types of existing data to the blockchain. In this RES we will look at a few options with pro's and con's
+There are multiple options to add these types of existing data to the blockchain. In this research we will look at a few options with pro's and con's
 
 ## Hypothesis:
 
@@ -24,10 +30,28 @@ An identity request his or her data. A validator sends the data off-chain to the
 
 #### Pro's
 - The identity adds the data to the blockchain and no validator is liable for the leakage of these records.
+- Existing data communication channels can be used to transfer data from the validator to the requesting identity
 #### Con's
-- Forus needs to build an offchain B2C API.
-- The identity has to add their information themself 
+- The identity has to add their information themself,
 
 ## Method
-*documentation/code*
 
+#### Validator adds the data
+
+Steps:
+- An identity files an 'insight' request to the validator.
+- Validator makes a JSON-LD object, thats formatted so that it can be used by the Forus Platform
+- Validator digitaly signs this JSON object using his private key.
+- Validator responds with a signed JSON object. 
+- The validator will encrypt this object using their own private key.
+- The validator will upload this JSON-LD object to IPFS
+- The validator registers the claim on the Ethereum blockchain by submitting the IPFS hash (location), issuer (validator public key)
+
+#### Identity adds the data
+Steps:
+- An identity files an 'insight' request to the validator.
+- Validator makes a JSON-LD object, thats formatted so that it can be used by the Forus Platform
+- Validator digitaly signs this JSON object using his private key.
+- Validator responds with a signed JSON object. 
+- Identity uploads this JSON-LD object to IPFS
+- The identity registers the claim on the Ethereum blockchain by submitting the IPFS hash (location), issuer(identity's public key)

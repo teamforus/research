@@ -8,6 +8,12 @@ JSON-LD Object - JSON stands for JavaScript Object Notation object for Linked Da
 JSON-LD is a World Wide Web Consortium (W3C) Recommendation. It is an open format to provide context and structure to data.
 https://en.wikipedia.org/wiki/JSON-LD 
 
+IPFS - IPFS stands for InterPlanetary File-System
+IPFS is a protocol designed to create content-adressable, peer-to-peer method of storing and sharing files in a distributed file system. 
+Notable IPFS users: The Catalan independence referendum, taking place in September-October 2017, was deemed illegal by the Constitutional Court of Spain and many related websites were blocked. Subsequently, the Catalan Pirate Party mirrored the website on IPFS to bypass the High Court of Justice of Catalonia order of blocking.
+https://en.wikipedia.org/wiki/InterPlanetary_File_System
+
+
 ## Background / Context
 **Goal/user story:** 
 
@@ -36,7 +42,25 @@ An identity request his or her data. A validator sends the data off-chain to the
 
 ## Method
 
-#### Validator adds the data
+### data registered and stored on the blockchain
+#### PRO's
+- Data can directly be used in Smart contracts
+#### CON'S
+- Storing data on the blockchain is expensive.
+- Data is hidden in plain sight. (not encrypted but not easily accessible)
+
+
+##### Validator adds the data to the blockchain
+##### Identity adds the data to the blockchain
+
+### data stored on IPFS, registry on blockchain
+#### PRO's
+- Validation
+#### CON'S
+- Proofs need to be generated with Zero knowledge. Data can't be used on chain.
+- The proofer needs an IPFS node to import the data.
+
+##### Validator adds the data to IPFS, registers datalocation on blockchain
 
 Steps:
 - An identity files an 'insight' request to the validator.
@@ -47,7 +71,7 @@ Steps:
 - The validator will upload this JSON-LD object to IPFS
 - The validator registers the claim on the Ethereum blockchain by submitting the IPFS hash (location), issuer (validator public key)
 
-#### Identity adds the data
+##### Identity adds the data to IPFS, registers datalocation on blockchain
 Steps:
 - An identity files an 'insight' request to the validator.
 - Validator makes a JSON-LD object, thats formatted so that it can be used by the Forus Platform

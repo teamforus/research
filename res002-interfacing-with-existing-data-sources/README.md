@@ -1,6 +1,6 @@
 # Research: interfacing with existing data sources 
 
-### v0.0
+### v0.1
 
 ##### List of terms
 
@@ -43,8 +43,6 @@ An identity request his or her data. A validator sends the data off-chain to the
 #### Con's
 - The identity has to add their information themself,
 
-## Method:
-
 ### data registered and stored on the blockchain
 #### PRO's
 - Data signature is easily handled, who issues the record, directly signs it with his address.
@@ -65,7 +63,6 @@ An identity request his or her data. A validator sends the data off-chain to the
 ##### Identity adds the data to the blockchain
 - An identity submits a record to a smart contract.
 - The claim is registered and the data can be used.
-This version method is coded in a smart contract written by @martijndoornik; https://github.com/teamforus/research-and-development/blob/poa001-demo-18-12-2017/demo003-platform/contracts/Identity.sol
 
 ### data stored on IPFS, registry on blockchain
 #### PRO's
@@ -98,6 +95,17 @@ Steps:
 - Identity uploads this JSON-LD object to IPFS
 - The identity registers the claim on the Ethereum blockchain by submitting the IPFS hash (location), issuer(identity's public key)
 
+## Method:
+A version of the hypothesis is coded in a smart contract written by @martijndoornik; https://github.com/teamforus/research-and-development/blob/poa001-demo-18-12-2017/demo003-platform/contracts/Identity.sol
+
+An identity registers data on the blockchain by voting. A vote contains a key and a value. Example:
+Key: birthDate
+Value: 17-10-1990
+
+Any identity can vote for a property. All votes on the key 'birthDate' are counted and when a validation is needed the smart contract returns the value for the highest amount of votes.
+
 ## Recomendation
 
-Its recommended to start storing data directly on the blockchain. Data can be used directly in a Smart Contract and it makes programming a smart contract much easier. The validator adds the single record to blockchain (and pays the gas price) because to have valid information we need the signature of the validator (provided by his address).
+Its recommended to start storing data directly on the blockchain. Data can be used directly in a Smart Contract and it makes programming a smart contract much easier. After more research the method @martijndoornik wrote is not the ideal situation. The more ideal situation is that a validator adds the record to blockchain (and pays the gas price) because to have valid information we need the signature of the validator (provided by his address). Currently voting on values is really expensive (each voter pays gas price for a vote). 
+
+Who is a validator on the network? All the nodes decide by voting for a trusted validator. (delegation system)

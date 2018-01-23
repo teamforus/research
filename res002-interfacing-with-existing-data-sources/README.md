@@ -106,6 +106,6 @@ Any identity can vote for a property. All votes on the key 'birthDate' are count
 
 ## Recomendation
 
-Its recommended to start storing data directly on the blockchain. Data can be used directly in a Smart Contract and it makes programming a smart contract much easier. After more research the method @martijndoornik wrote is not the ideal situation. The more ideal situation is that a validator adds the record to blockchain (and pays the gas price) because to have valid information we need the signature of the validator (provided by his address). Currently voting on values is really expensive (each voter pays gas price for a vote). 
+Its recommended to start storing data directly on the blockchain. Data can be used directly in a Smart Contract and it makes programming of a smart contract much easier. After more research the method @martijndoornik wrote is not an ideal situation. The better method is that a validator adds the record to blockchain (and pays the gas price) because to have valid information we need the signature of the validator (provided by his address). Currently voting on values is really expensive (each voter pays gas price for a vote). 
 
 Who is a validator on the network? All the nodes decide by voting for a trusted validator. (delegation system)

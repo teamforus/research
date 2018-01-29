@@ -5,15 +5,15 @@ import { Validated } from './Validated.sol';
 
 contract Token is Owned, Validated {
 
-    uint private _fundSize;
+    int private _fundSize;
     string private _name;
 
-    function Token(string name, address owner, uint fundSize, string key, string operator, uint value) public Owned(owner) Validated(key, operator, value) {
+    function Token(string name, address owner, int fundSize, string key, string operator, uint value) public Owned(owner) Validated(key, operator, value) {
         _fundSize = fundSize;
         _name = name;
     }
     
-    function getFundSize() public view returns (uint fundSize) {
+    function getFundSize() public view returns (int fundSize) {
         return _fundSize;
     }
 

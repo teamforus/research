@@ -5,8 +5,8 @@ import * as Web3 from 'web3/src/';
 @Injectable()
 export class ArtifactService {
 
-  host = 'http://localhost:8545';
-  contractAddress = '0xeaa63fdcad6fc93762bf944b1f13d8bbf6d9b4fc';
+  host = 'ws://localhost:8546';
+  contractAddress = '0x5dba61bb905b9b2a7d81cabcff8b35a808ac04d0';
   contractABI = [
     {
       'inputs': [
@@ -149,23 +149,39 @@ export class ArtifactService {
   artifacts: Artifact[] = [];
 
   constructor() {
-    this.web3 = new Web3(new Web3.providers.HttpProvider(this.host));
+    this.web3 = new Web3(new Web3.providers.WebsocketProvider(this.host));
 
     this.contract = new this.web3.eth.Contract(
       this.contractABI,
       this.contractAddress
     );
 
+
     /*
-    console.log(this.web3.eth.subscribe('logs', {}, function(error, result){
+    this.web3.eth.subscribe('newBlockHeaders', function(error, result){
       console.log(error);
       console.log(event);
-    }));
+    });
     */
 
     /*
-    const eventEmitter = this.contract.events.ArtifactAdded();
-    eventEmitter
+    console.log('asdf');
+    this.web3.eth.getTransactionCount('0x4046535b1d10505a40ca9e525c220b75d8201348').then(result => {
+      console.log(result);
+    });
+    */
+
+    this.contract.getPastEvents('ArtifactAdded', function(error, result){
+      console.log(error);
+      console.log(event);
+    }).then(function(events){
+      console.log(events); // same results as the optional callback above
+    });
+
+    this.contract.events.allEvents({}, function(error, result){
+      console.log(error);
+      console.log(event);
+    })
     .on('data', function(event){
       console.log('data');
       console.log(event);
@@ -178,9 +194,39 @@ export class ArtifactService {
       console.log('error');
       console.log(error);
     });
-    */
 
-  }
+    /*
+    this.web3.eth.sendTransaction({
+        from: '0x4046535b1d10505a40ca9e525c220b75d8201348',
+        to: '0x11f4d0A3c12e86B4b5F39B213F7E19D048276DAe',
+        value: '10000000000000'
+    }, function(error, result){
+      console.log(error);
+      console.log(event);
+    }).on('transactionHash', function(hash){
+      console.log('transactionHash');
+      console.log(hash);
+  })
+  .on('receipt', function(receipt){
+    console.log('receipt');
+    console.log(receipt);
+  })
+  .on('confirmation', function(confirmationNumber, receipt){
+    console.log('confirmation');
+    console.log(confirmationNumber);
+    console.log(receipt);
+  })
+  .on('error', function(error){
+    console.log('error');
+    console.log(error);
+  });
+*/
+
+
+this.web3.eth.getBalance('0x11f4d0a3c12e86b4b5f39b213f7e19d048276dae')
+.then(console.log);
+
+    }
 
   addArtifact(
     name: string,

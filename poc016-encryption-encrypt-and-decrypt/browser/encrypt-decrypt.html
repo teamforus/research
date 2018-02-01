@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Sign and verify - Web Cryptography API</title>
+	<script
+		src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+		crossorigin="anonymous"
+	></script>
+</head>
+<body>
+	<div>This example demonstrates how to encrypt and decrypt data using the Web Cryptography API.</div>
+	<br/>
+	<label for="algorithm">Sing/verify algorithm to use:</label>
+	<select id="algorithm">
+		<option>RSA-OAEP</option>
+		<option>AES-CTR</option>
+		<option>AES-CBC</option>
+		<option>AES-GCM</option>
+	</select>
+	<button type="button" id="generatekey">Generate key</button>
+
+	<hr/>
+
+	<label>Text to sign:</label><br/>
+	<Textarea id="plaintextsrc" rows="10" cols="80">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Textarea>
+	<br/>
+	<button type="button" id="encrypt">Encrypt text</button>
+
+	<hr/>
+
+	<label for="encrypted">Encrypted text (base64):</label>
+	<br/>
+	<textarea id="encrypted" rows="5" cols="80"></textarea>
+
+	<hr/>
+	<button type="button" id="decrypt">Decrypt</button>
+	<div id="decrypted"></div>
+
+	<script>
+
+		var privkey = null;
+		var pubkey = null;
+		var algorithm = null;
+
+		$(document).ready(function(){
+			
+			$("#generatekey").click(function(){
+
+				switch($("#algorithm").val()) {
+                    
+                    case "RSA-OAEP":
+					var keyAlgorithm = {
+						name: "RSA-OAEP",
+						
+						// RsaHashedKeyGenParams
+						
+						// The length, in bits, of the RSA modulus
+						modulusLength: 2048,
+						// The RSA public exponent
+						publicExponent: new Uint8Array([0x01, 0x00, 0x01]),  // Equivalent to 65537
+						// The hash algorithm to use
+						hash: {
+							name: "SHA-256"
+						}
+					};
+					var keyUsages = ["encrypt", "decrypt"];
+					algorithm = {
+                        name: "RSA-OAEP",
+                        
+                        // RsaOaepParams
+
+                        // (optional) The label/application data to associate with the message
+						//namBufferSourcee: null
+					};
+                    break;
+                    
+					case "AES-CTR":
+					var keyAlgorithm = {
+						name: "AES-CTR",
+						
+						// AesKeyGenParams
+
+						// The length, in bits, of the key.
+						length: 128
+					};
+					var keyUsages = ["encrypt", "decrypt"];
+					algorithm = {
+                        name: "AES-CTR",
+
+                        // AesCtrParams
+
+                        // The initial value of the counter block. counter MUST be 16 bytes
+                        // (the AES block size). The counter bits are the rightmost length
+                        // bits of the counter block. The rest of the counter block is for
+                        // the nonce. The counter bits are incremented using the standard
+                        // incrementing function specified in NIST SP 800-38A Appendix B.1:
+                        // the counter bits are interpreted as a big-endian integer and
+                        // incremented by one.
+                        counter : new ArrayBuffer(16),
+                        // The length, in bits, of the rightmost part of the counter block
+                        // that is incremented.
+                        length: 128
+					};
+					break;
+				
+					case "AES-CBC":
+					var keyAlgorithm = {
+						name: "AES-CBC",
+						
+						// AesKeyGenParams
+
+						// The length, in bits, of the key.
+						length: 128
+					};
+					var keyUsages = ["encrypt", "decrypt"];
+					algorithm = {
+                        name: "AES-CBC",
+
+                        // AesCbcParams
+
+                        // The initialization vector. MUST be 16 bytes.
+                        iv: crypto.getRandomValues(new Uint8Array(16))
+					};
+					break;
+				
+					case "AES-GCM":
+					var keyAlgorithm = {
+						name: "AES-GCM",
+						
+						// AesKeyGenParams
+
+						// The length, in bits, of the key.
+						length: 128
+					};
+					var keyUsages = ["encrypt", "decrypt"];
+					algorithm = {
+                        name: "AES-GCM",
+
+                        // AesGcmParams
+
+                        // The initialization vector to use. May be up to 2^64-1 bytes long.
+                        iv: crypto.getRandomValues(new Uint8Array(16))
+                        // (optional) The additional authentication data to include.
+                        //BufferSource additionalData;
+						// (optional) The desired length of the authentication tag.
+						// Can be 32, 64, 96, 104, 112, 120 or 128 (default)
+                        //[EnforceRange] octet tagLength;
+					};
+					break;
+                };
+
+				var extractable = true;
+
+				window.crypto.subtle.generateKey(keyAlgorithm, extractable, keyUsages).then(
+					key => {
+
+						// for symmetrical algorithms only one key is used
+						// asymmetrical algorithms us two keys
+						if ("RSA-OAEP" == $("#algorithm").val())
+						{
+							privkey = key.privateKey;
+							pubkey = key.publicKey;
+						}
+						else
+						{
+							privkey = null;
+							pubkey = key;
+						}
+
+					},
+					console.error.bind(console, "Unable to generate a key")
+				);
+				
+			});
+		});
+
+		
+		$("#encrypt").click(function(){
+			if (!pubkey) {
+				return;
+			}
+
+			if (!algorithm) {
+				return;
+			}
+
+			var encoder = new TextEncoder("utf-8");
+			var data = encoder.encode($("#plaintextsrc").val());
+
+			window.crypto.subtle.encrypt(algorithm, pubkey, data).then(
+				encrypted => {
+					$("#encrypted").val(ArrayBufferToBase64(encrypted));
+
+				}
+			);
+			
+		});
+        
+        
+		$("#decrypt").click(function(){
+			if (!pubkey && !privkey) {
+				return;
+			}
+
+			if (!algorithm) {
+				return;
+			}
+
+			$("#decrypted").html("");
+			
+            var data = Base64ToArray($("#encrypted").val());
+
+			// for symmetrical algorithms only one key is used
+			// asymmetrical algorithms us two keys
+			if ("RSA-OAEP" == $("#algorithm").val())
+			{
+				var key = privkey;
+			}
+			else
+			{
+				var key = pubkey;
+			}
+
+			window.crypto.subtle.decrypt(algorithm, key, data).then(
+				decrypted => {
+                    var encoder = new TextDecoder("utf-8");
+					$("#decrypted").html(encoder.decode(decrypted));
+				}
+			);
+
+		});
+
+		function ArrayBufferToBase64(buffer) {
+			return btoa(String.fromCharCode.apply(null, new Uint8Array(buffer)));
+		}
+
+		function Base64ToArray(base64) {
+			return Uint8Array.from(atob(base64), c => c.charCodeAt(0));
+		}
+
+	</script>
+</body>
+</html>

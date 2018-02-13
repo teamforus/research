@@ -106,6 +106,12 @@ Any identity can vote for a property. All votes on the key 'birthDate' are count
 
 ## Recomendation
 
+### Short term
 Its recommended to start storing data directly on the blockchain. Data can be used directly in a Smart Contract and it makes programming of a smart contract much easier. After more research the method @martijndoornik wrote is not an ideal situation. The better method is that a validator adds the record to blockchain (and pays the gas price) because to have valid information we need the signature of the validator (provided by his address). Currently voting on values is really expensive (each voter pays gas price for a vote). 
 
 Who is a validator on the network? All the nodes decide by voting for a trusted validator. (delegation system)
+
+### Long term
+The short-term recomendation has the con that it is very expensive and there is no privacy. On a permissioned testnet (short term) this is not deal-breaking, but on the longer term using ipfs/swarm with zero-knowledge might be the better option to provide privacy and maybe reduce costs.
+
+

@@ -1,6 +1,6 @@
 
 
-[![join our chat](https://img.shields.io/badge/join%20our%20chat-research--and--development-green.svg)](https://chat.forus.io/channel/research-and-development)
+[![join our chat](https://img.shields.io/badge/join%20chat-research--and--development-green.svg)](https://chat.forus.io/channel/research-and-development)
 
 ## Goal
 

@@ -1,3 +1,7 @@
+
+
+[![join our chat](https://img.shields.io/badge/join%20our%20chat-research--and--development-green.svg)](https://chat.forus.io/channel/research-and-development)
+
 ## Goal
 
 The goal of this repository is to learn and share knowledge around decentralized development. We are researching, creating and improving the building blocks of [Platform Forus](https://foundation.forus.io/en/platform/) and any other fully decentralized platform/application.
@@ -5,10 +9,6 @@ The goal of this repository is to learn and share knowledge around decentralized
 ## Getting started
 
 Every project folder contains a readme describing its contents. The [wiki](https://github.com/teamforus/research-and-development/wiki) contains general information, [issues](https://github.com/teamforus/research-and-development/issues) are for making and discussing proposals, [branches](https://github.com/teamforus/research-and-development/branches/all) show what is currently being worked on. 
-
-You can also join our [research-and-development](https://chat.forus.io/channel/research-and-development) channel at [chat.forus.io](chat.forus.io).
-
-
 
 ## Workflow
 

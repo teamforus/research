@@ -1,6 +1,6 @@
 
 
-[![join our chat](https://img.shields.io/badge/join%20chat-common--ground--vng-green.svg)](https://chat.forus.io/channel/common--ground--vng)
+[![join our chat](https://img.shields.io/badge/join%20chat-common--ground--vng-green.svg)](https://chat.forus.io/channel/common-ground-vng)
 
 ## Goal
 

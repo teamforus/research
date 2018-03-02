@@ -8,7 +8,7 @@ The goal of this repository is [tbd]
 
 ## About Common Ground VNG
 
-[![Website Common Ground](https://vng.nl/vereniging/samen-organiseren/common-ground)
+[Website Common Ground](https://vng.nl/vereniging/samen-organiseren/common-ground)
 
 ## Team
 * Frontend development and design: [@dev-weget](https://github.com/dev-weget) & [@danrminds](https://github.com/danrminds)

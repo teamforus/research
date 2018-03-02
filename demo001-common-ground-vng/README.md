@@ -8,8 +8,8 @@ The goal of this repository is [tbd]
 
 ## About Common Ground VNG
 
-[Website Common Ground](https://vng.nl/vereniging/samen-organiseren/common-ground)
-[Draaiboek Track Identity](https://drive.google.com/drive/u/1/folders/1pS6jieQG6R9ygz6NcSUaiPd3Tm6a1itR)
+* [Website Common Ground](https://vng.nl/vereniging/samen-organiseren/common-ground)
+* [Draaiboek Track Identity](https://drive.google.com/drive/u/1/folders/1pS6jieQG6R9ygz6NcSUaiPd3Tm6a1itR)
 
 
 ## Team

@@ -12,13 +12,6 @@ Every project folder contains a readme describing its contents. The [wiki](https
 
 ## Workflow
 
-Most projects start out as **issues**:  
-1: <kbd>[proposal](https://github.com/teamforus/proofs-of-concept/issues?q=is%3Aopen+is%3Aissue+label%3Aproposal)</kbd>  
-2: <kbd>[fill-template](https://github.com/teamforus/proofs-of-concept/issues?q=is%3Aopen+is%3Aissue+label%3Afill-template)</kbd> ([issue-template](https://github.com/teamforus/proofs-of-concept/blob/develop/ISSUE_TEMPLATE.md))  
-3: <kbd>[unassigned](https://github.com/teamforus/proofs-of-concept/issues?utf8=✓&q=is%3Aopen%20is%3Aissue%20label%3Aunassigned%20)</kbd>
+Topic suggestions and discussions take place over at the [issues](https://github.com/teamforus/research-and-development/issues).
 
-Then, when the issue is assigned, the assignee can create a **feature branch** with a **project folder** and a **readme** where it can be built and documented ([example-project](https://github.com/teamforus/proofs-of-concept/tree/poc0-example/poc0-example)). Comment your project name and number [here](https://github.com/teamforus/proofs-of-concept/issues/51).  
- 
-4: <kbd>[work-in-progress](https://github.com/teamforus/proofs-of-concept/issues?utf8=✓&q=is%3Aopen%20is%3Aissue%20label%3Awork-in-progress%20)</kbd>  
-5: <kbd>[waiting-for-review](https://github.com/teamforus/proofs-of-concept/issues?q=is%3Aopen+is%3Aissue+label%3Awaiting-for-review)</kbd>   
-6: <kbd>[completed](https://github.com/teamforus/proofs-of-concept/issues?utf8=✓&q=is%3Aissue%20label%3Acompleted%20)</kbd>  
+When work starts the assignee creates a **feature branch** with a **project folder** and a **readme** where the work is  performed and documented ([example-project](https://github.com/teamforus/proofs-of-concept/tree/poc0-example/poc0-example)). The assignee then opens a [pull-request](https://github.com/teamforus/research-and-development/pulls) where discussions can continue and where the issue number will also be assigned before merging into develop. 

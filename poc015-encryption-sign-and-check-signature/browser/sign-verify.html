@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Sign and verify - Web Cryptography API</title>
+	<script
+		src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+		crossorigin="anonymous"
+	></script>
+</head>
+<body>
+	<div>This example demonstrates how to sign and check data using the Web Cryptography API.</div>
+	<br/>
+	<label for="algorithm">Sing/verify algorithm to use:</label>
+	<select id="algorithm">
+		<option>RSASSA-PKCS1-v1_5</option>
+		<option>RSA-PSS</option>
+		<option>ECDSA</option>
+		<option>HMAC</option>
+	</select>
+	<button type="button" id="generatekey">Generate keypair</button>
+
+	<hr/>
+
+	<label>Text to sign:</label><br/>
+	<Textarea id="plaintextsrc" rows="10" cols="80">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ultricies erat ante, a facilisis ex rhoncus a. Donec in eleifend lectus. Integer non dui eu velit congue efficitur convallis et odio. Vivamus eu rhoncus sem. Aliquam feugiat tincidunt massa vitae facilisis. Nam dolor justo, finibus ac tempus nec, lacinia a ante. Cras congue vitae sapien sit amet gravida. Donec ut sapien a tortor tincidunt tristique quis non nunc. Phasellus turpis libero, laoreet non turpis nec, pulvinar condimentum nisl.</Textarea>
+	<br/>
+	<button type="button" id="sign">Sign text</button>
+
+	<hr/>
+
+	<label for="signature">Signature (base64):</label>
+	<br/>
+	<textarea id="signature" rows="5" cols="80"></textarea>
+
+	<hr/>
+	<button type="button" id="check">Check signature</button>
+	<div id="checkresult"></div>
+
+	<script>
+
+		var privkey = null;
+		var pubkey = null;
+		var signAlgorithm = null;
+
+		$(document).ready(function(){
+			
+			$("#generatekey").click(function(){
+
+				switch($("#algorithm").val()) {
+					
+					case "RSASSA-PKCS1-v1_5":
+					var keyAlgorithm = {
+						name: "RSASSA-PKCS1-v1_5",
+						
+						// RsaHashedKeyGenParams
+						
+						// The length, in bits, of the RSA modulus
+						modulusLength: 2048,
+						// The RSA public exponent
+						publicExponent: new Uint8Array([0x01, 0x00, 0x01]),  // Equivalent to 65537
+						// The hash algorithm to use
+						hash: {
+							name: "SHA-256"
+						}
+					};
+					var keyUsages = ["sign", "verify"];
+					signAlgorithm = {
+						name: "RSASSA-PKCS1-v1_5"
+					};
+					break;
+					
+					case "RSA-PSS":
+					var keyAlgorithm = {
+						name: "RSA-PSS",
+						
+						// RsaHashedKeyGenParams
+						
+						// The length, in bits, of the RSA modulus
+						modulusLength: 2048,
+						// The RSA public exponent
+						publicExponent: new Uint8Array([0x01, 0x00, 0x01]),  // Equivalent to 65537
+						// The hash algorithm to use
+						hash: {
+							name: "SHA-256"
+						}
+					};
+					var keyUsages = ["sign", "verify"];
+					signAlgorithm = {
+						name: "RSA-PSS",
+
+						// RsaPssParams
+
+						// The desired length of the random salt
+						saltLength: 0
+					};
+					break;
+					
+					case "ECDSA":
+					var keyAlgorithm = {
+						name: "ECDSA",
+						
+						// EcKeyGenParams
+
+						// A named curve
+						namedCurve: "P-256" // "P-256", "P-384", "P-521"
+					};
+					var keyUsages = ["sign", "verify"];
+					signAlgorithm = {
+						name: "ECDSA",
+
+						// EcdsaParams
+
+						// The hash algorithm to use
+						hash: "SHA-256"
+					};
+					break;
+					
+					case "HMAC":
+					var keyAlgorithm = {
+						name: "HMAC",
+						
+						// HmacKeyGenParams
+
+						// The length (in bits) of the key to generate. If unspecified, the
+						// recommended length will be used, which is the size of the associated hash function's block
+						// size.
+						length: 128,
+
+						// The inner hash function to use.
+						hash: {
+							name: "SHA-256"
+						}
+					};
+					var keyUsages = ["sign", "verify"];
+					signAlgorithm = {
+						name: "HMAC"
+					};
+					break;
+				}
+
+
+				var extractable = false;
+
+				window.crypto.subtle.generateKey(keyAlgorithm, extractable, keyUsages).then(
+					key => {
+						console.log(key);
+						if ("HMAC" == $("#algorithm").val())
+						{
+							privkey = key;
+							pubkey = null;
+						}
+						else
+						{
+							privkey = key.privateKey;
+							pubkey = key.publicKey;
+						}
+					},
+					console.error.bind(console, "Unable to generate a key")
+				);
+				
+			});
+		});
+
+		
+		$("#sign").click(function(){
+			if (!privkey) {
+				return;
+			}
+
+			if (!signAlgorithm) {
+				return;
+			}
+
+			var encoder = new TextEncoder("utf-8");
+			var data = encoder.encode($("#plaintextsrc").val());
+
+			var test = window.crypto.subtle.sign(signAlgorithm, privkey, data).then(
+				signature => {
+					$("#signature").val(ArrayBufferToBase64(signature));
+
+				}
+			);
+			
+		});
+		
+		$("#check").click(function(){
+			if (!pubkey && !privkey) {
+				return;
+			}
+
+			if (!signAlgorithm) {
+				return;
+			}
+
+			$("#checkresult").html("");
+			
+			var encoder = new TextEncoder("utf-8");
+			var data = encoder.encode($("#plaintextsrc").val());
+
+			var signature = Base64ToArray($("#signature").val());
+
+			if ("HMAC" == $("#algorithm").val())
+			{
+				var key = privkey;
+			}
+			else
+			{
+				var key = pubkey;
+			}
+
+			window.crypto.subtle.verify(signAlgorithm, key, signature, data).then(
+				result => {
+					if (result) {
+						$("#checkresult").html("Signature check successful");
+					}
+					else
+					{
+						$("#checkresult").html("Signature check failed");
+					}
+				}
+			);
+
+		});
+
+		function ArrayBufferToBase64(buffer) {
+			return btoa(String.fromCharCode.apply(null, new Uint8Array(buffer)));
+		}
+
+		function Base64ToArray(base64) {
+			return Uint8Array.from(atob(base64), c => c.charCodeAt(0));
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+
+<div>
+  <form method="GET" action="./search" class="block block-search">
+    <input type="text" name="query" placeholder="Start your search now" ng-model="searchInput" class="input block-search-input"/>
+    <div class="block block-search-options"><a ng-repeat="result in results" href="{{result.url}}" ng-bind="result.name" class="block-search-options-item"></a></div>
+    <input type="submit" value="Search now" class="button button-base block-search-button"/>
+  </form>
+</div>

@@ -1,0 +1,73 @@
+extends layout/layout
+block vars
+    -var angularController = 'GrantApplicationsCtrl';
+
+block header-nodes
+    .wrapper
+        .block.block-search
+            input(type="text", placeholder="Start your search now", ng-model="search.query.title", ng-init="search.requests = " + JSON.stringify(requests)).input.block-search-input
+            a(href="#").button.button-base.block-search-button SEARCH NOW
+        .block.block-margin-bottom
+            .label.label-light 
+                h1.label-title Search results
+                | Requests received for the offered grants 
+                strong {{ search.requests | filter:search.query | length }} 
+                | items
+block content
+    .body
+        .wrapper
+            .block.block-citizen-list
+                .citizen-tabs
+                    .citizen-tabs-item(ng-class="{active: search.type == 'all'}", ng-click="chooseType($event, 'all')"): span ALL
+                    .citizen-tabs-item(ng-class="{active: search.type == 'pending'}", ng-click="chooseType($event, 'pending')"): span PENDING
+                    .citizen-tabs-item(ng-class="{active: search.type == 'accepted'}", ng-click="chooseType($event, 'accepted')"): span ACCEPTED
+                    .citizen-tabs-item(ng-class="{active: search.type == 'picked-up'}", ng-click="chooseType($event, 'picked-up')").hidden: span PICKED UP
+                    .citizen-tabs-item(ng-class="{active: search.type == 'declined'}", ng-click="chooseType($event, 'declined')"): span DECLINED
+                .citizen-results
+                    .citizen-results-item(
+                        ng-repeat="(key, request) in search.requests | filter:search.query", 
+                        ng-show="request.state == search.type || search.type == 'all'",
+                        class="{{ 'citizen-results-item-' + request.state + ' ' + (request.shown?'active':'') }}"
+                        )
+                        .citizen-results-item-header(ng-click="request.shown = !request.shown")
+                            em.mdi.mdi-chevron-up.up
+                            em.mdi.mdi-chevron-down.down
+                            | {{ request.title }}
+                            .citizen-results-item-header-status(ng-if="request.state == 'accepted'")
+                                | Accepted
+                                em.mdi.mdi-check
+                            .citizen-results-item-header-status(ng-if="request.state == 'declined'")
+                                | Declined
+                                em.mdi.mdi-close
+                            .citizen-results-item-header-status(ng-if="request.state == 'pending'")
+                                | Pending
+                                em.mdi.mdi-timer-sand
+                            .citizen-results-item-header-status(ng-if="request.state == 'picked-up'")
+                                | Picked up
+                                em.mdi.mdi-package-variant
+
+                        .citizen-results-item-content
+                            .result-content
+                                .result-content-aside
+                                    div(ng-repeat="(_key, _val) in request.details")
+                                        .result-content-label(ng-bind="_val[0]")
+                                        .result-content-value(ng-bind="_val[1]", ng-if="(_val[1] | typeof) == 'string'")
+                                        .result-content-value(ng-if="(_val[1] | typeof) == 'object'")
+                                            span(ng-repeat="__val in _val[1]") - {{ __val }} <br>
+
+                                .result-content-content
+                                    .block.block-token-code(ng-if="request.state == 'accepted'")
+                                        .block-token-code-title Authorization Code
+                                        .block-token-code-code 01234567890ZXY01234567890
+                                    -var markers = [{position: [52.0761709,4.2982627], title: 'POINT A', content: '<h4 class="marker-title"><a href="./details-hotel.html">POINT A</a></h4>'}, {position: [47.043715, 28.897148], title: 'POINT B', content: '<h4 class="marker-title"><a href="./details-hotel.html">POINT B</a></h4>'}];
+                                    -var map_view = [52.0761709, 4.2982627];
+                                    -var map_zoom = 11;
+                                    div(google-map, 
+                                    data-markers=JSON.stringify(markers), 
+                                    data-map-view=JSON.stringify(map_view), 
+                                    data-map-zoom=map_zoom, 
+                                    data-mark="accepted",
+                                    ng-if="request.state == 'accepted'").result-content-map
+
+                                .result-content-declined(ng-if="request.state == 'declined'") DECLINED
+                                .result-content-pending(ng-if="request.state == 'pending'") PENDING

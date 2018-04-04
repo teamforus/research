@@ -1,0 +1,7 @@
+div
+    form(method="GET", action="./search").block.block-search
+        input(type="text", name="query", placeholder="Start your search now", ng-model="searchInput").input.block-search-input
+        .block.block-search-options
+            a(ng-repeat="result in results", href="{{result.url}}", ng-bind="result.name").block-search-options-item
+
+        input(type="submit", value="Search now").button.button-base.block-search-button

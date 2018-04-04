@@ -1,0 +1,36 @@
+extends layout/layout
+block header-nodes
+    .wrapper
+        .block
+            .label.label-light 
+                h1.label-title #{target_donation.name}
+                | Criteria to be fulfilled in order to be approved for receiving this grant
+
+block content
+    .body
+        .wrapper
+            .block.block-apply-verification
+                div(simple-anim)
+                    .apply-verification-item(data-state="1")
+                        span 1. 
+                        | Residence – Groningen Province
+                        span.mdi.mdi-check
+                    .apply-verification-item(data-state="1")
+                        span 2. 
+                        | Age >22 years old
+                        span.mdi.mdi-check
+                    .apply-verification-item(data-state="1")
+                        span 3. 
+                        | Income < € 5000.-
+                        span.mdi.mdi-check
+                    .apply-verification-item(data-state="1")
+                        span 4. 
+                        | Doctor validation
+                        span.mdi.mdi-check
+                .apply-verification-actions
+                    a(href="/requests").button.button-base.hidden.unhide-on-done
+                        | Apply
+                        i.mdi.mdi-check
+                    a(href="/").button.button-text 
+                        i.mdi.mdi-close
+                        | Cancel

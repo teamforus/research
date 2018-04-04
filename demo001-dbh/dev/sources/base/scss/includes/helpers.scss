@@ -1,0 +1,30 @@
+// clear Fix - for floating blocks
+@mixin cf(){
+    *zoom: 1;
+
+    &:before, &:after{
+        content: " ";
+        display: table;
+    }
+
+    &:after{
+        clear: both;
+    }
+}
+
+// fill parrent block
+@mixin fill_parent($offset: 0px, $position: absolute){
+    position: $position;
+    top: $offset;
+    right: $offset;
+    bottom: $offset;
+    left: $offset;
+}
+
+// ellipsis text
+@mixin ellipsis {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

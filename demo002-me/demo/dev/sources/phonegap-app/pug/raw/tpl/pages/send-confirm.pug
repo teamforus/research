@@ -1,0 +1,14 @@
+.view-content
+    
+    .hero
+        .hero-title {{ $ctrl.params.amount }} {{ $ctrl.params.token.name }}
+        .hero-subtitle Sending
+.view-footer
+    a(ng-click="$ctrl.send()").button.button-success.button-wide CONFIRM
+
+.popup(ng-if="$ctrl.showSuccess")
+    .popup-backdrop
+    .popup-content: .popup-content-inner
+        .popup-icon: em.mdi.mdi-check
+        .popup-title Success!
+        div(ui-sref="wallet-tokens").button.button-success.button-wide CLOSE

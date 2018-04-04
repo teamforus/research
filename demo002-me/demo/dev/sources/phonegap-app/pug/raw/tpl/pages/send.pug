@@ -1,0 +1,14 @@
+.view-content
+    .form
+        .form-group
+            label.form-label DESCRIPTION
+            input(ng-model="$ctrl.form.values.description" type="text" placeholder="Description Here").form-control
+            div(ng-if="$ctrl.form.errors.description" ng-repeat="err_smg in $ctrl.form.errors.description" ng-bind="err_smg").form-error
+        .form-group
+            label.form-label AMOUNT
+            input(ng-model="$ctrl.form.values.amount" type="number" placeholder="Fill in Amount").form-control
+            div(ng-if="$ctrl.form.errors.amount" ng-repeat="err_smg in $ctrl.form.errors.amount" ng-bind="err_smg").form-error
+
+.view-footer: .row
+    // .col.col-2: a(href="#" ui-sref="send-address").button.button-primary.button-wide ADDRESS
+    .col.col-4: a(ng-click="$ctrl.scanCode()").button.button-dim.button-wide SCAN QR

@@ -1,0 +1,18 @@
+.view-content
+    br
+    .hero
+        .hero-title {{ $ctrl.voucher.amount }} KDC
+        .hero-subtitle Transfer
+    .text.text-muted.text-center 
+        | Move your Kindpakket Coins to Identity App
+
+.view-footer: .row
+    .col.col-2: a(href="#" ui-sref="wallet-tokens").button.button-dim.button-wide CANCEL
+    .col.col-2: a(href="#" ng-click="$ctrl.accept()").button.button-success.button-wide ACCEPT
+
+.popup(ng-if="$ctrl.showAccepted")
+    .popup-backdrop
+    .popup-content: .popup-content-inner
+        .popup-icon: em.mdi.mdi-check
+        .popup-title Tokens transferred!
+        div(ui-sref="records").button.button-success.button-wide CLOSE

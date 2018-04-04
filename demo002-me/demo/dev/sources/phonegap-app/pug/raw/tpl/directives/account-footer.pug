@@ -1,0 +1,9 @@
+.view-footer-account
+    .view-footer-nav
+        a(ui-sref="records" ng-class="{'icon-active' : $root.$state.current.name == 'records'}").icon-left
+            em.mdi.mdi-format-list-checks
+            | Records
+        a(ui-sref="qr-scanner").icon-center: em.mdi.mdi-qrcode-scan
+        a(ui-sref="wallet-tokens" ng-class="{'icon-active' : $root.$state.current.name == 'wallet'}").icon-right
+            em.mdi.mdi-wallet
+            | Wallet

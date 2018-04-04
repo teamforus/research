@@ -1,0 +1,31 @@
+extends layout/layout
+block content
+    .view
+        .view-header.view-header-blue
+            .view-nav
+                a(href="#"): em.mdi.mdi-arrow-left.icon-left
+                .view-nav-text First name
+                a(href="#"): em.mdi.mdi-account-outline.icon-right
+            .view-title Jamal
+
+        .view-content
+            .list-group-list
+                .list-group-header VALIDATORS
+                mixin list_group_item(icon, title, subtitle)
+                    .list-group-item
+                        img(src="/assets/img/" + icon + ".png").list-group-icon
+                        .list-group-title #{title}
+                        .list-group-subtitle #{subtitle}
+                        .list-group-arrow.mdi.mdi-chevron-right
+                
+                .list-group-items
+                    +list_group_item('icon-validator-digid', 'DigiD', 'Open DigiD app')
+                    +list_group_item('icon-validator-gemeente', 'Gemeente Assen', 'Municipality validation')
+                    +list_group_item('icon-validator-gemeente-zuidhorn', 'Gemeente Zuidhorn', 'Municipality validation')
+                    +list_group_item('icon-validator-gemeente-almelo', 'Gemeente Almelo', 'Municipality validation')
+                    +list_group_item('icon-validator-gemeente-emmen', 'Gemeente Emmen', 'Municipality validation')
+                    +list_group_item('icon-validator-passport', 'Passport', 'Scan your passport')
+                .list-group-item-custom
+                    em.mdi.mdi-check.icon
+                    | Request custom validator
+                    .list-group-arrow.mdi.mdi-chevron-right

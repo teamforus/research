@@ -1,0 +1,52 @@
+extends layout/layout
+block content
+    .view
+        .view-header.view-header-blue
+            .view-nav
+                a(href="#"): em.mdi.mdi-arrow-left.icon-left
+                a(href="#"): em.mdi.mdi-account-outline.icon-right
+            .view-title RECORDS
+
+        .view-content
+            .list-group-list
+                mixin list_group_item(icon, title, count, items)
+                    .list-group-item
+                        img(src="/assets/img/" + icon + ".png").list-group-icon
+                        .list-group-title #{title}
+                        .list-group-subtitle(class=(count == 0 ? 'text-muted' : 'text-primary')) 
+                            | #{count > 0 ? (count + ' records') : 'Empty'}
+
+                        if (!items)
+                            .list-group-arrow.mdi.mdi-chevron-down
+
+                        if (items)
+                            .list-group-arrow.mdi.mdi-chevron-up
+                            mixin list_group_subitem(label, value, checked)
+                                .list-group-subitem(class=(checked?'list-group-subitem-checked':''))
+                                    .list-group-subitem-label #{label}
+                                    .list-group-subitem-value #{value}
+                                    .list-group-subitem-icon.mdi.mdi-check
+                            .list-group-subitems
+                                +list_group_subitem('FIRST NAME', 'John', true)
+                                +list_group_subitem('LAST NAME', 'Doe', true)
+                                +list_group_subitem('BSN', '45547646455', false)
+                                +list_group_subitem('E-MAIL', 'john@forus.io', true)
+                                +list_group_subitem('TELEPHONE NUMBER', '+315349635', true)
+                
+                .list-group-items
+                    +list_group_item('icon-records-personal', 'Personal', 5, true)
+                    +list_group_item('icon-records-medical', 'Medical', 0)
+                    +list_group_item('icon-records-professional', 'Professional', 5)
+                    +list_group_item('icon-records-relations', 'Relations', 5)
+                    +list_group_item('icon-records-licences', 'Licences', 5)
+                    +list_group_item('icon-records-other', 'Other', 5)
+
+        .view-footer-account
+            .view-footer-nav
+                a(href="#").icon-left
+                    em.mdi.mdi-wallet
+                    | Wallet
+                a(href="#").icon-center: em.mdi.mdi-qrcode-scan
+                a(href="#").icon-right
+                    em.mdi.mdi-format-list-checks
+                    | Records

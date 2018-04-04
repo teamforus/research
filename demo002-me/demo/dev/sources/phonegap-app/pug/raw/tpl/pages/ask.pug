@@ -1,0 +1,13 @@
+.view-content
+    .form
+        .form-group
+            label.form-label DESCRIPTION
+            input(ng-model="$ctrl.form.values.description" type="text" placeholder="Description Here").form-control
+            .form-error(ng-repeat="err_msg in $ctrl.form.errors.description" ng-bind="err_msg")
+        .form-group
+            label.form-label AMOUNT
+            input(ng-model="$ctrl.form.values.amount" type="number" placeholder="Fill in Amount").form-control
+            .form-error(ng-repeat="err_msg in $ctrl.form.errors.amount" ng-bind="err_msg")
+
+.view-footer
+    a(href="#" ng-click="$ctrl.showQrCode()").button.button-success.button-wide MAKE REQUEST

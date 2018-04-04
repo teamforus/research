@@ -1,0 +1,951 @@
+[
+    {
+        "id": 1,
+        "name": "Boeken",
+        "preview": "\/uploads\/single\/Books-3.jpg",
+        "original": "\/uploads\/single\/Books-2.jpg",
+        "shopkeepers": [
+            {
+                "id": 3,
+                "name": "Vennootschap onder Firma Schoelier",
+                "phone": "0594-50208",
+                "categories": "Speelgoed, Boeken",
+                "offices": [
+                    {
+                        "id": 3,
+                        "shop_keeper_id": 3,
+                        "address": "Hoofdstraat, 14, 9801BX, Zuidhorn, Nederland",
+                        "phone": "0594-502084",
+                        "email": "info@boekhandelschoelier.nl",
+                        "lon": "6.4074867",
+                        "lat": "53.2437987",
+                        "parsed": 0,
+                        "created_at": "2017-10-30 15:42:24",
+                        "updated_at": "2017-11-07 09:33:55",
+                        "preview": false,
+                        "original": false,
+                        "schedules": [
+                            {
+                                "id": 11,
+                                "office_id": 3,
+                                "week_day": 1,
+                                "start_time": "12:00",
+                                "end_time": "18:30"
+                            },
+                            {
+                                "id": 12,
+                                "office_id": 3,
+                                "week_day": 2,
+                                "start_time": "09:00",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 13,
+                                "office_id": 3,
+                                "week_day": 3,
+                                "start_time": "09:00",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 14,
+                                "office_id": 3,
+                                "week_day": 4,
+                                "start_time": "09:00",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 15,
+                                "office_id": 3,
+                                "week_day": 5,
+                                "start_time": "09:00",
+                                "end_time": "21:00"
+                            },
+                            {
+                                "id": 103,
+                                "office_id": 3,
+                                "week_day": 6,
+                                "start_time": "09:00",
+                                "end_time": "17:00"
+                            },
+                            {
+                                "id": 104,
+                                "office_id": 3,
+                                "week_day": 7,
+                                "start_time": "",
+                                "end_time": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Fiets",
+        "preview": "\/uploads\/single\/Bikes-3.jpg",
+        "original": "\/uploads\/single\/Bikes-2.jpg",
+        "shopkeepers": [
+            {
+                "id": 5,
+                "name": "Rijwielhal Kuis",
+                "phone": "0594507707",
+                "categories": "Fiets",
+                "offices": [
+                    {
+                        "id": 6,
+                        "shop_keeper_id": 5,
+                        "address": "Industrieweg, 30, 9804TG, Noordhorn, Nederland",
+                        "phone": "0594507707",
+                        "email": null,
+                        "lon": "6.395091",
+                        "lat": "53.2567501",
+                        "parsed": 0,
+                        "created_at": "2017-11-01 09:35:42",
+                        "updated_at": "2017-11-01 09:39:22",
+                        "preview": false,
+                        "original": false,
+                        "schedules": [
+                            {
+                                "id": 26,
+                                "office_id": 6,
+                                "week_day": 1,
+                                "start_time": "09:00",
+                                "end_time": "17:00"
+                            },
+                            {
+                                "id": 27,
+                                "office_id": 6,
+                                "week_day": 2,
+                                "start_time": "09:00",
+                                "end_time": "17:00"
+                            },
+                            {
+                                "id": 28,
+                                "office_id": 6,
+                                "week_day": 3,
+                                "start_time": "09:00",
+                                "end_time": "17:00"
+                            },
+                            {
+                                "id": 29,
+                                "office_id": 6,
+                                "week_day": 4,
+                                "start_time": "09:00",
+                                "end_time": "17:00"
+                            },
+                            {
+                                "id": 30,
+                                "office_id": 6,
+                                "week_day": 5,
+                                "start_time": "09:00",
+                                "end_time": "17:00"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 7,
+                "name": "Rijwielcentrum Penninga",
+                "phone": "0594855800",
+                "categories": "Fiets",
+                "offices": [
+                    {
+                        "id": 8,
+                        "shop_keeper_id": 7,
+                        "address": "Jonkerslaan, 41, 9843BP, Grijpskerk, Nederland",
+                        "phone": "0594855800",
+                        "email": "rijwielcentrumpenninga@hotmail.com",
+                        "lon": "6.3061691",
+                        "lat": "53.2615881",
+                        "parsed": 0,
+                        "created_at": "2017-11-01 10:43:56",
+                        "updated_at": "2017-11-01 10:49:40",
+                        "preview": "\/uploads\/single\/14368775_720450624771482_3204391104719751931_n-3.jpg",
+                        "original": "\/uploads\/single\/14368775_720450624771482_3204391104719751931_n-2.jpg",
+                        "schedules": [
+                            {
+                                "id": 36,
+                                "office_id": 8,
+                                "week_day": 1,
+                                "start_time": "",
+                                "end_time": ""
+                            },
+                            {
+                                "id": 37,
+                                "office_id": 8,
+                                "week_day": 2,
+                                "start_time": "09:00",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 38,
+                                "office_id": 8,
+                                "week_day": 3,
+                                "start_time": "09:00",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 39,
+                                "office_id": 8,
+                                "week_day": 4,
+                                "start_time": "09:00",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 40,
+                                "office_id": 8,
+                                "week_day": 5,
+                                "start_time": "09:00",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 99,
+                                "office_id": 8,
+                                "week_day": 6,
+                                "start_time": "09:00",
+                                "end_time": "17:00"
+                            },
+                            {
+                                "id": 100,
+                                "office_id": 8,
+                                "week_day": 7,
+                                "start_time": "",
+                                "end_time": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 9,
+                "name": "Herman van der Meulen",
+                "phone": "0594528441",
+                "categories": "Fiets",
+                "offices": [
+                    {
+                        "id": 10,
+                        "shop_keeper_id": 9,
+                        "address": "Jellemaweg 32, 9801CK, Zuidhorn",
+                        "phone": "0594528441",
+                        "email": "info@hermanvandermeulen.nl",
+                        "lon": "6.4048113",
+                        "lat": "53.243827",
+                        "parsed": 0,
+                        "created_at": "2017-11-03 14:40:55",
+                        "updated_at": "2017-11-03 14:59:41",
+                        "preview": "\/uploads\/single\/afbeelding_002-1.jpg",
+                        "original": "\/uploads\/single\/afbeelding_002.jpg",
+                        "schedules": [
+                            {
+                                "id": 46,
+                                "office_id": 10,
+                                "week_day": 1,
+                                "start_time": "00:00",
+                                "end_time": "00:00"
+                            },
+                            {
+                                "id": 47,
+                                "office_id": 10,
+                                "week_day": 2,
+                                "start_time": "09:00",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 48,
+                                "office_id": 10,
+                                "week_day": 3,
+                                "start_time": "09:00",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 49,
+                                "office_id": 10,
+                                "week_day": 4,
+                                "start_time": "09:00",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 50,
+                                "office_id": 10,
+                                "week_day": 5,
+                                "start_time": "09:00",
+                                "end_time": "18:00"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 15,
+                "name": "Rijwielhandel de Groot",
+                "phone": null,
+                "categories": "Fiets",
+                "offices": [
+                    {
+                        "id": 16,
+                        "shop_keeper_id": 15,
+                        "address": "Burg Seinenstraat, 57, 9831PV, Aduard, Nederland",
+                        "phone": "0504031904",
+                        "email": "info@hugodegroot-vof.nl",
+                        "lon": "6.458799399999999",
+                        "lat": "53.257043",
+                        "parsed": 0,
+                        "created_at": "2017-11-06 13:45:43",
+                        "updated_at": "2017-11-06 13:47:39",
+                        "preview": "\/uploads\/single\/hugologo.gif",
+                        "original": "\/uploads\/single\/hugologo-2.gif",
+                        "schedules": [
+                            {
+                                "id": 80,
+                                "office_id": 16,
+                                "week_day": 1,
+                                "start_time": "",
+                                "end_time": ""
+                            },
+                            {
+                                "id": 81,
+                                "office_id": 16,
+                                "week_day": 2,
+                                "start_time": "08:30",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 82,
+                                "office_id": 16,
+                                "week_day": 3,
+                                "start_time": "09:00",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 83,
+                                "office_id": 16,
+                                "week_day": 4,
+                                "start_time": "09:00",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 84,
+                                "office_id": 16,
+                                "week_day": 5,
+                                "start_time": "09:00",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 85,
+                                "office_id": 16,
+                                "week_day": 6,
+                                "start_time": "08:30",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 86,
+                                "office_id": 16,
+                                "week_day": 7,
+                                "start_time": "",
+                                "end_time": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 17,
+                "name": "Tweewielerhuis S. de Vries",
+                "phone": "0594502066",
+                "categories": "Fiets",
+                "offices": [
+                    {
+                        "id": 18,
+                        "shop_keeper_id": 17,
+                        "address": "Noorderweg, 2, 9804RM, Noordhorn, Nederland",
+                        "phone": "0594502066",
+                        "email": "tweewielerhuisnoordhorn@hotmail.nl",
+                        "lon": "6.3941512",
+                        "lat": "53.2627157",
+                        "parsed": 0,
+                        "created_at": "2017-11-06 15:16:24",
+                        "updated_at": "2017-11-06 15:29:10",
+                        "preview": false,
+                        "original": false,
+                        "schedules": [
+                            {
+                                "id": 92,
+                                "office_id": 18,
+                                "week_day": 1,
+                                "start_time": "13:00",
+                                "end_time": "17:00"
+                            },
+                            {
+                                "id": 93,
+                                "office_id": 18,
+                                "week_day": 2,
+                                "start_time": "09:00",
+                                "end_time": "17:00"
+                            },
+                            {
+                                "id": 94,
+                                "office_id": 18,
+                                "week_day": 3,
+                                "start_time": "09:00",
+                                "end_time": "17:00"
+                            },
+                            {
+                                "id": 95,
+                                "office_id": 18,
+                                "week_day": 4,
+                                "start_time": "09:00",
+                                "end_time": "17:00"
+                            },
+                            {
+                                "id": 96,
+                                "office_id": 18,
+                                "week_day": 5,
+                                "start_time": "09:00",
+                                "end_time": "17:00"
+                            },
+                            {
+                                "id": 97,
+                                "office_id": 18,
+                                "week_day": 6,
+                                "start_time": "",
+                                "end_time": ""
+                            },
+                            {
+                                "id": 98,
+                                "office_id": 18,
+                                "week_day": 7,
+                                "start_time": "",
+                                "end_time": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Sport accessoires",
+        "preview": "\/uploads\/single\/Sport toys-3.jpg",
+        "original": "\/uploads\/single\/Sport toys-2.jpg",
+        "shopkeepers": [
+            {
+                "id": 10,
+                "name": "Sporthuis Bergman",
+                "phone": "0636161363",
+                "categories": "Sport accessoires",
+                "offices": [
+                    {
+                        "id": 11,
+                        "shop_keeper_id": 10,
+                        "address": "Plein Overtuinen  Zuidhorn",
+                        "phone": "0636161363",
+                        "email": "info@sporthuisbergman.nl",
+                        "lon": "6.4086653",
+                        "lat": "53.2439573",
+                        "parsed": 0,
+                        "created_at": "2017-11-03 16:10:14",
+                        "updated_at": "2017-11-03 16:33:24",
+                        "preview": "\/uploads\/single\/sporthuis bergman-450x450-1.png",
+                        "original": "\/uploads\/single\/sporthuis bergman-450x450.png",
+                        "schedules": [
+                            {
+                                "id": 51,
+                                "office_id": 11,
+                                "week_day": 1,
+                                "start_time": "00:00",
+                                "end_time": "00:00"
+                            },
+                            {
+                                "id": 52,
+                                "office_id": 11,
+                                "week_day": 2,
+                                "start_time": "00:00",
+                                "end_time": "00:00"
+                            },
+                            {
+                                "id": 53,
+                                "office_id": 11,
+                                "week_day": 3,
+                                "start_time": "13:00",
+                                "end_time": "17:30"
+                            },
+                            {
+                                "id": 54,
+                                "office_id": 11,
+                                "week_day": 4,
+                                "start_time": "00:00",
+                                "end_time": "00:00"
+                            },
+                            {
+                                "id": 55,
+                                "office_id": 11,
+                                "week_day": 5,
+                                "start_time": "00:00",
+                                "end_time": "00:00"
+                            },
+                            {
+                                "id": 107,
+                                "office_id": 11,
+                                "week_day": 6,
+                                "start_time": "09:00",
+                                "end_time": "17:00"
+                            },
+                            {
+                                "id": 108,
+                                "office_id": 11,
+                                "week_day": 7,
+                                "start_time": "09:00",
+                                "end_time": "17:00"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Zwemmen",
+        "preview": "\/uploads\/single\/Swimming-3.jpg",
+        "original": "\/uploads\/single\/Swimming-2.jpg",
+        "shopkeepers": [
+            {
+                "id": 4,
+                "name": "ZwemCentrum Zuidhorn B.V.",
+                "phone": "0594-500561",
+                "categories": "Zwemmen",
+                "offices": [
+                    {
+                        "id": 5,
+                        "shop_keeper_id": 4,
+                        "address": "Atlasstraat 3, 9801 VA Zuidhorn, Nederland",
+                        "phone": "0594-500561",
+                        "email": "info@zc-zuidhorn.nl",
+                        "lon": "6.409045900000001",
+                        "lat": "53.2491802",
+                        "parsed": 0,
+                        "created_at": "2017-10-31 11:47:52",
+                        "updated_at": "2017-11-01 10:11:23",
+                        "preview": "\/uploads\/single\/17855429_1491632744212428_2261218387975582724_o-1.jpg",
+                        "original": "\/uploads\/single\/17855429_1491632744212428_2261218387975582724_o.jpg",
+                        "schedules": [
+                            {
+                                "id": 21,
+                                "office_id": 5,
+                                "week_day": 1,
+                                "start_time": "09:00",
+                                "end_time": "21:00"
+                            },
+                            {
+                                "id": 22,
+                                "office_id": 5,
+                                "week_day": 2,
+                                "start_time": "09:30",
+                                "end_time": "21:00"
+                            },
+                            {
+                                "id": 23,
+                                "office_id": 5,
+                                "week_day": 3,
+                                "start_time": "11:00",
+                                "end_time": "21:00"
+                            },
+                            {
+                                "id": 24,
+                                "office_id": 5,
+                                "week_day": 4,
+                                "start_time": "09:00",
+                                "end_time": "21:00"
+                            },
+                            {
+                                "id": 25,
+                                "office_id": 5,
+                                "week_day": 5,
+                                "start_time": "09:30",
+                                "end_time": "20:00"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Computer",
+        "preview": "\/uploads\/single\/Computer-1.jpg",
+        "original": "\/uploads\/single\/Computer.jpg",
+        "shopkeepers": [
+            {
+                "id": 1,
+                "name": "PC Hulp Oldehove",
+                "phone": "06 4975 2335",
+                "categories": "Computer",
+                "offices": [
+                    {
+                        "id": 1,
+                        "shop_keeper_id": 1,
+                        "address": "Kerkpad, 3, 9883PK, Oldehove, Nederland",
+                        "phone": "06 4975 2335",
+                        "email": "info@pchulpoldehove.nl",
+                        "lon": "6.3938456",
+                        "lat": "53.3042334",
+                        "parsed": 0,
+                        "created_at": "2017-10-30 09:52:58",
+                        "updated_at": "2017-10-30 11:11:45",
+                        "preview": "\/uploads\/single\/pc hulp 153x153-1.jpg",
+                        "original": "\/uploads\/single\/pc hulp 153x153.jpg",
+                        "schedules": [
+                            {
+                                "id": 1,
+                                "office_id": 1,
+                                "week_day": 1,
+                                "start_time": "09:00",
+                                "end_time": "17:00"
+                            },
+                            {
+                                "id": 2,
+                                "office_id": 1,
+                                "week_day": 2,
+                                "start_time": "09:00",
+                                "end_time": "17:00"
+                            },
+                            {
+                                "id": 3,
+                                "office_id": 1,
+                                "week_day": 3,
+                                "start_time": "09:00",
+                                "end_time": "17:00"
+                            },
+                            {
+                                "id": 4,
+                                "office_id": 1,
+                                "week_day": 4,
+                                "start_time": "09:00",
+                                "end_time": "17:00"
+                            },
+                            {
+                                "id": 5,
+                                "office_id": 1,
+                                "week_day": 5,
+                                "start_time": "09:00",
+                                "end_time": "17:00"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Kleding",
+        "preview": "\/uploads\/single\/Clothing-1.jpg",
+        "original": "\/uploads\/single\/Clothing.jpg",
+        "shopkeepers": [
+            {
+                "id": 2,
+                "name": "Joy House Of Brands",
+                "phone": "0594528980",
+                "categories": "Kleding",
+                "offices": [
+                    {
+                        "id": 2,
+                        "shop_keeper_id": 2,
+                        "address": "Dorpsvenne, 2, A, 9801DA, Zuidhorn, Nederland",
+                        "phone": "0594-528980",
+                        "email": "zuidhorn@joy.nl",
+                        "lon": "6.4057314",
+                        "lat": "53.2442198",
+                        "parsed": 0,
+                        "created_at": "2017-10-30 15:08:02",
+                        "updated_at": "2017-10-30 15:23:03",
+                        "preview": "\/uploads\/single\/12274356_652727061530882_5079196356320029223_n-1.jpg",
+                        "original": "\/uploads\/single\/12274356_652727061530882_5079196356320029223_n.jpg",
+                        "schedules": [
+                            {
+                                "id": 6,
+                                "office_id": 2,
+                                "week_day": 1,
+                                "start_time": "13:00",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 7,
+                                "office_id": 2,
+                                "week_day": 2,
+                                "start_time": "09:30",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 8,
+                                "office_id": 2,
+                                "week_day": 3,
+                                "start_time": "09:30",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 9,
+                                "office_id": 2,
+                                "week_day": 4,
+                                "start_time": "09:30",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 10,
+                                "office_id": 2,
+                                "week_day": 5,
+                                "start_time": "09:30",
+                                "end_time": "21:00"
+                            },
+                            {
+                                "id": 105,
+                                "office_id": 2,
+                                "week_day": 6,
+                                "start_time": "09:00",
+                                "end_time": "17:00"
+                            },
+                            {
+                                "id": 106,
+                                "office_id": 2,
+                                "week_day": 7,
+                                "start_time": "",
+                                "end_time": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 14,
+                "name": "Ter Stal Textiel B.V.",
+                "phone": "0594725905",
+                "categories": "Kleding",
+                "offices": [
+                    {
+                        "id": 15,
+                        "shop_keeper_id": 14,
+                        "address": "Overtuinen 4, 9801 BR Zuidhorn",
+                        "phone": "0594725905",
+                        "email": null,
+                        "lon": "6.792681648932841",
+                        "lat": "52.27632911524681",
+                        "parsed": 0,
+                        "created_at": "2017-11-06 13:13:03",
+                        "updated_at": "2017-11-06 13:17:27",
+                        "preview": "\/uploads\/single\/terStal_winkelhart_klaverweide_Zwaagdijk-1.jpg",
+                        "original": "\/uploads\/single\/terStal_winkelhart_klaverweide_Zwaagdijk.jpg",
+                        "schedules": [
+                            {
+                                "id": 73,
+                                "office_id": 15,
+                                "week_day": 1,
+                                "start_time": "10:00",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 74,
+                                "office_id": 15,
+                                "week_day": 2,
+                                "start_time": "09:00",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 75,
+                                "office_id": 15,
+                                "week_day": 3,
+                                "start_time": "09:00",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 76,
+                                "office_id": 15,
+                                "week_day": 4,
+                                "start_time": "09:00",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 77,
+                                "office_id": 15,
+                                "week_day": 5,
+                                "start_time": "09:00",
+                                "end_time": "21:00"
+                            },
+                            {
+                                "id": 78,
+                                "office_id": 15,
+                                "week_day": 6,
+                                "start_time": "09:00",
+                                "end_time": "17:00"
+                            },
+                            {
+                                "id": 79,
+                                "office_id": 15,
+                                "week_day": 7,
+                                "start_time": "",
+                                "end_time": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Speelgoed",
+        "preview": "\/uploads\/single\/Toys-1.jpg",
+        "original": "\/uploads\/single\/Toys.jpg",
+        "shopkeepers": [
+            {
+                "id": 3,
+                "name": "Vennootschap onder Firma Schoelier",
+                "phone": "0594-50208",
+                "categories": "Speelgoed, Boeken",
+                "offices": [
+                    {
+                        "id": 3,
+                        "shop_keeper_id": 3,
+                        "address": "Hoofdstraat, 14, 9801BX, Zuidhorn, Nederland",
+                        "phone": "0594-502084",
+                        "email": "info@boekhandelschoelier.nl",
+                        "lon": "6.4074867",
+                        "lat": "53.2437987",
+                        "parsed": 0,
+                        "created_at": "2017-10-30 15:42:24",
+                        "updated_at": "2017-11-07 09:33:55",
+                        "preview": false,
+                        "original": false,
+                        "schedules": [
+                            {
+                                "id": 11,
+                                "office_id": 3,
+                                "week_day": 1,
+                                "start_time": "12:00",
+                                "end_time": "18:30"
+                            },
+                            {
+                                "id": 12,
+                                "office_id": 3,
+                                "week_day": 2,
+                                "start_time": "09:00",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 13,
+                                "office_id": 3,
+                                "week_day": 3,
+                                "start_time": "09:00",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 14,
+                                "office_id": 3,
+                                "week_day": 4,
+                                "start_time": "09:00",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 15,
+                                "office_id": 3,
+                                "week_day": 5,
+                                "start_time": "09:00",
+                                "end_time": "21:00"
+                            },
+                            {
+                                "id": 103,
+                                "office_id": 3,
+                                "week_day": 6,
+                                "start_time": "09:00",
+                                "end_time": "17:00"
+                            },
+                            {
+                                "id": 104,
+                                "office_id": 3,
+                                "week_day": 7,
+                                "start_time": "",
+                                "end_time": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "name": "Drogisterij De Gaper",
+                "phone": "0594212548",
+                "categories": "Speelgoed",
+                "offices": [
+                    {
+                        "id": 7,
+                        "shop_keeper_id": 6,
+                        "address": "Herestraat, 44, 9843AL, Grijpskerk, Nederland",
+                        "phone": "0594212548",
+                        "email": "degapergrijpskerk@gmail.com",
+                        "lon": "6.306879599999999",
+                        "lat": "53.26358639999999",
+                        "parsed": 0,
+                        "created_at": "2017-11-01 10:14:11",
+                        "updated_at": "2017-11-07 09:31:06",
+                        "preview": false,
+                        "original": false,
+                        "schedules": [
+                            {
+                                "id": 31,
+                                "office_id": 7,
+                                "week_day": 1,
+                                "start_time": "13:00",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 32,
+                                "office_id": 7,
+                                "week_day": 2,
+                                "start_time": "08:30",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 33,
+                                "office_id": 7,
+                                "week_day": 3,
+                                "start_time": "08:30",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 34,
+                                "office_id": 7,
+                                "week_day": 4,
+                                "start_time": "08:30",
+                                "end_time": "18:00"
+                            },
+                            {
+                                "id": 35,
+                                "office_id": 7,
+                                "week_day": 5,
+                                "start_time": "08:30",
+                                "end_time": "20:00"
+                            },
+                            {
+                                "id": 101,
+                                "office_id": 7,
+                                "week_day": 6,
+                                "start_time": "09:00",
+                                "end_time": "16:30"
+                            },
+                            {
+                                "id": 102,
+                                "office_id": 7,
+                                "week_day": 7,
+                                "start_time": "",
+                                "end_time": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -1,0 +1,44 @@
+extends layout/layout
+block content
+    .view
+        .view-header.view-header-blue
+            .view-nav
+                a(href="#"): em.mdi.mdi-arrow-left.icon-left
+                a(href="#"): em.mdi.mdi-account-outline.icon-right
+            .view-title WALLET
+            .view-navtabs
+                .tab-item.tab-item-active Tokens
+                .tab-item Assets
+                .tab-item Tokens
+            .view-searchbar: .view-searchbar-inner
+                | Search Asset
+                .searchbar-icon.mdi.mdi-microphone
+
+        .view-content
+            .list-resources
+                mixin resource_item(value, label)
+                    .resource-item
+                        .resource-btn-left: .resource-btn-inner
+                            .mdi.mdi-chevron-up
+                            | Send
+                        .resource-value #{value}
+                        .resource-label #{label}
+                        .resource-btn-right: .resource-btn-inner
+                            .mdi.mdi-chevron-down
+                            | Ask
+
+                +resource_item("2,5", "Ether")
+                +resource_item("200,85", "BAT")
+                +resource_item("225,50", "Kindpakket Coins")
+                +resource_item("Tesla Model S", "02.02.2019, KH-355-X")
+                +resource_item("Paradign NYE", "1 x entrance, Groningen")
+
+        .view-footer-account
+            .view-footer-nav
+                a(href="#").icon-left
+                    em.mdi.mdi-wallet
+                    | Wallet
+                a(href="#").icon-center: em.mdi.mdi-qrcode-scan
+                a(href="#").icon-right
+                    em.mdi.mdi-format-list-checks
+                    | Records

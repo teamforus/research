@@ -1,0 +1,19 @@
+extends layout/layout
+block content
+    .view
+        .view-header.view-header-blue
+            .view-nav
+                a(href="#"): em.mdi.mdi-arrow-left.icon-left
+                a(href="#"): em.mdi.mdi-account-outline.icon-right
+            .view-title Delegate
+            .view-pad
+
+        .view-content
+            .qr-code-element: img(src="/assets/img/qr-code.png")
+            .text.text-center.text-muted Let the delegate scan this code from their device
+            .text.text-center
+                .button.button-narrow.button-primary-outline Why do I need this
+            .text.text-center.text-muted Please set at least one delegate to restore access if you loose your phone
+
+        .view-footer
+            a(href="#").button.button-success.button-wide DO LATER

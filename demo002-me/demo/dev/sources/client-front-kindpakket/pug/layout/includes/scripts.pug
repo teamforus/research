@@ -1,0 +1,61 @@
+//- add qdt config object to javascript
+//- var qdt_c = !{JSON.stringify(qdt_c)};
+script.
+    var env_data = !{JSON.stringify(env_data)};
+
+//- jquery
+if (qdt_c.platform.libs.jquery)
+    script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/dist/jquery/jquery.min.js")
+
+//- underscore
+if (qdt_c.platform.libs.underscore)
+    script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/dist/underscore/underscore-min.js")
+
+//- underscore.string
+if (qdt_c.platform.libs['underscore.string'])
+    script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/dist/underscore.string/underscore.string.min.js")
+
+//- bootstrap 3
+if (qdt_c.platform.libs.bootstrap_3)
+    script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/dist/bootstrap/js/bootstrap.min.js")
+
+//- angular
+if (qdt_c.platform.libs.angular)
+    script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/dist/angular/angular.min.js")
+    script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/dist/@uirouter/angularjs/angular-ui-router.min.js")
+    
+//- angular 2
+if (qdt_c.platform.libs.angular_2)
+    //- 1. Load libraries
+    //- IE required polyfill
+    script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/dist/@angular2/core-js/client/shim.min.js")
+
+    script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/dist/@angular2/zone.js/dist/zone.js")
+    script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/dist/@angular2/reflect-metadata/Reflect.js")
+
+    script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/dist/@angular2/rxjs/bundles/Rx.js")
+
+    script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/dist/@angular2/@angular/core/bundles/core.umd.js")
+    script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/dist/@angular2/@angular/common/bundles/common.umd.js")
+    script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/dist/@angular2/@angular/compiler/bundles/compiler.umd.js")
+    script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/dist/@angular2/@angular/platform-browser/bundles/platform-browser.umd.js")
+    script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/dist/@angular2/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js")
+
+    if (!qdt_c.platform.tasks.disabled.js && qdt_c.platform.libs.angular_2)
+        //- 2. Load our 'modules'
+        script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/js/angular-2/app.component.js")
+        script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/js/angular-2/app.module.js")
+        script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/js/angular-2/app.main.js")
+
+//- google maps
+script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXUcaMfxJEo5TCBTxnVE8nSwRe392aWEg")
+    
+//- custom script
+script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/dist/qrcodejs/qrcode.min.js")
+script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/dist/core-js/core.min.js")
+script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/dist/progressbar/progressbar.min.js")
+script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/dist/nanoscroller/jquery.nanoscroller.js")
+script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/js/app.js")
+
+if (!qdt_c.platform.tasks.disabled.ts)
+    script(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/js/app-ts.js")

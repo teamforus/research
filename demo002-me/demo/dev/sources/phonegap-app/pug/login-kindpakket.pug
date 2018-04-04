@@ -1,0 +1,41 @@
+extends layout/layout
+block content
+    .view
+        .view-header.view-header-blue
+            .view-nav
+                a(href="#"): em.mdi.mdi-arrow-left.icon-left
+                a(href="#"): em.mdi.mdi-account-outline.icon-right
+            .view-title Kindpakket
+            .view-subtitle Login to Kindpakket application
+
+        .view-content
+            .text This app requests following information from your identity:
+            .list
+                .list-item
+                    em.mdi.mdi-check.icon
+                    | First name
+                .list-item
+                    em.mdi.mdi-check.icon
+                    | Last name
+                .list-item
+                    em.mdi.mdi-check.icon
+                    | BSN
+            .form
+                label.form-label ALLOW IT FOR
+                .form-group
+                    select.form-control
+                        option(value="#") 1 hour
+                        option(value="#") 6 hour
+                        option(value="#") 12 hour
+                        option(value="#") 1 day
+                        option(value="#") 7 day
+                        option(value="#") 1 month
+                        option(value="#") 6 months
+                        option(value="#") 1 year
+                        option(value="#") 5 years
+                        option(value="#") forever
+
+
+        .view-footer: .row
+            .col.col-2: a(href="#").button.button-primary.button-wide DECLINE
+            .col.col-2: a(href="#").button.button-success.button-wide ACCEPT

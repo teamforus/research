@@ -1,0 +1,25 @@
+.view-content: form(action="/" ng-submit="$ctrl.submit()").form
+    .form-group
+        label(for="first_name").form-label FIRST NAME
+        input(name="first_name" id="first_name" type="text" placeholder="First name" ng-model="$ctrl.form.values.first_name").form-control
+        .form-error(ng-repeat="error_msg in $ctrl.form.errors.first_name" ng-bind="error_msg")
+    .form-group
+        label(for="last_name").form-label LAST NAME
+        input(name="last_name" id="last_name" type="text" placeholder="Last name" ng-model="$ctrl.form.values.last_name").form-control
+        .form-error(ng-repeat="error_msg in $ctrl.form.errors.last_name" ng-bind="error_msg")
+    .form-group
+        label(for="bsn").form-label BSN
+        input(name="bsn" id="bsn" type="text" placeholder="BSN Here" ng-model="$ctrl.form.values.bsn").form-control
+        .form-error(ng-repeat="error_msg in $ctrl.form.errors.bsn" ng-bind="error_msg")
+    .form-group
+        label(for="email").form-label E-MAIL
+        input(name="email" id="email" type="text" placeholder="Your E-mail" ng-model="$ctrl.form.values.email").form-control
+        .form-error(ng-repeat="error_msg in $ctrl.form.errors.email" ng-bind="error_msg")
+    .form-group
+        label(for="phone").form-label TELEPHONE NUMBER
+        input(name="phone" id="phone" type="text" placeholder="Your Telephone number" ng-model="$ctrl.form.values.phone").form-control
+        .form-error(ng-repeat="error_msg in $ctrl.form.errors.phone" ng-bind="error_msg")
+
+.view-footer: .row
+    .col.col-2: a(ng-click="$ctrl.submit()").button.button-success.button-wide ADD PROFILE
+    .col.col-2: a(ng-click="$ctrl.fillStd()").button.button-dim.button-wide FILL DEMO

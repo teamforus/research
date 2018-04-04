@@ -1,0 +1,37 @@
+.section.section-content: .wrapper
+    .window
+        .window-content
+            .window-header
+                | Maak nieuwe stelling
+                a(ui-sref="votes").back
+                    em.mdi.mdi-arrow-left 
+                    | Terug
+            .window-body.pad.pad-top-0: form(ng-submit="$ctrl.onSubmit()").form.form-sm
+                .form-group
+                    label(for="title").form-label Titel:
+                    input(name="title" id="title" type="text" placeholder="Titel" ng-model="$ctrl.form.values.title").form-control
+                    .form-error(ng-repeat="error in $ctrl.form.errors.title" ng-bind="error")
+                .form-group
+                    label(for="description").form-label Beschrijving:
+                    textarea(name="description" id="description" type="text" placeholder="Beschrijving" ng-model="$ctrl.form.values.description").form-control
+                    .form-error(ng-repeat="error in $ctrl.form.errors.description" ng-bind="error")
+                .form-group
+                    .form-label Opties (min: 2)
+                    .list-options
+                        .list-options-root(ng-sortable="$ctrl.sortable")
+                            .list-option-item(ng-repeat="(key, option) in $ctrl.form.values.options")
+                                .mdi.mdi-dots-vertical.handle
+                                input(name="options[]" type="text" placeholder="Tekst" ng-model="option.value").form-control
+                                a(ng-click="$ctrl.destroyOption($event, option)").button.button-danger 
+                                    em.mdi.mdi-delete
+                                    | Delete option
+                                .form-error(ng-if="$ctrl.form.errors['options.' + key + '.value']") Options can't be empty
+                        .list-option-item
+                            input(ng-model="$ctrl.newOptionValue" type="text" placeholder="Tekst").form-control
+                            a(ng-click="$ctrl.addOption($event);").button.button-primary 
+                                em.mdi.mdi-plus-circle
+                                | Optie toevoegen
+                    .form-error(ng-repeat="error in $ctrl.form.errors.options" ng-bind="error")
+                input(type="submit" hidden)#formSubmit
+        .window-actions
+            label(for='formSubmit').button.button-primary.pull-left Maak

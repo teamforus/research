@@ -1,0 +1,12 @@
+extends ../layout/layout-markup
+block content
+    .app-view
+        .app-container.app-container-inverse
+            .welcome-navbar
+                .qrcode.mdi.mdi-qrcode
+                .power.mdi.mdi-power
+            .welcome-logo
+                img(src="./assets/img/logo.svg", alt="")
+                span StemApp
+        .app-footer
+            a(href="./vote.html").button.button-wide.button-primary-inverse.text-center STEMMEN

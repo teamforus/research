@@ -1,0 +1,13 @@
+.app-view.app-view-ios
+    .app-container
+        .vote(ng-if="$ctrl.vote")
+            .vote-title(ng-bind="$ctrl.vote.title")
+            .vote-description(ng-bind="$ctrl.vote.description")
+            .vote-list
+                .vote-item(ng-repeat="option in $ctrl.vote.options")
+                    input(ng-model="$ctrl.selectedOption" value="{{ option.id }}" type="radio" name="vote_option" id="vote_item_{{ option.id }}" hidden)
+                    label(for="vote_item_{{ option.id }}")
+                        | {{ option.value }}
+                        .vote-item-circle: .mdi.mdi-check
+    .app-footer
+        div(ng-disabled="!$ctrl.selectedOption" ng-click="$ctrl.submitVote($ctrl.selectedOption)").button.button-wide.button-primary.text-center WACHTEN OP STEMBILJET

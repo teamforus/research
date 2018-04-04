@@ -1,0 +1,101 @@
+.dev-pages {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    padding: 20px;
+    background: white;
+    border-bottom: 1px solid silver;
+    transform: translate(0, -100%);
+    transition: all .4s;
+    
+    h1 {
+        margin: 0 0 10px;
+        font: 300 18px/40px $bf;
+    }
+
+    ul {
+        @include cf();
+
+        li {
+            display: inline-block;
+            display: block;
+            float: left;
+            text-transform: uppercase;
+            margin: 0 10px 10px 0;
+
+            a {
+                display: inline-block;
+                border: 1px solid transparent;
+                background: rgb(96,96,96);
+                font: 400 16px/36px $bf;
+                padding: 0 16px;
+                color: white;
+                text-decoration: none;
+                transition: all .4s;
+
+                &:hover {
+                    color: #202020;
+                    border-color: silver;
+                    background-color: white;
+                }
+            }
+        }
+    }
+
+    .show {
+        position: absolute;
+        top: 100%;
+        padding: 8px;
+        text-decoration: none;
+        background-color: black;
+        color: white;
+
+        .mdi {
+            display: none;
+            font-size: 20px;
+
+            &:first-of-type {
+                display: block;
+            }
+        }
+
+        &:hover {
+            color: orange;
+        }
+    }
+
+    &:hover, &.active{
+        transform: translate(0, 0);
+    }
+
+    &:hover {
+        .show {
+            .mdi {
+                &:first-of-type {
+                    display: none;
+                }
+
+                &:nth-child(3n+2) {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &.active {
+        .show {
+            .mdi {
+                &:first-of-type,
+                &:nth-child(3n+2) {
+                    display: none;
+                }
+
+                &:last-of-type {
+                    display: block;
+                }
+            }
+        }
+    }
+}

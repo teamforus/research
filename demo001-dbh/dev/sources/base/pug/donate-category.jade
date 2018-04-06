@@ -1,0 +1,16 @@
+extends layout/layout
+block header-nodes
+    .wrapper
+        .block
+            .label.label-base 
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            
+block content
+        .wrapper
+            .block.block-choice-donate-type
+                .donate-type-item: a(href="#").donate-type-item-inner
+                    .donate-type-item-icon !{svgIcon('icon-donate-product')}
+                    .donate-type-item-title Donate products & services
+                .donate-type-item: a(href="#").donate-type-item-inner
+                    .donate-type-item-icon !{svgIcon('icon-donate-money')}
+                    .donate-type-item-title Donate money

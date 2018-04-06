@@ -1,0 +1,10 @@
+.popup.popup-voucher-success.active
+    .popup-backdrop(ng-click="modal.close($event)")
+    .popup-inner
+        a(href="#" ng-click="modal.close($event)").popup-close.mdi.mdi-close
+        div.modal-success
+            .modal-success-title
+                em(ng-class="modal.icon").mdi 
+                | {{ modal.title }}
+            .modal-success-desc(ng-bind="modal.desc")
+            .modal-success-desc-lg(ng-bind="modal.descLg")

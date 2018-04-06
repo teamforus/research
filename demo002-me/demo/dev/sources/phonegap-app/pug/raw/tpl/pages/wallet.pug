@@ -1,0 +1,20 @@
+.view-content
+    .list-resources
+        mixin resource_item(value, label)
+            .resource-item
+                .resource-btn-left(ui-sref="send"): .resource-btn-inner
+                    .mdi.mdi-chevron-up
+                    | Send
+                .resource-value #{value}
+                .resource-label #{label}
+                .resource-btn-right(ui-sref="ask"): .resource-btn-inner
+                    .mdi.mdi-chevron-down
+                    | Ask
+
+        +resource_item("2,5", "Ether")
+        +resource_item("200,85", "BAT")
+        +resource_item("225,50", "Kindpakket Coins")
+        +resource_item("Tesla Model S", "02.02.2019, KH-355-X")
+        +resource_item("Paradign NYE", "1 x entrance, Groningen")
+
+account-footer

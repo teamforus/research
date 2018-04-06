@@ -1,0 +1,31 @@
+extends layout/layout
+block content
+    .view
+        .view-header.view-header-blue
+            .view-nav
+                a(href="#"): em.mdi.mdi-arrow-left.icon-left
+                a(href="#"): em.mdi.mdi-account-outline.icon-right
+            .view-title New profile
+            .view-subtitle Lorem ipsum dolor sit amet, consectetur
+
+        .view-content
+            .form
+                .form-group
+                    label.form-label FIRST NAME
+                    input(type="text" placeholder="First name").form-control
+                    div.form-error First name is required!
+                .form-group
+                    label.form-label LAST NAME
+                    input(type="text" placeholder="Last name").form-control
+                .form-group
+                    label.form-label BSN
+                    input(type="text" placeholder="BSN Here").form-control
+                .form-group
+                    label.form-label E-MAIL
+                    input(type="text" placeholder="Your E-mail").form-control
+                .form-group
+                    label.form-label TELEPHONE NUMBER
+                    input(type="text" placeholder="Your Telephone number").form-control
+
+        .view-footer
+            a(href="#").button.button-success.button-wide ADD PROFILE

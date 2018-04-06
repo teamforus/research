@@ -1,0 +1,35 @@
+.section.section-content: .wrapper
+    .window
+        .window-content
+            .window-header Lijst met stelling 
+            .table(ng-if="$ctrl.votes.length > 0"): table
+                tHead: tr
+                    th Titel
+                    th Status
+                    th Beschrijving
+                    th Activeren
+                    th.text-right Acties
+                tBody
+                    tr(ng-repeat="vote in $ctrl.votes")
+                        td(ng-bind="vote.title")
+                        td(ng-bind="vote.state")
+                        td(ng-bind="vote.description")
+                        td: div(ng-if="vote.state != 'active'" ng-click="$ctrl.voteActivate(vote)").button.button-primary-outline.button-narrow Activeren
+                        td.actions.text-right
+                            div(ng-if="vote.state != 'pending'" ui-sref="vote-view({id: vote.id})").action-item
+                                em.mdi.mdi-eye
+                                | Bekijken
+                            div(ng-if="vote.state == 'pending'" ui-sref="vote-edit({id: vote.id})").action-item
+                                em.mdi.mdi-pencil
+                                | Aanpassen
+                            div(ng-if="vote.state != 'active'" ng-click="$ctrl.voteDestroy(vote)").action-item
+                                em.mdi.mdi-delete
+                                | Verwijderen
+            div(ng-if="$ctrl.votes.length == 0").window-body
+                br
+                br
+                p.text-center List is empty
+                br
+                br
+        .window-actions
+            a(ui-sref="vote-create").button.button-primary Nieuwe stelling

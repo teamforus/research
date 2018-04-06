@@ -1,0 +1,18 @@
+extends ../layout/layout-markup
+block content
+    .section.section-content: .wrapper
+        .window
+            .window-content
+                .window-header
+                    | De gemeente moet het gebruik van de lokale voedselketen stimuleren.
+                    a(href="#").back
+                        em.mdi.mdi-arrow-left 
+                        | Terug
+                .window-body.pad.pad-top-0
+                    .chart-container
+                        canvas(id="myChart" width="400" height="400")
+                        .chart-desc 
+                            | Aantal uitgebrachte stemmen: 
+                            strong 300.548
+            .window-actions
+                a(href="#").button.button-primary.pull-left Toevoegen

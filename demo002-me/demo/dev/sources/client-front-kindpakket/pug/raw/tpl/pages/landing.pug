@@ -1,0 +1,151 @@
+header.section.section-header: .wrapper
+    .section-header-inner(ng-show="$root.credentials")
+        a(ui-sref="landing").logo: img(src="./assets/img/logo.svg")
+        .section-header-actions
+            .button-group
+                .button.button-white.disabled
+                    span Huidige Budget &nbsp; 
+                    strong €
+                    strong(ng-bind="$root.targetVoucher.funds")
+                a(ui-sref="account").button.button-white
+                    span.mdi.mdi-account
+                    | Mijn Account
+            a(href="#" ng-click="$root.auth.signOut($event)").button.button-primary
+                em.mdi.mdi-logout
+                | Logout
+    .section-header-inner(ng-show="!$root.credentials")
+        a(href="./").logo: img(src="./assets/img/logo.svg", alt="")
+        .section-header-actions
+            a(href="#" ng-click="$root.auth.signIn($event)").button.button-white
+                .svg-icon: include ../../../../resources/assets/icons/icon-forus.svg
+                | Log me in
+            a(href="#" ng-click="$root.auth.activateVoucher($event)").button.button-success#activate-button
+                em.mdi.mdi-ticket-confirmation
+                | Activatiecode
+
+    .section-header-text
+        .section-header-text-title
+            strong Zuidhorn. 
+            | Kindpakket
+        .section-header-text-description
+            | Welkom op de website van het kindpakket Zuidhorn. Het kindpakket is een jaarlijks ondersteunende regeling voor kinderen in de gemeente Zuidhorn.
+        a(href="#how-it-works" slow-scroll).button.button-primary 
+            span Lees meer over hoe het 
+            span systeem werkt
+
+.section.section-offices
+    .section-offices-list
+        .section-offices-list-header
+            h4 We hebben {{ $ctrl.locations.length }} winkel(s) gevonden. 
+            small Selecteer een winkel om de locatie en details te tonen.
+        .section-offices-list-inner.nano: .nano-content 
+            .section.section-panel(ng-repeat="location in $ctrl.locations track by $index" ng-click="$ctrl.selectLocation($event, location)" ng-class="{active: location.selected}")
+                .office-li
+                    img(ng-src="{{location.preview || 'assets/img/no-image.jpg'}}", alt="").office-li-thumb
+                    .office-li-name(ng-bind="location.shopkeeper.name")
+                    .office-li-description
+                        strong Adres: 
+                        span(ng-bind="location.address || 'Geen data'")
+                        br
+                        strong Telefoonnummer: 
+                        span(ng-bind="location.phone || 'Geen data'")
+                        br
+                        br
+                        strong.text-primary Openingstijden:
+                        br
+                        div
+                            span.br(ng-repeat="schedule in (location.schedules | only_working_schedule) track by $index")
+                                strong {{ ['Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za', 'Zo'][$index] }}: 
+                                | {{ schedule.start_time }}-{{ schedule.end_time }}{{ $index < ((location.schedules | only_working_schedule)).length - 1 ? ',' : '' }} 
+
+    .section-offices-map(google-map)
+
+.section.section-categories
+    .wrapper
+        h1.section-header Kies een of meerdere categorieën om het bovenstaande overzicht van deelnemende winkels te filteren
+
+        .categories-list
+            .categories-list-inner
+                .categories-item(ng-repeat="category in $ctrl.categories track by $index")
+                    .categories-item-inner(ng-class="{active: category.selected}" ng-click="$ctrl.selectCategory($event, category)")
+                        img(ng-src="{{ category.preview }}" alt="").categories-item-img
+                        .categories-item-radio
+                        div(ng-bind="category.name").categories-item-title
+            
+            .categories-list-actions(ng-show="false")
+                a(href="#" ng-click="$ctrl.selectAll($event)").button.button-primary
+                    em.mdi.mdi-chevron-double-right
+                    | Selecteer Alles
+                a(href="#" ng-click="$ctrl.updateOfficesCategory($event)").button.button-success
+                    em.mdi.mdi-magnify
+                    | Filter
+
+.section.section-how-it-works
+    .bg-image
+    .how-it-works-inner
+        h1#how-it-works.how-it-works-title Hoe het systeem werkt
+        .how-it-works-list
+            mixin how_it_works_item(icon, title, title_nth, text)
+                .how-it-works-item 
+                    em.how-it-works-item-icon: img(
+                        src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/img/icon-steps/" + icon + ".png", alt="")
+                    h4.how-it-works-item-heading
+                        | #{title} 
+                        span.text-primary #{title_nth}
+                    | !{text}
+    
+            +how_it_works_item('icon-text', 'Stap', '#1', 'U heeft een een brief ontvangen van de Gemeente. In deze brief staat een activatiecode. Deze hebt u nodig voor stap 2.')
+            +how_it_works_item('icon-login', 'Stap', '#2', 'Op de website waar u zich nu bevindt klikt u, boven aan de pagina, op <a href="#activate-button" class="text-primary" slow-scroll offset-y="-40">de groene knop</a> en logt u in met de activatiecode.')
+            +how_it_works_item('icon-envelope', 'Stap', '#3', 'U ontvangt een mail een QR-code (nodig voor stap 5) en een link naar overzichtspagina van het kindpakket.')
+            +how_it_works_item('icon-qr-code', 'Stap', '#4', 'Op de overzichtspagina staan de winkels waar u met de QR-Code terecht kunt. Print de QR-Code uit, of zorg dat deze als plaatje op uw telefoon staat. De Qr-Code kunt u steeds opnieuw gebruiken.')
+            +how_it_works_item('icon-shop-check', 'Stap', '#5', 'Ga naar de winkel naar keuze. Laat de QR-Codezien. U krijgt het product voor uw kind mee.')
+
+.section.section-faq: .wrapper
+    mixin faq_item(nth, title, message)
+        .faq-ul-li
+            .faq-ul-li-title(tabulation-tab=nth) 
+                | #{title}
+                em.mdi.mdi-chevron-down
+                em.icon-active.mdi.mdi-chevron-up
+            .faq-ul-li-content(tabulation-pane=nth) #{message}
+    .faq
+        .faq-heading Veel gestelde vragen
+        .faq-ul(tabulation)
+            +faq_item(1, 
+                "Ik weet niet hoe ik moet inloggen; hoe de activatiecode werkt.", 
+                "In de brief staat uw activatiecode. Die code vult u in op de website onder de knop activatie-code. Daana u ontvangt u een e-mail met uw QR-code")
+            +faq_item(2, 
+                "Ik ben mijn QR-code kwijt. Wat moet ik doen?", 
+                "Uw QR-code staat in uw e-mail die u na het activeren heeft ontvangen. Die code kunt u steeds opnieuw gebruiken.")
+            +faq_item(3, 
+                "Hoe kan ik zien hoe hoog mijn budget nog is?", 
+                "Na besteding van uw voucher ontvant uw een-mail over de hoogte van uw budget en kunt u op de website zien hoe hoog uw budget nog is.")
+            +faq_item(4, 
+                "Kan ik iets wat ik gekocht heb ruilen/retour brengen?", 
+                "U kunt niet bij alle winkels spullen ruilen/retour brengen. Vraag de winkelier naar de mogelijkheden. ")
+            +faq_item(5, 
+                "Moet ik mijn budget in 1x besteden?", 
+                "Nee, u hoeft uw budget niet in 1x te besteden. ")
+            +faq_item(6, 
+                "Ik heb meerdere kinderen. Moet ik aan ieder kind persé €300,00 besteden?", 
+                "Nee, u mag zelf bepalen hoeveel u per kind wilt besteden.")
+            +faq_item(7, 
+                "Hoe lang is de voucher geldig?", 
+                "De voucher is vanaf 1 november 2017 1 jaar geldig.")
+            +faq_item(8, 
+                "Kan ik de voucher ook aan iemand anders geven?", 
+                "Nee, de voucher is strikt persoonlijk. U mag de voucher niet aan iemand geven. Maakt iemand anders wel gebruik van uw voucher dan wordt uw eigen budget lager.")
+            +faq_item(9, 
+                "Kan ik de voucher ook omruilen voor contant geld?", 
+                "Nee, u krijgt de waarde van de voucher niet in contant geld uitbetaald.")
+            +faq_item(10, 
+                "Kan ik iets kopen bij een andere winkelier die niet op de website staat?", 
+                "Nee, u kunt alleen bij de winkels die op de website staan iets kopen.")
+            +faq_item(11, 
+                "Ik heb nog een kind gekregen. Kom ik in aanmerking voor een hoger budget?", 
+                "Ja, dat kan. Neem dan even contact op met de gemeente.")
+            +faq_item(12, 
+                "Hoe kom ik in aanmerking voor het kindpakket?", 
+                "Als u denkt recht te hebben op het kindpakket, neem dan contact op met de gemeente. De gemeente bekijkt dan of u aan de voorwaarden voldoet. ")
+
+div(contact-form)

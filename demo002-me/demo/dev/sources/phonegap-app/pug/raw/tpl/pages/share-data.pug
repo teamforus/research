@@ -1,0 +1,38 @@
+.view-content
+    .text This app requests following information from your identity:
+    .list
+        .list-item(ng-repeat="item in $ctrl.items")
+            em.mdi.mdi-check.icon
+            | {{ item }}
+    .form
+        label.form-label ALLOW IT FOR
+        .form-group
+            select.form-control
+                option(value="#") 1 hour
+                option(value="#") 6 hour
+                option(value="#") 12 hour
+                option(value="#") 1 day
+                option(value="#") 7 day
+                option(value="#") 1 month
+                option(value="#") 6 months
+                option(value="#") 1 year
+                option(value="#") 5 years
+                option(value="#") forever
+
+.view-footer: .row
+    .col.col-2: a(href="#" ng-click="$ctrl.decline()").button.button-primary.button-wide DECLINE
+    .col.col-2: a(href="#" ng-click="$ctrl.accept()").button.button-success.button-wide ACCEPT
+
+.popup(ng-if="$ctrl.showAccepted")
+    .popup-backdrop
+    .popup-content: .popup-content-inner
+        .popup-icon: em.mdi.mdi-check
+        .popup-title Success logged in!
+        div(ui-sref="records").button.button-success.button-wide CLOSE
+
+.popup(ng-if="$ctrl.showDeclined")
+    .popup-backdrop
+    .popup-content: .popup-content-inner
+        .popup-icon: em.mdi.mdi-check
+        .popup-title Request declined!
+        div(ui-sref="records").button.button-success.button-wide CLOSE

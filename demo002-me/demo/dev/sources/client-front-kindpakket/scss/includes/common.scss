@@ -1,0 +1,31 @@
+.pull-right { float: right; }
+.pull-left { float: left; }
+
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+
+.text-strike { text-decoration: line-through; }
+.text-muted { color: #a1a1a1; }
+
+.hidden { display: none; }
+
+
+.cf { @include cf(); }
+
+.blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+@-webkit-keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}

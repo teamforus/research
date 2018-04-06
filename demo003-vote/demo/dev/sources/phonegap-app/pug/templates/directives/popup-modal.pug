@@ -1,0 +1,13 @@
+.popup.popup-notification.active
+    .popup-backdrop(ng-click="modal.confirm ? false : modal.close($event)")
+    .popup-inner: .popup-content
+        a(href="#" ng-if="!modal.confirm" ng-click="modal.close($event)").popup-close.mdi.mdi-close
+        div(ng-class="{{['modal-notification-' + modal.type]}}").modal-notification
+            .modal-notification-title
+                em(ng-class="modal.icon").mdi 
+                | {{ modal.title }}
+            .modal-notification-desc(ng-bind="modal.desc")
+            .modal-notification-desc-lg(ng-bind="modal.descLarge")
+            div.text-center(ng-if="modal.confirm")
+                br
+                div(ng-click="modal.confirm(); modal.close($event)" ng-bind="modal.confirmText || 'OK'").button.button-primary.button-sm

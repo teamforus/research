@@ -1,0 +1,31 @@
+doctype
+block vars
+    -var svgIcon = svg_icon;
+    -var angularController;
+    -var bodyClass = {'show-demo-popup': !locals.demoSubmitted};
+
+html(lang="en")
+    include includes/head
+    body(ng-app="fuApp" ng-controller="BaseCtrl" class=bodyClass): div(ng-controller=angularController)
+        include includes/dev-pages
+        header.header
+            .header-bg.header-bg-1
+            .wrapper
+                a(href="/").header-logo: img(src="/assets/img/logo.png", alt="")
+                .header-auth
+                    span.header-auth-avatar AM
+                    span.header-auth-greeting Hello Alexander Maestro
+                    span.header-auth-email myemail@gmail.com
+            .header-nav
+                .wrapper
+                    a(href="/donate-category").header-nav-item Become a sponsor
+                    a(href="/become-a-supplier").header-nav-item Register as a supplier
+                    a(href="/check-token").header-nav-item Check token
+                    a(href="#").header-nav-auth.pull-right
+                        | Sign out
+                        span.mdi.mdi-login-variant
+            block header-nodes
+        block content
+        include includes/footer
+        include includes/demo-popup
+        include includes/scripts

@@ -1,0 +1,20 @@
+extends layout/layout
+block content
+    .view
+        .view-header.view-header-dark-blue
+            .view-nav
+                a(href="#"): em.mdi.mdi-arrow-left.icon-left
+                a(href="#"): em.mdi.mdi-account-outline.icon-right
+            .view-title Restore
+            .view-pad
+
+        .view-content
+            .qr-code-element: img(src="/assets/img/qr-code.png")
+            .text.text-center.text-muted Let delegates scan this address to restore your access
+            .hero
+                .hero-title 1 of 3
+                .hero-subtitle Required: 2
+
+        .view-footer
+            a(href="#" disabled).button.button-dim.button-wide CONFIRM
+

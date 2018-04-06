@@ -1,0 +1,16 @@
+.view-content
+    .form
+        .form-group
+            label.form-label CONTACT NAME
+            input(type="text" placeholder="The name of the contact").form-control
+        .form-group
+            label.form-label TOKEN ADDRESS
+            input(type="text" placeholder="Address of Token Here").form-control
+        .form-group
+            label(for="add_contact").checkbox
+                input(name="add_contact" id="add_contact" type="checkbox" hidden)
+                .checkbox-box: .mdi.mdi-check
+                .checkbox-text Add to my contact list
+
+.view-footer
+    a(href="#" ui-sref="wallet").button.button-success.button-wide CONFIRM

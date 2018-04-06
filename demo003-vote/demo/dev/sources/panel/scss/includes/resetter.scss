@@ -1,0 +1,48 @@
+* , :after, :before{
+    -moz-box-sizing:    border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing:         border-box;
+    -webkit-font-smoothing: antialiased !important;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, b, i, li, td{
+    font-family: $bf;
+    font-weight: 300;
+    color: inherit;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+        font: 300 16px/28px $bf;
+    }
+}
+
+p, b {
+    font: 300 16px/28px $bf;
+    margin: 0 0 16px;
+
+    a {
+        font: inherit;
+        color: inherit;
+    }
+}
+
+a {
+    text-decoration: none;
+    font: 300 14px/26px $bf;
+    color: #222; 
+}
+
+b, strong {
+    font-weight: 600;
+}

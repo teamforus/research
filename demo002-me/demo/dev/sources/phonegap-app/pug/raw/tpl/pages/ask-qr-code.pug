@@ -1,0 +1,22 @@
+.view-content
+    .qr-code-element.qr-code-element-lg#qrcode
+    .hero
+        .hero-title {{ $ctrl.request.amount }} {{ $ctrl.request.token.name }}
+        .hero-subtitle Requested
+    .text.text-center.text-muted Let somebody scan your personal QR-Code to send you tokens, assets or tickets
+
+account-footer
+
+.popup(ng-if="$ctrl.showAccepted")
+    .popup-backdrop
+    .popup-content: .popup-content-inner
+        .popup-icon: em.mdi.mdi-check
+        .popup-title Success!
+        div(ui-sref="wallet-tokens").button.button-success.button-wide CLOSE
+
+.popup(ng-if="$ctrl.showDeclined")
+    .popup-backdrop
+    .popup-content: .popup-content-inner
+        .popup-icon: em.mdi.mdi-close
+        .popup-title Declined!
+        div(ui-sref="wallet-tokens").button.button-success.button-wide CLOSE

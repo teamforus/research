@@ -1,0 +1,10 @@
+.view-content
+    .list-resources
+        mixin resource_item(value, label)
+            .resource-item.resource-item-no-buttons
+                .resource-value #{value}
+                .resource-label #{label}
+
+        +resource_item("Tesla Model S", "02.02.2019, KH-355-X")
+
+account-footer

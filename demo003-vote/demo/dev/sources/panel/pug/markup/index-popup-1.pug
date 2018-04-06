@@ -1,0 +1,53 @@
+extends ../layout/layout-markup
+block content
+    .wrapper: .section.section-posts
+        .post-item: .post-item-inner
+            .post-item-header
+                .post-item-nth 1
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit
+            .post-item-body
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+        .post-item: .post-item-inner
+            .post-item-header
+                .post-item-nth 2
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit
+            .post-item-body
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+        .post-item: .post-item-inner
+            .post-item-header
+                .post-item-nth 3
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit
+            .post-item-body
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+    .popups
+        .popup.active.popup-forus-auth
+            .popup-backdrop
+            .popup-inner: .popup-content
+                .popup-content-aside
+                    .download-app
+                        .download-app-title De app wordt momenteel alleen uitgeven via Android
+                        .download-app-btn
+                            .mdi.mdi-google-play
+                            | Download it from
+                            br
+                            strong PLAY MARKET
+
+                // step 1
+                .popup-content-main(ng-if="auth.step == 1")
+                    .content-title Inloggen Kindpakket Zuidhorn
+                    .section.section-forus-qr-code
+                        .title Scan de QR-code met de Forus
+                        .qr-code#auth_qr
+                        .text U kunt tot 14:55 uur (Nederlandse tijd) inloggen. Daarna verloopt uw sessie.
+                        .links  
+                            a(href="#")
+                                | » 
+                                span Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                            a(href="#") 
+                                | » 
+                                span Eiusmod tempor incididunt ut labore et dolore magna aliqua
+                            a(href="#") 
+                                | » 
+                                span Laboris nisi ut aliquip ex ea commodo consequat.
+
+                a(href="#" ng-click="auth.closeModals($event)").popup-close.mdi.mdi-close

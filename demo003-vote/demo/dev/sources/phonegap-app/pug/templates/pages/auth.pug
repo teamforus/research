@@ -1,0 +1,10 @@
+.app-view
+    .app-container.app-container-inverse
+        .welcome-navbar
+            // .qrcode.mdi.mdi-qrcode
+            div(ng-click="$ctrl.showInfo()").power.mdi.mdi-information-outline
+        .welcome-logo
+            img(src="./assets/img/logo.svg", alt="")
+            span StemApp
+    .app-footer
+        div(ng-click="$ctrl.authorize()").button.button-wide.button-primary-inverse.text-center STEMMEN

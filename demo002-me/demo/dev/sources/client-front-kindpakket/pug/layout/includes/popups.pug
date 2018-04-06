@@ -1,0 +1,113 @@
+.popups
+    .popup.popup-auth
+        .popup-backdrop(ng-click="auth.closeModals($event)")
+        .popup-inner
+            a(href="#" ng-click="auth.closeModals($event)").popup-close.mdi.mdi-close
+            .popup-heading Login
+            form.form(ng-submit="auth.signInSubmit($event, forms.login)")
+                .row
+                    .col.col-12: .form-group
+                        label.label Email
+                        input(type="email" placeholder="Email" ng-model="forms.login.values.email").form-control
+                        p(class="text-danger" ng-repeat="error in forms.login.errors.email track by $index" ng-bind="error")
+                .row
+                    br
+                    .col.col-12: .form-group.text-center
+                        button(type="submit").button.button-success Submit
+
+    .popup.popup-voucher
+        .popup-backdrop(ng-click="auth.closeModals($event)")
+        .popup-inner
+            a(href="#" ng-click="auth.closeModals($event)").popup-close.mdi.mdi-close
+            .popup-heading Activeer uw account
+            form(ng-hide="forms.voucher.submit" ng-submit="auth.activateVoucherSubmit($event, forms.voucher)").form
+                .row
+                    .col.col-12: .form-group
+                        label.label Activatiecode (zoals in de brief van de gemeente)
+                        input(type="text" placeholder="Activatiecode" ng-model="forms.voucher.values.code").form-control
+                        p(class="text-danger" ng-repeat="error in forms.voucher.errors.code track by $index" ng-bind="error")
+                    .col.col-12: .form-group
+                        label.label E-mailadres
+                        input(type="email" placeholder="E-mailadres" ng-model="forms.voucher.values.email").form-control
+                        p(class="text-danger" ng-repeat="error in forms.voucher.errors.email track by $index" ng-bind="error")
+                    .col.col-12: .form-group
+                        label.label E-mailadres
+                        input(type="email" placeholder="E-mailadres" ng-model="forms.voucher.values.email_confirmation").form-control
+                        p(class="text-danger" ng-repeat="error in forms.voucher.errors.email_confirmation track by $index" ng-bind="error")
+                .row
+                    br
+                    .col.col-12: .form-group.text-center
+                        button(type="submit").button.button-success Activeer
+            div(ng-show="forms.voucher.submit").voucher-activation-loading: img(src="./assets/img/progress.gif", alt="")
+
+    .popup.popup-qr-code-email-success
+        .popup-backdrop(ng-click="auth.closeModals($event)")
+        .popup-inner
+            a(href="#" ng-click="auth.closeModals($event)").popup-close.mdi.mdi-close
+            div.modal-success
+                .modal-success-title
+                    em.mdi.mdi-checkbox-multiple-marked-circle-outline 
+                    | QR-Code sent
+    
+    .popup.popup-forus-auth
+        .popup-backdrop
+        .popup-inner: .popup-content
+            .popup-content-aside
+                .download-app
+                    .download-app-title De app wordt momenteel alleen uitgeven via Android
+                    .download-app-btn
+                        .mdi.mdi-google-play
+                        | Download it from
+                        br
+                        strong PLAY MARKET
+
+            // step 1
+            .popup-content-main(ng-if="auth.step == 1")
+                .content-title Inloggen Kindpakket Zuidhorn
+                .section.section-forus-qr-code
+                    .title Scan de QR-code met de Forus
+                    .qr-code#auth_qr
+                    .text U kunt tot 14:55 uur (Nederlandse tijd) inloggen. Daarna verloopt uw sessie.
+                    .links  
+                        a(href="#")
+                            | » 
+                            span Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                        a(href="#") 
+                            | » 
+                            span Eiusmod tempor incididunt ut labore et dolore magna aliqua
+                        a(href="#") 
+                            | » 
+                            span Laboris nisi ut aliquip ex ea commodo consequat.
+
+            // step 2
+            .popup-content-main(ng-if="auth.step == 2")
+                .content-title Inloggen bij Lorem ipsum dolor sit amet
+                .section.section-share-info
+                    div(progress).progress: .mdi.mdi-qrcode-scan
+                    .list
+                        .list-title Waiting for your information:
+                        .list-item.active 
+                            em.mdi.mdi-check
+                            | Personal data
+                        .list-item 
+                            em.mdi.mdi-check
+                            | Relations
+                        .list-item 
+                            em.mdi.mdi-check
+                            | ... 
+
+                    .footer-info
+                        | Please accept sharing this information in your 
+                        span Me App
+
+            // step 2
+            .popup-content-main(ng-if="auth.step == 3")
+                .section.section-share-success
+                    .message
+                        div(progress).progress: .mdi.mdi-check
+                        .progress-title You successfully logged in
+                
+
+            a(href="#" ng-click="auth.closeModals($event)").popup-close.mdi.mdi-close
+
+    div(ng-repeat="modal in $root.modals.modals() track by $index" popup-modal modal="modal")

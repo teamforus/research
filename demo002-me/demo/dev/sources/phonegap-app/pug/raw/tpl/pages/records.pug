@@ -1,0 +1,38 @@
+.view-content
+    .list-group-list
+        mixin list_group_item(icon, title, count, items)
+            .list-group-item
+                if (items)
+                    div(ng-click="$ctrl.show = !$ctrl.show")
+                        img(src="assets/img/" + icon + ".png").list-group-icon
+                        .list-group-title #{title}
+                        .list-group-subtitle(class=(count == 0 ? 'text-muted' : 'text-primary')) 
+                            | {{ $ctrl.recordCount + ' records' }}
+                        .list-group-arrow.mdi.mdi-chevron-down(ng-show="!$ctrl.show")
+                        .list-group-arrow.mdi.mdi-chevron-up(ng-show="$ctrl.show")
+                    .list-group-subitems(ng-show="$ctrl.show")
+                        .list-group-subitem(
+                            ng-repeat="record in $ctrl.records"
+                            ng-click="$ctrl.validate(record)"
+                            ng-class='{"list-group-subitem-checked" : record.state == "valid"}') 
+                            .list-group-subitem-label(ng-bind="record.name")
+                            .list-group-subitem-value(ng-bind="record.value")
+                            .list-group-subitem-icon.mdi.mdi-check
+
+                else
+                    img(src="assets/img/" + icon + ".png").list-group-icon
+                    .list-group-title #{title}
+                    .list-group-subtitle(class=(count == 0 ? 'text-muted' : 'text-primary')) 
+                        | #{count > 0 ? (count + ' records') : 'Empty'}
+                    .list-group-arrow.mdi.mdi-chevron-down
+
+        
+        .list-group-items
+            +list_group_item('icon-records-personal', 'Personal', 5, true)
+            +list_group_item('icon-records-medical', 'Medical', 0)
+            +list_group_item('icon-records-professional', 'Professional', 0)
+            +list_group_item('icon-records-relations', 'Relations', 0)
+            +list_group_item('icon-records-licences', 'Licences', 0)
+            +list_group_item('icon-records-other', 'Other', 0)
+
+account-footer

@@ -1,0 +1,13 @@
+.view-content
+    .list-resources
+        .resource-item(ng-repeat="token in $ctrl.tokens")
+            .resource-btn-left(ng-click="$ctrl.sendTokens(token)"): .resource-btn-inner
+                .mdi.mdi-chevron-up
+                | Send
+            .resource-value(ng-bind="token.amount")
+            .resource-label(ng-bind="token.name")
+            .resource-btn-right(ng-click="$ctrl.askTokens(token)"): .resource-btn-inner
+                .mdi.mdi-chevron-down
+                | Ask
+
+account-footer

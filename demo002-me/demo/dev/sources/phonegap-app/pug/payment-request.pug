@@ -1,0 +1,27 @@
+extends layout/layout
+block content
+    .view
+        .view-header.view-header-blue
+            .view-nav
+                a(href="#"): em.mdi.mdi-arrow-left.icon-left
+                a(href="#"): em.mdi.mdi-account-outline.icon-right
+            .view-title Payment request
+            .view-pad.view-pad-lg
+
+        .view-content
+            .qr-code-element.qr-code-element-lg: img(src="/assets/img/qr-code.png")
+            .hero
+                .hero-title 120 BAT
+                .hero-subtitle Requested
+            .text.text-center.text-muted Let somebody scan your personal QR-Code to send you tokens, assets or tickets
+
+        .view-footer-account
+            .view-footer-nav
+                a(href="#").icon-left
+                    em.mdi.mdi-wallet
+                    | Wallet
+                a(href="#").icon-center: em.mdi.mdi-qrcode-scan
+                a(href="#").icon-right
+                    em.mdi.mdi-format-list-checks
+                    | Records
+

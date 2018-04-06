@@ -1,0 +1,10 @@
+doctype
+-env_data = env_data || {html5Mode: {enable: false, basePath: "/"}, apiUrl: "/"};
+html(lang="en" ng-app="kindpakketApp" ng-controller="BaseController")
+    include includes/head
+    body(ng-cloak ng-class="{'popup-open' : $root.modals.count() > 0}")
+        include includes/header
+        block content
+        include includes/popups
+        include includes/footer
+        include includes/scripts

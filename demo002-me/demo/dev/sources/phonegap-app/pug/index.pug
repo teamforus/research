@@ -1,0 +1,38 @@
+extends layout/layout-app
+block content
+    .view(ng-cloak)
+        .view-header(ng-if="$state.current.data.header" ng-class="$state.current.data.header.class").view-header-blue
+            .view-nav(ng-if="$state.current.data.header.navbar")
+                a(
+                    ng-click="$state.go($state.current.data.header.navbar.left.sref)"
+                    ng-if="$state.current.data.header.navbar.left")
+                    em(
+                        ng-class="$state.current.data.header.navbar.left.class").icon-left
+
+                .view-nav-text(ng-bind="$state.current.data.header.navbar.text")
+
+                a(
+                    ng-click="$state.go($state.current.data.header.navbar.right.sref)"
+                    ng-if="$state.current.data.header.navbar.right")
+                    em(
+                        ng-class="$state.current.data.header.navbar.right.class").icon-right
+
+            .view-title(ng-if="$state.current.data.header.title || $state.current.data.header.title_btn")
+                | {{ $state.current.data.header.title }}
+                a(href="#" ui-sref="{{ $state.current.data.header.title_btn.sref }}" ng-if="$state.current.data.header.title_btn")
+                    em(ng-class="$state.current.data.header.title_btn.class")
+            .view-subtitle(ng-bind="$state.current.data.header.subtitle" ng-if="$state.current.data.header.subtitle")
+            .view-pad(ng-if="$state.current.data.header.pad")
+            .view-pad.view-pad-lg(ng-if="$state.current.data.header.pad_lg")
+
+            .view-navtabs(ng-if="$state.current.data.header.tabs")
+                .tab-item(
+                    ng-repeat="(tab_key, tab) in $state.current.data.header.tabs" 
+                    ng-class="{'tab-item-active': tab_key == $state.current.data.header.tab_active}" 
+                    ng-click="$state.go('wallet-' + tab_key)"
+                    ng-bind="tab")
+
+            .view-searchbar(ng-if="$state.current.data.header.search"): .view-searchbar-inner
+                | {{ $state.current.data.header.search_text }}
+                .searchbar-icon.mdi.mdi-microphone
+        ui-view

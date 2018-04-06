@@ -1,0 +1,17 @@
+/*==========  Style Sheet - Placeholders  ==========*/
+::-webkit-input-placeholder{
+    color: $ptc;
+    font: inherit;
+}
+::-moz-placeholder{
+    color: $ptc;
+    font: inherit;
+}
+:-moz-placeholder{
+    color: $ptc;
+    font: inherit;
+}
+:-ms-input-placeholder {
+    color: $ptc;
+    font: inherit;
+}

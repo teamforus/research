@@ -1,0 +1,49 @@
+header.section.section-header: .wrapper
+    .section-header-inner(ng-show="$root.credentials")
+        a(ui-sref="landing").logo: img(src="./assets/img/logo.svg")
+        .section-header-actions
+            .button-group
+                .button.button-white.disabled
+                    span Huidige Budget &nbsp; 
+                    strong €
+                    strong(ng-bind="$root.targetVoucher.funds")
+                a(ui-sref="landing").button.button-white
+                    span.mdi.mdi-shopping
+                    | Webshop
+            a(href="#" ng-click="$root.auth.signOut($event)").button.button-primary
+                em.mdi.mdi-logout
+                | Logout
+    .section-header-inner(ng-show="!$root.credentials")
+        a(href="./").logo: img(src="./assets/img/logo.svg", alt="")
+        .section-header-actions
+            a(href="#" ng-click="$root.auth.signIn($event)").button.button-white
+                .svg-icon: include ../../../../resources/assets/icons/icon-forus.svg
+                | Log me in
+            a(href="#" ng-click="$root.auth.activateVoucher($event)").button.button-success#activate-button
+                em.mdi.mdi-ticket-confirmation
+                | Activatiecode
+
+    .section-header-placeholder
+
+.section.section-voucher-details
+    .wrapper.wrapper-sm
+        .voucher-info-view
+            .voucher-info-view-content: .inner
+                .voucher-content-code: img(ng-src="{{$ctrl.qrCode}}", alt="") 
+                .voucher-content-title 
+                    em.mdi.mdi-ticket-confirmation
+                    | Mijn Voucher Code
+                .voucher-content-amount 
+                    .voucher-content-amount-title HUIDIG BUDGET
+                    .voucher-content-amount-value 
+                        | €
+                        strong(ng-bind="$root.targetVoucher.funds")
+
+            .voucher-info-view-aside: .inner
+                .voucher-info-view-aside-actions
+                    a(href="#" ng-click="$ctrl.printQrCode($event)").button.button-white
+                        span.mdi.mdi-printer
+                        | Print Voucher
+                    a(href="#" ng-click="$ctrl.sendQrCodeEmail($event)").button.button-white
+                        span.mdi.mdi-email
+                        | Stuur per e-mail

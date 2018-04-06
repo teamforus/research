@@ -1,0 +1,26 @@
+.view-content
+    br
+    | {{ $ctrl.transaction }}
+    .hero
+        .hero-title {{ $ctrl.transaction.amount }} {{ $ctrl.transaction.coin.name }}
+        .hero-subtitle Transfer
+    .text.text-muted.text-center 
+        | Move your Kindpakket Coins to Identity App
+
+.view-footer: .row
+    .col.col-2: a(href="#" ng-click="$ctrl.decline()").button.button-dim.button-wide DECLINE
+    .col.col-2: a(href="#" ng-click="$ctrl.accept()").button.button-success.button-wide ACCEPT
+
+.popup(ng-if="$ctrl.showAccepted")
+    .popup-backdrop
+    .popup-content: .popup-content-inner
+        .popup-icon: em.mdi.mdi-check
+        .popup-title Transaction accepted!
+        div(ui-sref="records").button.button-success.button-wide CLOSE
+
+.popup(ng-if="$ctrl.showDeclined")
+    .popup-backdrop
+    .popup-content: .popup-content-inner
+        .popup-icon: em.mdi.mdi-check
+        .popup-title Transaction declined!
+        div(ui-sref="records").button.button-success.button-wide CLOSE

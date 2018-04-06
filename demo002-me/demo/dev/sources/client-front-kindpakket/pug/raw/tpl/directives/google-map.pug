@@ -1,0 +1,4 @@
+.map(ng-class="{'map-show' : (categories | filter:{selected: true}).length}")
+    .map-triangle
+    .map-canvas#map-canvas-contact(data-marker="assets/img/map-pin.png" data-zoom="20" data-style="style-1")
+    .wrap: a(href="#" ng-click="deselectAll($event)").btn-3.cancel Cancel

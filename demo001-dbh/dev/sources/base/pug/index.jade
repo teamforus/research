@@ -1,0 +1,59 @@
+extends layout/layout
+block append header-nodes
+    .wrapper
+        div(search-offerts)
+        .block
+            .label.label-base 
+                | Start looking for a grant, donation or subsidy. Just write down in the search bar the keywords related to what you need. 
+
+block content
+    .body
+        .wrapper
+            mixin _search_helpers_item(title, icon_name)
+                .sarch-helpers-li
+                    .sarch-helpers-li-inner
+                        h1.sarch-helpers-li-inner-header
+                            | !{svgIcon(icon_name)}
+                            | #{title}
+                        .sarch-helpers-li-inner-list
+                            a(href="/search-results.html?query="+title).sarch-helpers-li-inner-list-item 
+                                em.mdi.mdi-chevron-right
+                                | Special products
+                            a(href="/search-results.html?query="+title).sarch-helpers-li-inner-list-item
+                                em.mdi.mdi-chevron-right
+                                | Clothing
+                            a(href="/search-results.html?query="+title).sarch-helpers-li-inner-list-item
+                                em.mdi.mdi-chevron-right
+                                | Haircutting
+
+            .block
+                .sarch-helpers
+                    .sarch-helpers-ul
+                        +_search_helpers_item('Personal care', 'icon-cat-personal-care')
+                        +_search_helpers_item('Home care', 'icon-cat-home-care')
+                        +_search_helpers_item('Support & assistance', 'icon-cat-support-and-assistance')
+                        +_search_helpers_item('Sport', 'icon-cat-sport')
+                        +_search_helpers_item('Therapy', 'icon-cat-therapy')
+                        +_search_helpers_item('Education', 'icon-cat-education')
+                        +_search_helpers_item('Transportation', 'icon-cat-transportation')
+                        +_search_helpers_item('Health care', 'icon-cat-health-care')
+                        +_search_helpers_item('Household expenses', 'icon-cat-household-expenses')
+            
+            mixin _articles_list_item(nth, title, desc, date)
+                .articles-list-item
+                    a(href="./search-results.html").articles-list-item-thumb
+                        img(src="./assets/img/articles/" + nth + ".jpg", alt="")
+                        .date #{date}
+                    .articles-list-item-title: aa(href="#") #{title}
+                    .articles-list-item-desc #{desc}
+                    a(href="#").articles-list-item-more
+                        em.mdi.mdi-chevron-right
+                        | Read more
+
+            .block
+                .articles
+                    .articles-header Custom header here
+                    .articles-list
+                        +_articles_list_item(1, 'The title', 'The desc,  Lorem ipsum dolor sit amet, consectetur adipisicing elit. In totam voluptatibus consectetur et odit provident corrupti!', '07.07.2017')
+                        +_articles_list_item(2, 'The title', 'The desc,  Lorem ipsum dolor sit amet, consectetur adipisicing elit. In totam voluptatibus consectetur et odit provident corrupti!', '07.07.2017')
+                        +_articles_list_item(3, 'The title', 'The desc,  Lorem ipsum dolor sit amet, consectetur adipisicing elit. In totam voluptatibus consectetur et odit provident corrupti!', '07.07.2017')

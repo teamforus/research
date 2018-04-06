@@ -1,0 +1,38 @@
+extends ../layout/layout-markup
+block content
+    .section.section-content: .wrapper
+        .window
+            .window-content
+                .window-header Stellingen
+                .table: table
+                    .tHead: tr
+                        th Title
+                        th Status
+                        th Description
+                        th Actions
+                    .tBody
+                        mixin table_row(state)
+                            tr
+                                td Lorem ipsum dolor sit amet, consectetur
+                                td #{state}
+                                td De gemeente moet het gebruik van de lokale voedselketen stimuleren.
+                                td
+                                    if (state != 'Active')
+                                        a(href="#").button.button-primary-outline.button-narrow Activate
+                                td.actions
+                                    if (state == 'Active')
+                                        a(href="./chart.html").action-item
+                                            em.mdi.mdi-eye
+                                            | View
+                                    else
+                                        a(href="./edit.html").action-item
+                                            em.mdi.mdi-pencil
+                                            | Edit
+                                    a(href="#").action-item
+                                        em.mdi.mdi-delete
+                                        | Delete
+                        +table_row('Pending')
+                        +table_row('Active')
+                        +table_row('Closed')
+            .window-actions
+                a(href="./edit.html").button.button-primary Nieuwe stelling

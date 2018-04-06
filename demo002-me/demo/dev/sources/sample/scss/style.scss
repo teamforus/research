@@ -1,0 +1,61 @@
+@import 'includes/vars';
+@import 'includes/resetter';
+@import 'includes/helpers';
+@import 'includes/placeholders';
+@import 'includes/third-party';
+
+// COMMON
+@import 'includes/common';
+
+// DEV PAGES
+@import 'includes/dev-pages';
+
+html {
+    // code
+    // 
+    body {
+        .wrapper {
+            padding: 60px 0 0;
+            text-align: center;
+        }
+
+        .about {
+
+            .logo {
+                padding: 30px;
+                display: inline-block;
+                margin: 0 0 60px;
+                border: 1px solid $bc;
+                cursor: default;
+                font: 100 24px $bf;
+                transition: all .4s ease-in;
+
+                &:hover {
+                    background-color: $bc;
+                    color: white;
+                }
+            }
+
+            p {
+                padding: 20px;
+                margin: 40px 0 0;
+
+                a {
+                    color: $bc;
+
+                    &:hover {
+                        color: $tc;
+                        transition: color .4s;
+                    }
+                }
+            }
+
+            hr {
+                border: 0;
+                margin: 0;
+                border-top: 1px solid $tc;
+                opacity: .4;
+            }
+        }
+    }
+}

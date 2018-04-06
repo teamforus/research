@@ -1,0 +1,37 @@
+[{
+    "name": "Personal Care",
+    "icon": "icon-cat-personal-care",
+    "keywords": ["Shower", "Special Products", "Clothing"]
+}, {
+    "name": "Home Care",
+    "icon": "icon-cat-home-care",
+    "keywords": ["Cleaning", "Washing", "Cooking"]
+}, {
+    "name": "Support & Assistance",
+    "icon": "icon-cat-support-and-assistance",
+    "keywords": ["Law", "Mediation", "Psychologist"]
+}, {
+    "name": "Sport",
+    "icon": "icon-cat-sport",
+    "keywords": ["Swimming", "Football", "Fitness"]
+}, {
+    "name": "Therapy",
+    "icon": "icon-cat-therapy",
+    "keywords": ["Massage", "Physical assistance", "Physical assistance"]
+}, {
+    "name": "Education",
+    "icon": "icon-cat-education",
+    "keywords": ["Books", "Extra curricular", "Extra curricular"]
+}, {
+    "name": "Transportation",
+    "icon": "icon-cat-transportation",
+    "keywords": ["Bike", "Public Transportation", "Car allowance"]
+}, {
+    "name": "Health Care",
+    "icon": "icon-cat-health-care",
+    "keywords": ["Wheelchair", "Drugs", "Drugs"]
+}, {
+    "name": "Household expenses",
+    "icon": "icon-cat-household-expenses",
+    "keywords": ["Reparation", "Decoration", "Decoration"]
+}]

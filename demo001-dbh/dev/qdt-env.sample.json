@@ -1,0 +1,10 @@
+{
+    "server": {
+        "enabled": true,
+        "platform": "html",
+        "watch_platforms": "all"
+    },
+    "platforms": {
+        "enabled": ["html"]
+    }
+}

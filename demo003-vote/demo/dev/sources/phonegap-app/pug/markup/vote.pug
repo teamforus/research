@@ -1,0 +1,20 @@
+extends ../layout/layout-markup
+block content
+    .app-view.app-view-ios
+        .app-container
+            .vote
+                .vote-title Bij welke track ben jij het meest benieuwd naar de resilataten?
+                .vote-description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum temporibus id nemo nostrum provident itaque voluptate facilis totam pariatur consectetur sunt debitis at iste rerum libero atque praesentium cum.
+                .vote-list
+                    mixin vote_item(id, name)
+                        .vote-item
+                            input(type="radio" name="vote_option" id=("vote_item_"+id) hidden)
+                            label(for="vote_item_"+id)
+                                | #{name}
+                                .vote-item-circle: .mdi.mdi-check
+                    +vote_item(1, "Lorem ipsum dolor.")
+                    +vote_item(2, "Lorem ipsum dolor sit amet.")
+                    +vote_item(3, "Lorem ipsum dolor sit amet, consectetur.")
+                    +vote_item(4, "Lorem ipsum dolor sit amet, consectetur adipisicing elit.")
+        .app-footer
+            a(href="#" disabled).button.button-wide.button-primary.text-center WACHTEN OP STEMBILJET

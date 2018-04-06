@@ -1,0 +1,56 @@
+footer.section.section-footer
+    .footer-nav.wrapper
+        .footer-nav-col
+            a(href="#").footer-nav-logo: img(src=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/img/logo-dark.svg", alt="")
+            .footer-nav-ul
+                .footer-nav-ul-li
+                    span.text-primary-dark E-mailadres:
+                    | kindpakket@zuidhorn.nl
+                .footer-nav-ul-li
+                    span.text-primary-dark Telefoonnummer:
+                    | (0594) 508888
+                .footer-nav-ul-li
+                    span.text-primary-dark Adres:
+                    | Hooiweg 9, 9801 AJ Zuidhorn
+        .footer-nav-col
+            .footer-nav-heading Openingstijden Gemeente:
+            .footer-nav-ul
+                .footer-nav-ul-li
+                    span.footer-nav-ul-li-pad.text-primary-dark Maandag: 
+                    | 8.30-12.30, 13.30-16.30, 18.00-19.30
+                .footer-nav-ul-li
+                    span.footer-nav-ul-li-pad.text-primary-dark Dinsdag: 
+                    | 8.30-12.30
+                .footer-nav-ul-li
+                    span.footer-nav-ul-li-pad.text-primary-dark Woensdag: 
+                    | 8.30-12.30, 13.30-17.30
+                .footer-nav-ul-li
+                    span.footer-nav-ul-li-pad.text-primary-dark Donderdag: 
+                    | 8.30-12.30
+                .footer-nav-ul-li
+                    span.footer-nav-ul-li-pad.text-primary-dark Vrijdag: 
+                    | 8.30-12.30          
+        .footer-nav-col
+            .footer-nav-ul
+                a(href=env_data.winkelierUrl target="_blank").footer-nav-ul-button.button.button-primary.button-wide
+                    em.em.mdi.mdi-information
+                    | Bent u een winkelier in Zuidhorn en wilt u meer informatie?
+                a(href=env_data.kindpakketUrl target="_blank").footer-nav-ul-button.button.button-success-dark.button-wide
+                    em.em.mdi.mdi-information
+                    | Bent u een inwoner van Zuidhorn en wilt u meer informatie?
+                .footer-nav-ul-li.footer-nav-ul-li-mark
+                    a(
+                        href=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/documents/algemene-voorwaarden.pdf" 
+                        download="Algemene Voorwaarden Kindpakket website.pdf" 
+                        target="_blank") 
+                        span.text-primary Algemene Voorwaarden
+                .footer-nav-ul-li.footer-nav-ul-li-mark
+                    a(
+                        href=(env_data.html5Mode.enable?env_data.html5Mode.basePath:'') + "assets/documents/privacy-policy.pdf" 
+                        download="Privacy Policy voor websites Kindpakket.pdf" 
+                        target="_blank") 
+                        span.text-primary Privacy Statement
+    .footer-copyrights
+        | Copyright © 2017 Zuidhorn. Alle rechten voorbehouden. 
+        span | 
+        a(href="#") Algemene voorwaarden

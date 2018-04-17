@@ -10,9 +10,7 @@ Proof of Work PoW - A type of algorithm which uses computing power to handle fau
 
 Byzantine Fault BF - A failure in which a node remains functional, but operates in a dishonest manner.
 
-## Hypothesis:
-There is alot of hype around Ethereum. 
-
+## Platforms: 
 
 #### Public
 

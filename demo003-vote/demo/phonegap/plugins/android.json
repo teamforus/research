@@ -10,6 +10,9 @@
     "cordova-plugin-add-swift-support": {
       "PACKAGE_NAME": "io.forus.demo.stemapp"
     },
+    "cordova-plugin-appavailability": {
+      "PACKAGE_NAME": "io.forus.demo.stemapp"
+    },
     "cordova-plugin-battery-status": {
       "PACKAGE_NAME": "io.forus.demo.stemapp"
     },
@@ -48,9 +51,6 @@
       "PACKAGE_NAME": "io.forus.demo.stemapp"
     },
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "io.forus.demo.stemapp"
-    },
-    "cordova-plugin-appavailability": {
       "PACKAGE_NAME": "io.forus.demo.stemapp"
     }
   },

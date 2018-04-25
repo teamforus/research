@@ -149,14 +149,6 @@
     "is_top_level": false,
     "variables": {}
   },
-  "cordova.custom.plugins.exitapp": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-exitapp"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-appavailability": {
     "source": {
       "type": "registry",

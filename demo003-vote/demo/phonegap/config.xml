@@ -80,7 +80,7 @@
     </config-file>
     <engine name="browser" spec="~5.0.3" />
     <engine name="ios" spec="^4.5.4" />
-    <engine name="android" spec="^6.3.0" />
+    <engine name="android" spec="^6.4.0" />
     <plugin name="cordova-plugin-battery-status" spec="^1.2.5" />
     <plugin name="cordova-plugin-camera" spec="^2.4.1" />
     <plugin name="cordova-plugin-media-capture" spec="^1.4.3" />

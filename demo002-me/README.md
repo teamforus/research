@@ -23,7 +23,7 @@ Make sure ``./storage`` and ``./bootstrap/cache`` paths are writable by web serv
 
 Now you can run backend in terminal:
 ```
-$ php artisan server --host 0.0.0.0 --port 80000
+$ php artisan serve --host 0.0.0.0 --port 8000
 ``` 
 
 Or use apache2 server by adding this to server configuration:

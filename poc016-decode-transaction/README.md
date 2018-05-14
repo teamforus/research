@@ -1,4 +1,9 @@
-# How to install abi-decoder
+# POC016 - Decode transactions
+
+This is a proof of concept supplied by ConsenSys to show which data is added to the ethereum blockchain while submitting a new transaction. The data that is submitted is transcoded and not encrypted. 
+Privacy and blockchains don't go hand in hand. Currently, 14-05-2018, privacy is not possible on a public blockchain.
+
+## How to install abi-decoder
 
 ## ConsenSys abi-decoder
 Nodejs and Javascript library for decoding data params and events from etherem transactions

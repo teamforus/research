@@ -1,4 +1,4 @@
-# poc5-Host-frontend-on-IPFS
+# poc005-host-frontend-on-ipfs
 
 ## Background / Context
 **Goal: ** The goal of this proof of concept is to host a front-end application on a decentralized network. 

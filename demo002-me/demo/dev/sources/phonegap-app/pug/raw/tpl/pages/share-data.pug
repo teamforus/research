@@ -1,16 +1,16 @@
 .view-content
-    .text This app requests following information from your identity:
+    .text Deze applicatie vraagt om teostemming voor het gebruik van de volgende informatie van je identiteit:
     .list
         .list-item(ng-repeat="item in $ctrl.items")
             em.mdi.mdi-check.icon
             | {{ item }}
     .form
-        label.form-label ALLOW IT FOR
+        label.form-label TOESTAAN VOOR
         .form-group
             select.form-control
-                option(value="#") 1 hour
-                option(value="#") 6 hour
-                option(value="#") 12 hour
+                option(value="#") 1 uur
+                option(value="#") 6 uur
+                option(value="#") 12 uur
                 option(value="#") 1 day
                 option(value="#") 7 day
                 option(value="#") 1 month
@@ -20,19 +20,32 @@
                 option(value="#") forever
 
 .view-footer: .row
-    .col.col-2: a(href="#" ng-click="$ctrl.decline()").button.button-primary.button-wide DECLINE
-    .col.col-2: a(href="#" ng-click="$ctrl.accept()").button.button-success.button-wide ACCEPT
+    .col.col-2: a(href="#" ng-click="$ctrl.decline()").button.button-primary.button-wide WEIGEREN
+    .col.col-2: a(href="#" ng-click="$ctrl.accept()").button.button-success.button-wide TOESTAAN
 
 .popup(ng-if="$ctrl.showAccepted")
-    .popup-backdrop
+    .popup-backdrop(ui-sref="records")
     .popup-content: .popup-content-inner
-        .popup-icon: em.mdi.mdi-check
-        .popup-title Success logged in!
-        div(ui-sref="records").button.button-success.button-wide CLOSE
+        .popup-content-header
+            .popup-title Aanmelden
+            .popup-subtitle Wacht op bevestiging
+            .popup-close Sluit
+        .popup-content-body
+            .popup-icon: img(src="assets/img/icon-popup-success.png").popup-icon-img
+            .popup-heading.text-center Geslaagd!
+            .popup-text.text-center Uw gegevens zijn succesvol verwerkt
+        .popup-content-footer
+            div(ui-sref="records").button.button-success.button-wide CLOSE
 
-.popup(ng-if="$ctrl.showDeclined")
-    .popup-backdrop
+.popup.popup-dim(ng-if="$ctrl.showDeclined")
+    .popup-backdrop(ui-sref="records")
     .popup-content: .popup-content-inner
-        .popup-icon: em.mdi.mdi-check
-        .popup-title Request declined!
-        div(ui-sref="records").button.button-success.button-wide CLOSE
+        .popup-content-header
+            .popup-title Niet gevalideerd
+            .popup-close Sluit
+        .popup-content-body
+            .popup-icon: img(src="assets/img/icon-popup-error.png").popup-icon-img
+            .popup-heading.text-center Eigenschappen zijn niet gevalideerd
+            .popup-text.text-center Uw gegevens zijn niet gevalideerd
+        .popup-content-footer
+            div(ui-sref="records").button.button-dim.button-wide CLOSE

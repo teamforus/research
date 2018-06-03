@@ -221,13 +221,13 @@ module.exports = {
                         ],
                         "dest": "/",
                         "name": "app.js",
-                        "minify": true,
+                        "minify": false,
                         "sourcemap": true,
                         "browserify": true
                     }],
                     "pug": [{
-                        "path": "/",
-                        "src": ["index.pug"],
+                        "path": "/phonegap",
+                        "src": ["phonegap/index.pug"],
                         "watch": ["layout/**/*.pug"],
                         "dest": "/"
                     }, {
@@ -237,7 +237,10 @@ module.exports = {
                     }]
                 }
             },
-            "server": false
+            "server": {
+                "path": "/",
+                "port": 4000
+            }
         },
         "phonegap-html": {
             "source": "phonegap-app",
@@ -286,27 +289,25 @@ module.exports = {
                 "settings": {
                     "js": [{
                         "src": [
-                            "app.js",
-                            "angular/*.js",
-                            "angular/controllers/**/**.js",
-                            "angular/components/**/**.js",
-                            "angular/directives/**/**.js",
-                            "angular/providers/**/**.js",
-                            "angular/services/**/**.js",
-                            "angular/filters/**/**.js",
-                            "angular/routes/**/**.js"
+                            "app.js"
                         ],
                         "dest": "/",
                         "name": "app.js",
                         "minify": true,
                         "sourcemap": true,
                         "browserify": true
+                    }],
+                    "pug": [{
+                        "path": "/",
+                        "src": ["*"],
+                        "watch": ["layout/**/*.pug"],
+                        "dest": "/"
                     }]
                 }
             },
             "server": {
                 "path": "/",
-                "port": 4000
+                "port": 4500
             }
         }
     }

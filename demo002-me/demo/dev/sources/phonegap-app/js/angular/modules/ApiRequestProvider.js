@@ -21,7 +21,6 @@ planApp.provider('ApiRequest', function() {
                 $rootScope
             ) {
                 var resolveUrl = function(input) {
-                    console.log(input);
                     var parser = document.createElement('a');
 
                     parser.href = input;

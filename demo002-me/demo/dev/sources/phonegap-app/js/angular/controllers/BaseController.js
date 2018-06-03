@@ -1,4 +1,4 @@
-var BaseController = function($rootScope, $scope, $q, $attrs, $state, $timeout) {
+var BaseController = function ($rootScope, $scope, $q, $attrs, $state, $timeout, AuthService, CredentialsService) {
     $rootScope.$state = $scope.$state = $state;
     $rootScope.$thisState = $scope.$thisState = $state.current;
 
@@ -23,6 +23,22 @@ var BaseController = function($rootScope, $scope, $q, $attrs, $state, $timeout) 
                 }, {
                     title: 'StemAPP',
                     subtitle: 'Share your voting pass',
+                });
+            } else if (url.pathname == '/authorize-email') {
+                let source = url.searchParams.get("source");
+                let token = url.searchParams.get("token");
+
+                AuthService.authorizeAuthEmailToken(source, token).then((res) => {
+                    CredentialsService.add(res.data.access_token, "");
+                    CredentialsService.set(res.data.access_token);
+
+                    AuthService.getName().then((name) => {
+                        CredentialsService.update(res.data.access_token, name);
+                        $state.go('records');
+                    }, console.log);
+                    $state.go('records');
+                }, (res) => {
+                    alert("Authorization failed: " . res.data.message);
                 });
             }
         }, 100);
@@ -49,4 +65,4 @@ var BaseController = function($rootScope, $scope, $q, $attrs, $state, $timeout) 
     }, 1000);
 };
 
-module.exports = ['$rootScope', '$scope', '$q', '$attrs', '$state', '$timeout', BaseController];
+module.exports = ['$rootScope', '$scope', '$q', '$attrs', '$state', '$timeout', 'AuthService', 'CredentialsService', BaseController];

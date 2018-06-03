@@ -1,0 +1,9 @@
+.view-header-pincode
+    | {{ text }}
+    .pincode
+        .pincode-digit(ng-repeat="digit in digits track by $index" ng-class="{active: digit !== false}")
+            .pincode-digit-value {{ digit === false ? '_' : digit }}
+            img(src="assets/img/shape-square.png").pincode-digit-shape
+
+
+        input(type="number" ng-model="codeValue" ng-change="onInputChange($event)").pincode-input

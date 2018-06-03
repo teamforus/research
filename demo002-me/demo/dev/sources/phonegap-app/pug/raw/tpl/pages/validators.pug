@@ -1,6 +1,6 @@
 .view-content
     .list-group-list
-        .list-group-header VALIDATORS
+        .list-group-header validatoren
         mixin list_group_item_inner(icon, title, subtitle)
             img(src="assets/img/" + icon + ".png").list-group-icon
             .list-group-title #{title}
@@ -15,7 +15,7 @@
         
         .list-group-items
             +list_group_item('digid', 'icon-validator-digid', 'DigiD', 'Open DigiD app', true)
-            +list_group_item('gemeente-zuidhorn', 'icon-validator-gemeente-zuidhorn', 'Gemeente Zuidhorn', 'Municipality validation')
+            +list_group_item('zuidhorn', 'icon-validator-gemeente-zuidhorn', 'Gemeente Zuidhorn', 'Municipality validation', true)
             +list_group_item('gemeente-almelo', 'icon-validator-gemeente-almelo', 'Gemeente Almelo', 'Municipality validation')
             +list_group_item('gemeente-emmen', 'icon-validator-gemeente-emmen', 'Gemeente Emmen', 'Municipality validation')
             +list_group_item('passport', 'icon-validator-passport', 'Passport', 'Scan your passport')

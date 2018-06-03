@@ -17,10 +17,15 @@ module.exports = {
                 return $state.go('send');
             }
 
-            QrScannerService.scan().then(function(text) {
+            QrScannerService.scan().then(function(code) {
                 var data = JSON.parse(JSON.stringify($stateParams.data));
+                var result = JSON.parse(code);
 
-                data.address = text;
+                if (result.type != 'identity_address') {
+                    return alert("Malformed qr code.");
+                }
+
+                data.address = result.value;
 
                 $state.go('send-confirm', {
                     data: data

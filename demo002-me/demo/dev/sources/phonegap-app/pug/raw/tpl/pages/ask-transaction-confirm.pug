@@ -7,19 +7,33 @@
         | Move your Kindpakket Coins to Identity App
 
 .view-footer: .row
-    .col.col-2: a(href="#" ng-click="$ctrl.decline()").button.button-dim.button-wide DECLINE
-    .col.col-2: a(href="#" ng-click="$ctrl.accept()").button.button-success.button-wide ACCEPT
+    .col.col-2: button(ng-click="$ctrl.decline()").button.button-dim.button-wide DECLINE
+    .col.col-2: button(ng-click="$ctrl.accept()").button.button-success.button-wide ACCEPT
+
 
 .popup(ng-if="$ctrl.showAccepted")
-    .popup-backdrop
+    .popup-backdrop(ui-sref="records")
     .popup-content: .popup-content-inner
-        .popup-icon: em.mdi.mdi-check
-        .popup-title Transaction accepted!
-        div(ui-sref="records").button.button-success.button-wide CLOSE
-
-.popup(ng-if="$ctrl.showDeclined")
-    .popup-backdrop
+        .popup-content-header
+            .popup-title Aanmelden
+            .popup-subtitle Wacht op bevestiging
+            .popup-close Sluit
+        .popup-content-body
+            .popup-icon: img(src="assets/img/icon-popup-success.png").popup-icon-img
+            .popup-heading.text-center Geslaagd!
+            .popup-text.text-center Uw gegevens zijn succesvol verwerkt
+        .popup-footer
+            button(ui-sref="records").button.button-success.button-wide CLOSE
+    
+.popup.popup-dim(ng-if="$ctrl.showDeclined")
+    .popup-backdrop(ui-sref="records")
     .popup-content: .popup-content-inner
-        .popup-icon: em.mdi.mdi-check
-        .popup-title Transaction declined!
-        div(ui-sref="records").button.button-success.button-wide CLOSE
+        .popup-content-header
+            .popup-title Niet gevalideerd
+            .popup-close(ui-sref="records") Sluit
+        .popup-content-body
+            .popup-icon: img(src="assets/img/icon-popup-error.png").popup-icon-img
+            .popup-heading.text-center Eigenschappen zijn niet gevalideerd
+            .popup-text.text-center Uw gegevens zijn niet gevalideerd
+        .popup-footer
+            button(ui-sref="records").button.button-dim.button-wide CLOSE

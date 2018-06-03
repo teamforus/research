@@ -8,6 +8,10 @@ module.exports = {
             AuthService
         ) {
             var ctrl = this;
+
+            AuthService.assets().then((res) => {
+                ctrl.assets = res.data;
+            }, console.log);
         }
     ]
 };

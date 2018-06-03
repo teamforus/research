@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Token;
+use App\Services\Forus\Identity\Models\Identity;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Models\Coin;
 use Illuminate\Http\Request;
@@ -15,7 +17,7 @@ class TransactionSendRequest extends FormRequest
      */
     public function authorize(Request $request)
     {
-        return $request->get('auth_user');
+        return $request->get('identity');
     }
 
     /**
@@ -25,22 +27,28 @@ class TransactionSendRequest extends FormRequest
      */
     public function rules(Request $request)
     {
-        $authUser = $request->get('auth_user');
-        $coinId = $request->input('token.id');
+        $identity = Identity::whereKey($request->get('identity'))->first();
+        $tokenId = $request->input('token.id');
 
-        if ($coinId && ($targetCoin = Coin::where('id', $coinId)->first())) {
-            $userCoins = $authUser->user_coins()->where([
-                'coin_id' => $targetCoin->id
+        if ($tokenId && ($targetToken = Token::getModel()->where('id', $tokenId)->first())) {
+            $userTokens = $identity->wallet->tokens()->where([
+                'token_id' => $targetToken->id
             ])->first();
+
+            if ($userTokens) {
+                $userTokens = $userTokens->amount;
+            } else {
+                $userTokens = 0;
+            }
         } else {
-            $userCoins = 0;
+            $userTokens = 0;
         }
 
         return [
-            'token.id'      => 'required|exists:coins,id',
+            'token.id'      => 'required|exists:tokens,id',
             'description'   => 'required',
-            'amount'        => 'required|numeric|min:0.1|max:' . $userCoins->amount,
-            'address'       => 'nullable|exists:users,public_address'
+            'amount'        => 'required|numeric|min:0.1|max:' . $userTokens,
+            'address'       => 'nullable|exists:identities,address'
         ];
     }
 }

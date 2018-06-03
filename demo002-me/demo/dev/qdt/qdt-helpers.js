@@ -52,13 +52,13 @@ var qdtBuidAssetPaths = function (platform) {
     // mdi
     if (_platform_libs.mdi) {
         _assets_to_move = _assets_to_move.concat([{
-            from: './node_modules/mdi/css/materialdesignicons.min.css',
+            from: './node_modules/@mdi/font/css/materialdesignicons.min.css',
             to: platform.paths.assets_root + '/' + 'dist/mdi/css/'
         }, {
-            from: './node_modules/mdi/css/materialdesignicons.min.css.map',
+                from: './node_modules/@mdi/font/css/materialdesignicons.min.css.map',
             to: platform.paths.assets_root + '/' + 'dist/mdi/css/'
         }, {
-            from: './node_modules/mdi/fonts/*',
+                from: './node_modules/@mdi/font/fonts/*',
             to: platform.paths.assets_root + '/' + 'dist/mdi/fonts/'
         }]);
     }

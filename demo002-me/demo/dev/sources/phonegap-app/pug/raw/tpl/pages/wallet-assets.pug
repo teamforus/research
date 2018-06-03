@@ -1,10 +1,18 @@
 .view-content
     .list-resources
-        mixin resource_item(value, label)
-            .resource-item.resource-item-no-buttons
-                .resource-value #{value}
-                .resource-label #{label}
-
-        +resource_item("Tesla Model S", "02.02.2019, KH-355-X")
+        // .show-options
+        .resource-item.resource-item-asset.resource-item-options-x1(ng-repeat="asset in $ctrl.assets" ng-class="{'show-options': asset.show}") 
+            img(src="assets/img/icon-real-estate.png").resource-icon(ng-click="asset.show = !asset.show")
+            .resource-value(ng-click="asset.show = !asset.show") Kantoor
+            .resource-label(ng-bind="asset.location" ng-click="asset.show = !asset.show")
+            .resource-item-arrow.mdi.mdi-chevron-right(ng-click="asset.show = !asset.show")
+            
+            .resource-item-options
+                // .resource-item-option.resource-item-option-danger
+                    a.mdi.mdi-close
+                    | Aanpassen
+                .resource-item-option(ui-sref="wallet-asset-view({assetId: asset.id})")
+                    a.mdi.mdi-pen
+                    | Verwijderen
 
 account-footer

@@ -21,7 +21,7 @@ var controller = function($rootScope, $scope, $state, VoteService, FormBuilderSe
             $state.go('votes');
             ctrl.form.unlock();
         }, function(res) {
-            ctrl.form.errors = res.data;
+            ctrl.form.errors = res.data.errors;
             ctrl.form.unlock();
         });
     };

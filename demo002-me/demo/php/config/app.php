@@ -179,7 +179,14 @@ return [
 
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
 
-        App\Services\UUIDGeneratorService\UUIDGeneratorServiceProvider::class,
+        \App\Providers\RepositoryServiceProvider::class,
+
+        \App\Services\UUIDGeneratorService\UUIDGeneratorServiceProvider::class,
+        \App\Services\TokenGeneratorService\TokenGeneratorServiceProvider::class,
+
+        \App\Services\Forus\Identity\IdentityServiceProvider::class,
+        \App\Services\Forus\Mailer\MailerServiceProvider::class,
+        \App\Services\Forus\Record\RecordServiceProvider::class,
     ],
 
     /*
@@ -229,6 +236,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'MailerService' => App\Services\Forus\Mailer\Facades\MailerService::class,
+        'IdentityService' => \App\Services\Forus\Identity\Facades\IdentityService::class,
+        'RecordService' => \App\Services\Forus\Record\Facades\RecordService::class,
     ],
 
 ];

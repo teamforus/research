@@ -1,0 +1,25 @@
+extends layout/layout
+block content
+    .view
+        .view-header.view-header-blue
+            .view-nav
+                a(href="#"): em.mdi.mdi-arrow-left.icon-left
+                a(href="#"): em.mdi.mdi-account-outline.icon-right
+            .view-title Validatie verzoek
+            .view-subtitle Eigenschappen die wachten op validatie
+
+        .view-content
+            .form
+                .form-group
+                    label.form-label ADRES
+                    input(type="text" placeholder="BSN" value="334454443" disabled).form-control
+                    .form-group-icon.mdi.mdi-check
+                .form-group
+                    label.form-label VOORNAAM
+                    input(type="text" placeholder="voornaam" value="Jamal" disabled).form-control
+                    div(success).form-group-icon.mdi.mdi-check
+                    .form-group-icon.mdi.mdi-check
+
+        .view-footer: .row
+            .col.col-2: a(href="#").button.button-primary.button-wide ANNULEREN
+            .col.col-2: a(href="#").button.button-success.button-wide BEVESTIGEN

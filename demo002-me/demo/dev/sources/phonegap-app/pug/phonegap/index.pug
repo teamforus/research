@@ -1,0 +1,72 @@
+extends ../layout/layout-app
+block content
+    .view(ng-cloak ng-class="['view-footer-x' + ($state.current.data.layout.footer_size || 1)]")
+        .view-header(ng-if="$state.current.data.header" ng-class="$state.current.data.header.class").view-header-blue
+            .view-nav(ng-if="$state.current.data.header.navbar")
+                a(
+                    ng-click="$state.go($state.current.data.header.navbar.left.sref)"
+                    ng-if="$state.current.data.header.navbar.left")
+                    em(
+                        ng-class="$state.current.data.header.navbar.left.class").icon-left
+
+                .view-nav-text(ng-bind="$state.current.data.header.navbar.text")
+
+                a(
+                    ng-click="$state.go($state.current.data.header.navbar.right.sref)"
+                    ng-if="$state.current.data.header.navbar.right")
+                    em(
+                        ng-class="$state.current.data.header.navbar.right.class").icon-right
+
+            .view-title(ng-if="$state.current.data.header.title || $state.current.data.header.title_btn")
+                | {{ $state.current.data.header.title }}
+                a(href="#" ui-sref="{{ $state.current.data.header.title_btn.sref }}" ng-if="$state.current.data.header.title_btn")
+                    em(ng-class="$state.current.data.header.title_btn.class")
+            .view-subtitle(ng-bind="$state.current.data.header.subtitle" ng-if="$state.current.data.header.subtitle")
+            .view-pad(ng-if="$state.current.data.header.pad")
+            .view-pad.view-pad-lg(ng-if="$state.current.data.header.pad_lg")
+            
+            .view-header-voucher(ng-if="$state.current.data.header.voucher_details")
+                .view-header-voucher-title(ng-bind="$state.current.data.header.voucher_details.name")
+                .view-header-voucher-subtitle 2 dagen geldig
+                .view-header-voucher-value(ng-bind="'€' + $state.current.data.header.voucher_details.amount.toFixed(2)") 
+                .view-header-voucher-qr-code#qrcode
+
+            .view-header-navlist(ng-if="$state.current.data.header.navlist")
+                .view-header-navlist-option(ng-repeat="navitem in $state.current.data.header.navlist" ng-click="navitem.onClick($event, navitem)")
+                    .view-header-navlist-option-icon(ng-id="navitem.icon" ng-class="['mdi mdi-' + navitem.icon]")
+                    .view-header-navlist-option-text(ng-bind="navitem.name")
+                    .view-header-navlist-option-arrow.mdi.mdi-chevron-right
+
+                // mixin view_header_navlist_option(icon, text)
+                    .view-header-navlist-option
+                        .view-header-navlist-option-icon(class="mdi mdi-" + icon)
+                        .view-header-navlist-option-text=text
+                        .view-header-navlist-option-arrow.mdi.mdi-chevron-right
+
+                // +view_header_navlist_option("arrow-split-vertical", "Delen in kleiner bedrag")
+                // +view_header_navlist_option("email-outline", "E-mail naar mij")
+
+            .view-navtabs(ng-if="$state.current.data.header.tabs")
+                .tab-item(
+                    ng-repeat="(tab_key, tab) in $state.current.data.header.tabs" 
+                    ng-class="{'tab-item-active': tab_key == $state.current.data.header.tab_active}" 
+                    ng-click="$state.go('wallet-' + tab_key)"
+                    ng-bind="tab")
+            
+            .view-header-buttons(ng-if="$state.current.data.header.sendAndAsk"): .row
+                .col.col-2: button(ui-sref="send({data: $state.current.data.header.sendAndAsk.token})").button.button-wide.button-transparent-outline 
+                    | ZEND
+                    .mdi.mdi-chevron-up.pull-left
+                .col.col-2: button(ui-sref="ask({data: $state.current.data.header.sendAndAsk.token})").button.button-wide.button-bright
+                    .mdi.mdi-chevron-down.pull-right
+                    | VRAAG
+
+            .view-searchbar(ng-if="$state.current.data.header.search"): .view-searchbar-inner
+                | {{ $state.current.data.header.search_text }}
+                .searchbar-icon.mdi.mdi-microphone
+
+            img.view-header-circle(ng-if="$state.current.data.header.circleIcon" ng-src='{{ $state.current.data.header.circleIcon }}')
+
+            view-header-pin-code(ng-if="$state.current.data.header.pincode")
+
+        ui-view

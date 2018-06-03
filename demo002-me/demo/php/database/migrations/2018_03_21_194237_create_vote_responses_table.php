@@ -15,14 +15,14 @@ class CreateVoteResponsesTable extends Migration
     {
         Schema::create('vote_responses', function(Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('identity_id')->unsigned();
             $table->integer('vote_id')->unsigned();
             $table->integer('vote_option_id')->unsigned();
             $table->timestamps();
 
             // foreign keys
-            $table->foreign('user_id')->references('id')
-                ->on('users')->onDelete('cascade');
+            /*$table->foreign('identity_id')->references('id')
+                ->on('identities')->onDelete('cascade');*/
 
             $table->foreign('vote_id')->references('id')
                 ->on('votes')->onDelete('cascade');

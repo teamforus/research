@@ -19,7 +19,7 @@ class Cors
             '*']);
 
         $allowed_methods = collect([
-            'GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']);
+            'GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH']);
 
         $allowed_headers = collect([
             'Content-Type', 'Access-Control-Allow-Headers', 'Authorization', 

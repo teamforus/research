@@ -12,12 +12,15 @@ module.exports = {
             var ctrl = this;
 
             if (!$stateParams.data ||
-                $stateParams.data.record.state != 'pending') {
+                $stateParams.data.record.valid) {
                 return $state.go('records');
             }
 
+            $state.$current.data.header.title = $stateParams.data.record.value;
+            $state.$current.data.header.navbar.text = $stateParams.data.record.name;
+
             ctrl.validate = function(validator) {
-                return $state.go('validator-digid', $stateParams);
+                return $state.go('validator-' + validator, $stateParams);
             };
         }
     ]

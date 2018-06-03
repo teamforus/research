@@ -30,7 +30,7 @@ module.exports = {
                         data: JSON.parse(JSON.stringify(ctrl.form.values))
                     });
                 }, function(res) {
-                    ctrl.form.errors = res.data;
+                    ctrl.form.errors = res.data.errors;
                 });
             };
         }

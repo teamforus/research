@@ -2,19 +2,30 @@
 
 namespace App\Models;
 
+use App\Services\Forus\Identity\Models\Identity;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\User;
-use App\Models\IntentMeta;
 
+/**
+ * Class Intent
+ * @property mixed $id
+ * @property string $token
+ * @property int $identity_id
+ * @property string $state
+ * @property string $type
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
+ * @package App\Models
+ */
 class Intent extends Model
 {
     protected $fillable = [
-        'token', 'user_id', 'state', 'type'
+        'token', 'identity_id', 'state', 'type'
     ];
 
-    public function user()
+    public function identity()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Identity::class);
     }
 
     public function metas()

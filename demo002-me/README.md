@@ -4,9 +4,16 @@
 ### Installation/Setup backend
 
 **Requirements:**
- - php >=5.6.4
+ - php >= 7.0.0
  - mysql-server
  - composer
+
+**Required PHP extensions:**
+ - OpenSSL PHP Extension  
+ - PDO PHP Extension  
+ - Mbstring PHP Extension  
+ - Tokenizer PHP Extension  
+ - XML PHP Extension  
 
 Open path ``./demo/php`` in terminal and run 
 ``` 
@@ -23,7 +30,7 @@ Make sure ``./storage`` and ``./bootstrap/cache`` paths are writable by web serv
 
 Now you can run backend in terminal:
 ```
-$ php artisan server --host 0.0.0.0 --port 80000
+$ php artisan serve --host 0.0.0.0 --port 8000
 ``` 
 
 Or use apache2 server by adding this to server configuration:

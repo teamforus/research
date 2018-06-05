@@ -1,4 +1,4 @@
-const apiUrl = "http://kindpakket-api.dev-rminds.nl/api/";
+const apiUrl = "http://localhost/api/v1/";
 
 module.exports = {
     "server": {

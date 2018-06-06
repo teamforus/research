@@ -319,7 +319,7 @@ module.exports = ['$stateProvider', function($stateProvider) {
             component: 'recordsComponent',
             data: {
                 header: {
-                    title: "EIGENSCHAPPEN",
+                    title: "Eigenschappen",
                     title_btn: {
                         class: "mdi mdi-account-outline",
                         sref: "profile"

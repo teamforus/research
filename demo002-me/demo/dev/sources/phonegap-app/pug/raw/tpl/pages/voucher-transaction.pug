@@ -1,18 +1,18 @@
 .view-content
     br
     .hero
-        .hero-title {{ $ctrl.voucher.amount }} KDC
+        .hero-title {{ $ctrl.voucher.amount }} KPV
         .hero-subtitle Transfer
     .text.text-muted.text-center 
-        | Move your Kindpakket Coins to Identity App
+        | Verplaats je kindpakketvoucher naar je Me app
 
 .view-footer: .row
-    .col.col-2: a(href="#" ui-sref="wallet-tokens").button.button-dim.button-wide CANCEL
-    .col.col-2: a(href="#" ng-click="$ctrl.accept()").button.button-success.button-wide ACCEPT
+    .col.col-2: a(href="#" ui-sref="wallet-tokens").button.button-dim.button-wide ANNULEER
+    .col.col-2: a(href="#" ng-click="$ctrl.accept()").button.button-success.button-wide ACCEPTEER
 
 .popup(ng-if="$ctrl.showAccepted")
     .popup-backdrop
     .popup-content: .popup-content-inner
         .popup-icon: em.mdi.mdi-check
-        .popup-title Tokens transferred!
-        div(ui-sref="records").button.button-success.button-wide CLOSE
+        .popup-title Tokens verstuurt!
+        div(ui-sref="records").button.button-success.button-wide SLUIT

@@ -18,8 +18,8 @@
         .popup-backdrop(ng-click="$ctrl.closeSplitVoucherPopup()")
         .popup-content: .popup-content-inner
             .popup-content-header
-                .popup-title Voucher delen
-                .popup-subtitle Vul het bedrag in om de voucher te delen
+                .popup-title Voucher splitten
+                .popup-subtitle Vul het bedrag in om de voucher te splitten
                 .popup-close(ng-click="$ctrl.closeSplitVoucherPopup()") Annuleren
             .popup-content-body
                 .form
@@ -92,16 +92,16 @@
                     .popup-transaction-info(ng-if="$ctrl.targetTransaction.dir == 'in'")
                         .popup-transaction-info-label Verzonden vanaf:
                         .popup-transaction-info-value(ng-bind="$ctrl.targetTransaction.counterpart")
-                        .popup-transaction-info-label Receiver:
+                        .popup-transaction-info-label Ontvanger:
                         .popup-transaction-info-value(ng-bind="$ctrl.account.name")
-                        .popup-transaction-info-label Date:
+                        .popup-transaction-info-label Datum:
                         .popup-transaction-info-value(ng-bind="$ctrl.targetTransaction.pretty_date")
 
                     .popup-transaction-info(ng-if="$ctrl.targetTransaction.dir == 'out'")
                         .popup-transaction-info-label Verzonden vanaf:
                         .popup-transaction-info-value(ng-bind="$ctrl.account.name")
-                        .popup-transaction-info-label Receiver:
+                        .popup-transaction-info-label Ontvanger:
                         .popup-transaction-info-value(ng-bind="$ctrl.targetTransaction.counterpart")
-                        .popup-transaction-info-label Date:
+                        .popup-transaction-info-label Datum:
                         .popup-transaction-info-value(ng-bind="$ctrl.targetTransaction.pretty_date")
 account-footer

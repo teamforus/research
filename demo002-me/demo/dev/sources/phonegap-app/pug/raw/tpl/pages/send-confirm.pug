@@ -1,9 +1,9 @@
 .view-content
     .hero
         .hero-title {{ $ctrl.params.amount }} {{ $ctrl.params.token.name }}
-        .hero-subtitle Sending
+        .hero-subtitle Zenden
 .view-footer
-    a(ng-click="$ctrl.send()").button.button-success.button-wide CONFIRM
+    a(ng-click="$ctrl.send()").button.button-success.button-wide BEVESTIG
 
 .popup(ng-if="$ctrl.showSuccess")
     .popup-backdrop(ui-sref="wallet-tokens")

@@ -16,10 +16,10 @@
         input(name="email" id="email" type="text" placeholder="uw e-mailadres" ng-model="$ctrl.form.values.records.email").form-control
         .form-error(ng-repeat="error_msg in $ctrl.form.errors['records.email']" ng-bind="error_msg")
     .form-group
-        label(for="phone").form-label TELEPHONE NUMBER
+        label(for="phone").form-label TELEFOONNUMMER
         input(name="phone" id="phone" type="text" placeholder="uw telefoonnummer" ng-model="$ctrl.form.values.records.phone").form-control
         .form-error(ng-repeat="error_msg in $ctrl.form.errors['records.phone']" ng-bind="error_msg")
 
 .view-footer: .row
     .col.col-4: a(ng-click="$ctrl.submit()").button.button-success.button-wide PROFIEL TOEVOEGEN
-    .col.col-4: a(ng-click="$ctrl.fillStd()").button.button-dim.button-wide FILL DEMO
+    .col.col-4: a(ng-click="$ctrl.fillStd()").button.button-dim.button-wide VUL DEMO

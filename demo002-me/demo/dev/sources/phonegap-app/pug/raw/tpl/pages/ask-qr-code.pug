@@ -2,8 +2,8 @@
     .qr-code-element.qr-code-element-lg#qrcode
     .hero
         .hero-title {{ $ctrl.request.amount }} {{ $ctrl.request.token.name }}
-        .hero-subtitle Requested
-    .text.text-center.text-muted Let somebody scan your personal QR-Code to send you tokens, assets or tickets
+        .hero-subtitle Aangevraagd
+    .text.text-center.text-muted Laat iemand jouw persoonlijke QR-code scannen om tokens, bezit of vouchers te ontvangen.
 
 account-footer
 
@@ -19,7 +19,7 @@ account-footer
             .popup-heading.text-center Geslaagd!
             .popup-text.text-center Uw gegevens zijn succesvol verwerkt
         .popup-footer
-            button(ui-sref="records").button.button-success.button-wide CLOSE
+            button(ui-sref="records").button.button-success.button-wide SLUIT
     
 .popup.popup-dim(ng-if="$ctrl.showDeclined")
     .popup-backdrop(ui-sref="records")
@@ -32,4 +32,4 @@ account-footer
             .popup-heading.text-center Eigenschappen zijn niet gevalideerd
             .popup-text.text-center Uw gegevens zijn niet gevalideerd
         .popup-footer
-            button(ui-sref="records").button.button-dim.button-wide CLOSE
+            button(ui-sref="records").button.button-dim.button-wide SLUIT

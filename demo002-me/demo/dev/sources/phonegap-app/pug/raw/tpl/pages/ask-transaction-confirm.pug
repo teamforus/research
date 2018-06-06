@@ -2,13 +2,13 @@
     br
     .hero
         .hero-title {{ $ctrl.transaction.amount }} {{ $ctrl.transaction.coin.name }}
-        .hero-subtitle Transfer
+        .hero-subtitle Ontvangen
     .text.text-muted.text-center 
-        | Move your Kindpakket Coins to Identity App
+        | Verplaats je kindpakket vouchers naar je Me app
 
 .view-footer: .row
-    .col.col-2: button(ng-click="$ctrl.decline()").button.button-dim.button-wide DECLINE
-    .col.col-2: button(ng-click="$ctrl.accept()").button.button-success.button-wide ACCEPT
+    .col.col-2: button(ng-click="$ctrl.decline()").button.button-dim.button-wide WEIGER
+    .col.col-2: button(ng-click="$ctrl.accept()").button.button-success.button-wide ACCEPTEER
 
 
 .popup(ng-if="$ctrl.showAccepted")
@@ -23,7 +23,7 @@
             .popup-heading.text-center Geslaagd!
             .popup-text.text-center Uw gegevens zijn succesvol verwerkt
         .popup-footer
-            button(ui-sref="records").button.button-success.button-wide CLOSE
+            button(ui-sref="records").button.button-success.button-wide SLUIT
     
 .popup.popup-dim(ng-if="$ctrl.showDeclined")
     .popup-backdrop(ui-sref="records")
@@ -36,4 +36,4 @@
             .popup-heading.text-center Eigenschappen zijn niet gevalideerd
             .popup-text.text-center Uw gegevens zijn niet gevalideerd
         .popup-footer
-            button(ui-sref="records").button.button-dim.button-wide CLOSE
+            button(ui-sref="records").button.button-dim.button-wide SLUIT

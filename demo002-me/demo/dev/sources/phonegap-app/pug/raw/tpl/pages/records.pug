@@ -23,16 +23,16 @@
                     img(src="assets/img/" + icon + ".png").list-group-icon
                     .list-group-title #{title}
                     .list-group-subtitle(class=(count == 0 ? 'text-muted' : 'text-primary')) 
-                        | #{count > 0 ? (count + ' records') : 'Empty'}
+                        | #{count > 0 ? (count + ' records') : 'Geen eigenschappen'}
                     .list-group-arrow.mdi.mdi-chevron-down
 
         
         .list-group-items
             +list_group_item('icon-records-personal', 'Persoonlijk', 5, true)
-            +list_group_item('icon-records-medical', 'Medical', 0)
-            +list_group_item('icon-records-professional', 'Professional', 0)
-            +list_group_item('icon-records-relations', 'Relations', 0)
-            +list_group_item('icon-records-licences', 'Licences', 0)
-            +list_group_item('icon-records-other', 'Other', 0)
+            +list_group_item('icon-records-medical', 'Medisch', 0)
+            +list_group_item('icon-records-professional', 'Werk', 0)
+            +list_group_item('icon-records-relations', 'Relaties', 0)
+            +list_group_item('icon-records-licences', 'Certificaten', 0)
+            +list_group_item('icon-records-other', 'Anders', 0)
 
 account-footer

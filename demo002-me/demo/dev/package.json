@@ -46,6 +46,7 @@
     "@angular/platform-browser-dynamic": "~4.3.0",
     "@angular/router": "~4.3.0",
     "@angular/upgrade": "~4.3.0",
+    "@mdi/font": "^2.4.85",
     "@uirouter/angularjs": "^1.0.15",
     "angular": "^1.6.5",
     "angular-in-memory-web-api": "~0.3.2",

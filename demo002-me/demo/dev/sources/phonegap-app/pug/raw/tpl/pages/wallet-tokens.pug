@@ -3,11 +3,11 @@
         .resource-item(ng-repeat="token in $ctrl.tokens")
             .resource-btn-left(ng-click="$ctrl.sendTokens(token)"): .resource-btn-inner
                 .mdi.mdi-chevron-up
-                | Send
-            .resource-value(ng-bind="token.amount")
-            .resource-label(ng-bind="token.name")
+                | Zend
+            .resource-value(ng-bind="token.amount" ui-sref="wallet-token-view({tokenId: token.id})")
+            .resource-label(ng-bind="token.name" ui-sref="wallet-token-view({tokenId: token.id})")
             .resource-btn-right(ng-click="$ctrl.askTokens(token)"): .resource-btn-inner
                 .mdi.mdi-chevron-down
-                | Ask
+                | Vraag
 
 account-footer

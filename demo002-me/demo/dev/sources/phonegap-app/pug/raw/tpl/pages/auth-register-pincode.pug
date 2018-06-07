@@ -1,0 +1,10 @@
+.view-content
+    .text.text-center 
+        br
+        br
+        | Vul een 4 cijferige toegangscode in.
+        br 
+        | Dit is uw persoonlijke pincode
+.view-footer: .row
+    .col.col-4(ng-show="$ctrl.digits.length != 4"): button(ng-click="$ctrl.cancel()").button.button-dim.button-wide ANNULEREN
+    .col.col-4(ng-show="$ctrl.digits.length == 4"): button(ng-click="$ctrl.submit()").button.button-success.button-wide BEVESTIGEN

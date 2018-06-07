@@ -41,28 +41,36 @@ module.exports = function() {
                     return {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json',
-                        'Access-Token': CredentialsService.get(),
+                        'Authorization': 'Bearer ' + CredentialsService.get(),
                     };
                 };
 
-                var get = function(endpoint, data, headers) {
-                    return ajax('GET', endpoint, data, headers);
+                var get = function (endpoint, data, headers, auth_redirect) {
+                    return ajax('GET', endpoint, data, headers, auth_redirect);
                 };
 
-                var post = function(endpoint, data, headers) {
-                    return ajax('POST', endpoint, data, headers);
+                var post = function (endpoint, data, headers, auth_redirect) {
+                    return ajax('POST', endpoint, data, headers, auth_redirect);
                 };
 
-                var put = function(endpoint, data, headers) {
-                    return ajax('PUT', endpoint, data, headers);
+                var patch = function (endpoint, data, headers, auth_redirect) {
+                    return ajax('PATCH', endpoint, data, headers, auth_redirect);
                 };
 
-                var _delete = function(endpoint, data, headers) {
-                    return ajax('DELETE', endpoint, data, headers);
+                var put = function (endpoint, data, headers, auth_redirect) {
+                    return ajax('PUT', endpoint, data, headers, auth_redirect);
                 };
 
-                var ajax = function(method, endpoint, data, headers, debug) {
+                var _delete = function (endpoint, data, headers, auth_redirect) {
+                    return ajax('DELETE', endpoint, data, headers, auth_redirect);
+                };
+
+                var ajax = function(method, endpoint, data, headers, auth_redirect) {
                     var params = {};
+                    
+                    if (typeof auth_redirect == 'undefined') {
+                        auth_redirect = true;
+                    }
 
                     if (method == 'GET') {
                         params.params = data || {};
@@ -77,7 +85,7 @@ module.exports = function() {
                         params.data = data || {};
                     }
 
-                    params.headers = Object.assign(makeHeaders());
+                    params.headers = Object.assign(makeHeaders(), headers);
                     params.url = resolveUrl(host + endpoint);
                     params.method = method;
 
@@ -85,7 +93,8 @@ module.exports = function() {
                         $http(params).then(function(response) {
                             done(response);
                         }, function(response) {
-                            if (response.status == 401) {
+                            if ((response.status == 401) && auth_redirect) {
+                                CredentialsService.delete(CredentialsService.get());
                                 CredentialsService.set(null);
                                 $state.go('auth');
                             }
@@ -102,6 +111,7 @@ module.exports = function() {
                 return {
                     get: get,
                     post: post,
+                    patch: patch,
                     put: put,
                     delete: _delete,
                     ajax: ajax,

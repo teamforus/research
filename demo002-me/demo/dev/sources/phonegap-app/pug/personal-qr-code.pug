@@ -10,16 +10,49 @@ block content
 
         .view-content
             .qr-code-element.qr-code-element-lg: img(src="/assets/img/qr-code.png")
-            .heading.text-center Here is your personal QR-Code
-            .text.text-center.text-muted Let somebody scan your personal QR-Code to send you tokens, assets or tickets
+            .heading.text-center Hier is je persoonlijke QR-Code
+            .text.text-center.text-muted Laat iemand uw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen
+            
+            .fancy-selector
+                .fancy-selector-active
+                    .fancy-selector-label Wissel van identiteit
+                    .fancy-selector-value Rocket Minds
+                    .fancy-selector-arrow.mdi.mdi-chevron-right
+
+                .fancy-selector-options
+                    .fancy-selector-options-backdrop
+                    .fancy-selector-options-header
+                        .fancy-selector-options-title Wissel identiteit
+                        a(href="#").fancy-selector-options-close Annuleren
+                
+                    .fancy-selector-options-body
+                        mixin fancy_selector_option(icon, title, subtitle)
+                            a(href="#").fancy-selector-option
+                                img(src="/assets/img/"+icon).fancy-selector-option-icon
+                                .fancy-selector-option-title=title
+                                .fancy-selector-option-subtitle=subtitle
+                                .fancy-selector-option-arrow.mdi.mdi-chevron-right
+                            
+                        +fancy_selector_option('icon-validator-digid.png', "Dan Ghimpu", "Persoonlijke identiteit")
+                        +fancy_selector_option('icon-validator-gemeente-zuidhorn.png', "Gemeente Zuidhorn", "Organisatie identiteit")
+                            
+                        +fancy_selector_option('icon-validator-digid.png', "Dan Ghimpu", "Persoonlijke identiteit")
+                        +fancy_selector_option('icon-validator-gemeente-zuidhorn.png', "Gemeente Zuidhorn", "Organisatie identiteit")
+                            
+                        +fancy_selector_option('icon-validator-digid.png', "Dan Ghimpu", "Persoonlijke identiteit")
+                        +fancy_selector_option('icon-validator-gemeente-zuidhorn.png', "Gemeente Zuidhorn", "Organisatie identiteit")
+                        
+                        .fancy-selector-option-add
+                            .fancy-selector-option-add-icon.mdi.mdi-plus
+                            .fancy-selector-option-add-text Maak een nieuwe identiteit
+                            .fancy-selector-option-add-arrow.mdi.mdi-chevron-right
 
         .view-footer-account
             .view-footer-nav
                 a(href="#").icon-left
                     em.mdi.mdi-wallet
-                    | Wallet
+                    | Eigendom
                 a(href="#").icon-center: em.mdi.mdi-qrcode-scan
                 a(href="#").icon-right
                     em.mdi.mdi-format-list-checks
-                    | Records
-
+                    | Eigenschappen

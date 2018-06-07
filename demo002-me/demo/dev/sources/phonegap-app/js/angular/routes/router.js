@@ -10,8 +10,9 @@ module.exports = ['$stateProvider', function($stateProvider) {
                     $state,
                     CredentialsService
                 ) {
+                    CredentialsService.delete(CredentialsService.get());
                     CredentialsService.set(null);
-                    $state.go('auth');
+                    $state.go('welcome');
                 }
             ]
         })
@@ -36,9 +37,70 @@ module.exports = ['$stateProvider', function($stateProvider) {
             name: 'auth-register',
             component: 'authRegisterComponent',
             data: {
+                layout: {
+                    footer_size: 2 
+                },
                 header: {
-                    title: "New profile",
-                    subtitle: "Fill in your first identity records",
+                    title: "Nieuw profiel",
+                    subtitle: "Vul uw gegevens in",
+                    navbar: {
+                        text: "",
+                        left: {
+                            class: "mdi mdi-arrow-left",
+                            sref: "auth"
+                        },
+                        right: false
+                    }
+                }
+            }
+        })
+        .state({
+            url: '/auth-pending',
+            name: 'auth-pending',
+            component: 'authPendingComponent',
+            data: {
+                header: {
+                    title: "Nieuw profiel",
+                    subtitle: "Vul uw gegevens in",
+                    navbar: {
+                        text: "",
+                        left: {
+                            class: "mdi mdi-arrow-left",
+                            sref: "auth"
+                        },
+                        right: false
+                    }
+                }
+            }
+        })
+        .state({
+            url: '/auth-register-pincode',
+            name: 'auth-register-pincode',
+            component: 'authRegisterPinCodeComponent',
+            data: {
+                header: {
+                    title: "PIN instellen",
+                    subtitle: "Maak een 4 cijferige pincode aan",
+                    pincode: true,
+                    navbar: {
+                        text: "",
+                        left: false,
+                        right: false
+                    }
+                }
+            }
+        })
+        .state({
+            url: '/auth-restore',
+            name: 'auth-restore',
+            component: 'authRestoreComponent',
+            data: {
+                layout: {
+                    footer_size: 2
+                },
+                header: {
+                    title: "Aanmelden",
+                    pad_lg: true,
                     navbar: {
                         text: "",
                         left: {
@@ -109,45 +171,52 @@ module.exports = ['$stateProvider', function($stateProvider) {
             }
         })
         .state({
-            url: '/auth-restore',
-            name: 'auth-restore',
-            component: 'authRestoreComponent',
-            data: {
-                header: {
-                    class: "view-header-dark-blue",
-                    title: "Restore",
-                    pad: true,
-                    navbar: {
-                        text: "",
-                        left: {
-                            class: "mdi mdi-arrow-left",
-                            sref: "auth"
-                        },
-                        right: false
-                    }
-                }
-            }
-        })
-        .state({
             url: '/wallet-tokens',
             name: 'wallet-tokens',
             component: 'walletTokensComponent',
             data: {
                 header: {
-                    title: "Wallet",
+                    title: "Eigendom",
                     title_btn: {
                         class: "mdi mdi-account-outline",
                         sref: "profile"
                     },
                     navbar: false,
                     tabs: {
-                        tokens: "Tokens",
-                        assets: "Assets",
-                        passes: "Passes"
+                        tokens: "Valuta",
+                        assets: "Bezit",
+                        vouchers: "Vouchers"
                     },
                     tab_active: "tokens",
                     search: true,
-                    search_text: 'Search Token'
+                    search_text: 'Zoek valuta'
+                }
+            }
+        })
+        .state({
+            url: '/wallet-token-view/:tokenId',
+            name: 'wallet-token-view',
+            component: 'walletTokenViewComponent',
+            data: {
+                header: {
+                    title: "",
+                    subtitle: "",
+                    navbar: {
+                        text: "",
+                        left: {
+                            class: "mdi mdi-arrow-left",
+                            sref: "records"
+                        },
+                        right: {
+                            class: "mdi mdi-logout-variant",
+                            sref: "logout"
+                        }
+                    },
+                    search: true,
+                    search_text: 'Zoek transacties',
+                    sendAndAsk: {
+                        tokenId: null,
+                    }
                 }
             }
         })
@@ -157,43 +226,90 @@ module.exports = ['$stateProvider', function($stateProvider) {
             component: 'walletAssetsComponent',
             data: {
                 header: {
-                    title: "Wallet",
+                    title: "Eigendom",
                     title_btn: {
                         class: "mdi mdi-account-outline",
                         sref: "profile"
                     },
                     navbar: false,
                     tabs: {
-                        tokens: "Tokens",
-                        assets: "Assets",
-                        passes: "Passes"
+                        tokens: "Valuta",
+                        assets: "Bezit",
+                        vouchers: "Vouchers"
                     },
                     tab_active: "assets",
                     search: true,
-                    search_text: 'Search Asset'
+                    search_text: 'Zoek bezit'
                 }
             }
         })
         .state({
-            url: '/wallet-passes',
-            name: 'wallet-passes',
-            component: 'walletPassesComponent',
+            url: '/wallet-asset-view/:assetId',
+            name: 'wallet-asset-view',
+            component: 'walletAssetViewComponent',
             data: {
                 header: {
-                    title: "Wallet",
+                    title: "Kantoor",
+                    subtitle: "Hier kunt u uw bezittingen bewerken",
+                    navbar: {
+                        text: "",
+                        left: {
+                            class: "mdi mdi-arrow-left",
+                            sref: "records"
+                        },
+                        right: {
+                            class: "mdi mdi-logout-variant",
+                            sref: "logout"
+                        }
+                    },
+                    circleIcon: "assets/img/icon-real-estate.png"
+                }
+            }
+        })
+        .state({
+            url: '/wallet-vouchers',
+            name: 'wallet-vouchers',
+            component: 'walletVouchersComponent',
+            data: {
+                header: {
+                    title: "Eigendom",
                     title_btn: {
                         class: "mdi mdi-account-outline",
                         sref: "profile"
                     },
                     navbar: false,
                     tabs: {
-                        tokens: "Tokens",
-                        assets: "Assets",
-                        passes: "Passes"
+                        tokens: "Valuta",
+                        assets: "Bezit",
+                        vouchers: "Vouchers"
                     },
-                    tab_active: "passes",
+                    tab_active: "vouchers",
                     search: true,
-                    search_text: 'Search Pass'
+                    search_text: 'Zoek vouchers'
+                }
+            }
+        })
+        .state({
+            url: '/wallet-voucher-view/:voucherId',
+            name: 'wallet-voucher-view',
+            component: 'walletVoucherViewComponent',
+            data: {
+                header: {
+                    title: " ",
+                    subtitle: "Voucher",
+                    navbar: {
+                        text: "",
+                        left: {
+                            class: "mdi mdi-arrow-left",
+                            sref: "records"
+                        },
+                        right: {
+                            class: "mdi mdi-logout-variant",
+                            sref: "logout"
+                        }
+                    },
+                    search: true,
+                    search_text: 'Zoek transactions'
                 }
             }
         })
@@ -203,7 +319,7 @@ module.exports = ['$stateProvider', function($stateProvider) {
             component: 'recordsComponent',
             data: {
                 header: {
-                    title: "Records",
+                    title: "Eigenschappen",
                     title_btn: {
                         class: "mdi mdi-account-outline",
                         sref: "profile"
@@ -279,9 +395,9 @@ module.exports = ['$stateProvider', function($stateProvider) {
             component: 'validatorsComponent',
             data: {
                 header: {
-                    title: "Jamal",
+                    title: "",
                     navbar: {
-                        text: "First name",
+                        text: "",
                         left: {
                             class: "mdi mdi-arrow-left",
                             sref: "records"
@@ -307,13 +423,41 @@ module.exports = ['$stateProvider', function($stateProvider) {
             }
         })
         .state({
+            url: '/validator-zuidhorn',
+            name: 'validator-zuidhorn',
+            component: 'validatorZuidhornComponent',
+            data: {
+                header: {
+                    title: "Gemeente Zuidhorn",
+                    subtitle: " "
+                }
+            },
+            params: {
+                data: null
+            }
+        })
+        .state({
+            url: '/validator-zuidhorn-confirm',
+            name: 'validator-zuidhorn-confirm',
+            component: 'validatorZuidhornConfirmComponent',
+            data: {
+                header: {
+                    title: "Validate verzoek",
+                    subtitle: "Eigenschappen die wachten op validatie"
+                }
+            },
+            params: {
+                data: null
+            }
+        })
+        .state({
             url: '/ask',
             name: 'ask',
             component: 'askComponent',
             data: {
                 header: {
-                    title: "Ask",
-                    subtitle: "Fill in details of your request",
+                    title: "Opvragen",
+                    subtitle: "Vul de gegevens van uw aanvraag in",
                     navbar: {
                         text: "",
                         left: {
@@ -357,8 +501,8 @@ module.exports = ['$stateProvider', function($stateProvider) {
             component: 'sendComponent',
             data: {
                 header: {
-                    title: "Send",
-                    subtitle: "Fill in details of your payment.",
+                    title: "Versturen",
+                    subtitle: "Vul de gegevens van uw betaling in",
                     navbar: {
                         text: "",
                         left: {

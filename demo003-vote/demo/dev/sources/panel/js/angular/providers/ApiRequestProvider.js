@@ -41,7 +41,7 @@ module.exports = function() {
                     return {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json',
-                        'Access-Token': CredentialsService.get(),
+                        'Authorization': 'Bearer ' + CredentialsService.get(),
                     };
                 };
 

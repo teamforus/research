@@ -14,7 +14,7 @@ class TransactionAskRequest extends FormRequest
      */
     public function authorize(Request $request)
     {
-        return $request->get('auth_user');
+        return true;
     }
 
     /**
@@ -25,7 +25,7 @@ class TransactionAskRequest extends FormRequest
     public function rules(Request $request)
     {
         return [
-            'token.id'      => 'required|exists:coins,id',
+            'token.id'      => 'required|exists:tokens,id',
             'description'   => 'required',
             'amount'        => 'required|numeric|min:0.1'
         ];

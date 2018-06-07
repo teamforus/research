@@ -1,9 +1,11 @@
 module.exports = ['$q', function($q) {
-    var QrScanner = function() {
+    return new (function () {
         var html = window.document.querySelector('html');
-        this.scan = function() {
 
-            return $q(function(resolve, reject) {
+        this.scan = function () {
+            html.style.cssText = 'background: transparent !important;';
+
+            return $q(function (resolve, reject) {
                 function runScanner(argument) {
                     // For the best user experience, make sure the user is ready to give your app
                     // camera access before you show the prompt. On iOS, you only get one chance.
@@ -19,7 +21,7 @@ module.exports = ['$q', function($q) {
                         if (status.authorized) {
                             html.style.display = 'none';
 
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 html.style.display = 'block';
                             }, 1);
                             // W00t, you have camera access and the scanner is initialized.
@@ -67,16 +69,12 @@ module.exports = ['$q', function($q) {
             });
         };
 
-        this.cancelScan = function() {
-            QRScanner.hide(function(status){
-                console.log(JSON.stringify(status));
-            });
-
-            QRScanner.cancelScan(function(status){
-                console.log(JSON.stringify(status));
-            });
+        this.cancelScan = function () {
+            QRScanner.hide();
+            QRScanner.cancelScan();
+            QRScanner.destroy();
+            
+            html.style.cssText = 'background: #fff !important;';
         }
-    };
-
-    return new QrScanner();
+    })();
 }]

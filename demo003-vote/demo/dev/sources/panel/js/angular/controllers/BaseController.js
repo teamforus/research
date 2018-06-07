@@ -1,6 +1,7 @@
 module.exports = [
     '$scope',
     '$state',
+    '$timeout',
     '$rootScope',
     'AuthService',
     'FormBuilderService',
@@ -8,6 +9,7 @@ module.exports = [
     function(
         $scope,
         $state,
+        $timeout,
         $rootScope,
         AuthService,
         FormBuilderService,
@@ -67,44 +69,43 @@ module.exports = [
 
             $scope.forms.login.reset();
 
-            var checkForUpdate = function(intentToken) {
-                AuthService.getIntentCodeState(intentToken).then(function(res) {
-                    if (res.data.state == 'authorized') {
-                        AuthService.intentToAccessToken(intentToken).then(function(res) {
-                            $rootScope.auth.step = $rootScope.auth.step + 2;
-                            CredentialsService.set(res.data.access_token);
-                            $rootScope.credentials = CredentialsService.get();
-                            $rootScope.$broadcast('voucher:fetch');
+            var checkAccessTokenStatus = (type, access_token) => {
+                AuthService.checkAccessToken(access_token).then((res) => {
+                    if (res.data.status == 'active') {
+                        $rootScope.auth.step = $rootScope.auth.step + 2;
+                        CredentialsService.set(access_token);
+                        $rootScope.credentials = CredentialsService.get();
+                        $rootScope.$broadcast('voucher:fetch');
 
-                            setTimeout(function() {
-                                initProgress();
-                            }, 200);
-
-                            setTimeout(function() {
-                                $rootScope.auth.closeModals();
-                                $rootScope.auth.step = 1;
-                                $state.go('votes');
-                            }, 2000);
-                        });
-                    } else if (res.data.state == 'declined') {
-                        $rootScope.auth.closeModals();
-                    } else if (res.data.state == 'pending') {
                         setTimeout(function() {
-                            checkForUpdate(intentToken);
+                            initProgress();
+                        }, 200);
+
+                        setTimeout(function() {
+                            $rootScope.auth.closeModals();
+                            $rootScope.auth.step = 1;
+                            $state.go('votes');
                         }, 2000);
+                    } else if (res.data.status == 'pending') {
+                        $timeout(function () {
+                            if (type == 'code' && !ctrl.showPinCode) {
+                                return false;
+                            }
+
+                            checkAccessTokenStatus(type, access_token);
+                        }, 2500);
                     }
-                });
-            }
+                }, console.log);
+            };
 
-            AuthService.getIntentCode().then(function(res) {
+            AuthService.makeAuthToken().then(function(res) {
                 $('#auth_qr').text('');
-                (new QRCode("auth_qr")).makeCode(
-                    res.data.token
-                );
+                (new QRCode("auth_qr")).makeCode(JSON.stringify({
+                    type: "auth_token",
+                    value: res.data.auth_token
+                }));
 
-                setTimeout(function() {
-                    checkForUpdate(res.data.token);
-                }, 2000);
+                checkAccessTokenStatus('token', res.data.access_token);
             });
 
             $('body').addClass('popup-open');

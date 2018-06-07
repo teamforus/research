@@ -14,14 +14,12 @@ module.exports = {
             AuthService.records().then(function(res) {
                 ctrl.records = res.data;
                 ctrl.recordCount = Object.keys(ctrl.records).length;
-            }, function(res) {
-                console.log(res.data);
-            });
+            }, console.log);
 
             ctrl.show = false;
 
             ctrl.validate = function(record) {
-                if (record.state != 'pending')
+                if (record.valid)
                     return;
 
                 $state.go('validators', {

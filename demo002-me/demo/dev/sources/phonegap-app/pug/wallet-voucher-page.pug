@@ -1,0 +1,47 @@
+extends layout/layout
+block content
+    .view
+        .view-header.view-header-blue
+            .view-nav
+                a(href="#"): em.mdi.mdi-arrow-left.icon-left
+                a(href="#"): em.mdi.mdi-account-outline.icon-right
+            .view-title Kindpakket
+            .view-subtitle Voucher
+            .view-header-voucher
+                .view-header-voucher-title Kindpakket
+                .view-header-voucher-subtitle 2 dagen geldig
+                .view-header-voucher-value €456,66
+                .view-header-voucher-qr-code: img(src="/assets/img/qr-code.png")
+
+            .view-header-navlist
+                mixin view_header_navlist_option(icon, text)
+                    .view-header-navlist-option
+                        .view-header-navlist-option-icon(class="mdi mdi-" + icon)
+                        .view-header-navlist-option-text=text
+                        .view-header-navlist-option-arrow.mdi.mdi-chevron-right
+
+                +view_header_navlist_option("arrow-split-vertical", "Delen in kleiner bedrag")
+                +view_header_navlist_option("email-outline", "E-mail naar mij")
+
+            .view-searchbar: .view-searchbar-inner
+                | Zoek Valuta
+                .searchbar-icon.mdi.mdi-microphone
+
+        .view-content
+            .ul-transactions
+                .ul-transactions-title VANDAAG
+                
+                mixin ul_transaction_item(name, date, amount, dir)
+                    .li-transaction(class=(dir?'li-transaction-in':'li-transaction-out'))
+                        .li-transaction-icon: .mdi.mdi-earth
+                        .li-transaction-name #{name}
+                        .li-transaction-date #{date}
+                        .li-transaction-amount 
+                            | #{dir ? '+' : '-'}#{amount},
+                            small 00
+                
+                +ul_transaction_item("RMinds", "19 mei, 14:08", 4, true)
+                +ul_transaction_item("EBSIntegrator", "19 mei, 14:08", 6, false)
+                    
+
+        include layout/includes/main-footer

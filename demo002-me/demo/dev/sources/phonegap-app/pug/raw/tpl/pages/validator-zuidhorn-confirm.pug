@@ -1,0 +1,25 @@
+.view-content
+    .form
+        .form-group
+            label.form-label(ng-bind="$ctrl.record.type")
+            input(type="text" placeholder="BSN" ng-model="$ctrl.record.value" disabled).form-control
+            .form-group-icon.mdi.mdi-check
+
+.view-footer: .row
+    .col.col-2: button(ng-click="$ctrl.declineSubmit()").button.button-primary.button-wide ANNULEREN
+    .col.col-2: button(ng-click="$ctrl.acceptSubmit()").button.button-success.button-wide BEVESTIGEN
+
+.popup(ng-if="$ctrl.showSuccess")
+    .popup-backdrop(ui-sref="records")
+    .popup-content: .popup-content-inner
+        .popup-content-header
+            .popup-title Aanmelden
+            .popup-subtitle Wacht op bevestiging
+            .popup-close(ui-sref="records") Sluit
+        .popup-content-body
+            .popup-icon: img(src="assets/img/icon-popup-success.png").popup-icon-img
+            .popup-heading.text-center Geslaagd!
+            .popup-text.text-center Uw gegevens zijn succesvol verwerkt
+        .popup-content-footer
+            button(ui-sref="records").button.button-success.button-wide OK
+

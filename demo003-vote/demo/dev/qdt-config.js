@@ -61,8 +61,8 @@ module.exports = {
                         ],
                         "dest": "/",
                         "name": "app.js",
-                        "minify": false,
-                        "sourcemap": false,
+                        "minify": true,
+                        "sourcemap": true,
                         "browserify": false
                     }, {
                         "src": [
@@ -70,8 +70,8 @@ module.exports = {
                         ],
                         "dest": "/raw",
                         "path": "/raw",
-                        "minify": false,
-                        "sourcemap": false,
+                        "minify": true,
+                        "sourcemap": true,
                         "browserify": false
                     }],
                     "scss": [{
@@ -79,7 +79,7 @@ module.exports = {
                         "watch": "includes/**/*.scss",
                         "path": "/",
                         "name": "style.min.css",
-                        "minify": false
+                        "minify": true
                     }],
                     "pug": [{
                         "path": "/",
@@ -119,8 +119,8 @@ module.exports = {
                         ],
                         "dest": "/",
                         "name": "app.js",
-                        "minify": false,
-                        "sourcemap": false,
+                        "minify": true,
+                        "sourcemap": true,
                         "browserify": false
                     }],
                     "scss": [{
@@ -128,7 +128,7 @@ module.exports = {
                         "watch": "includes/**/*.scss",
                         "path": "/",
                         "name": "style.min.css",
-                        "minify": false
+                        "minify": true
                     }],
                     "pug": [{
                         "path": "/markup",
@@ -201,7 +201,7 @@ module.exports = {
                         "watch": "includes/**/*.scss",
                         "path": "/",
                         "name": "style.min.css",
-                        "minify": false
+                        "minify": true
                     }],
                     "pug": [{
                         "path": "/",
@@ -255,8 +255,8 @@ module.exports = {
                         ],
                         "dest": "/",
                         "name": "app.js",
-                        "minify": false,
-                        "sourcemap": false,
+                        "minify": true,
+                        "sourcemap": true,
                         "browserify": false
                     }],
                     "scss": [{
@@ -264,7 +264,7 @@ module.exports = {
                         "watch": "includes/**/*.scss",
                         "path": "/",
                         "name": "style.min.css",
-                        "minify": false
+                        "minify": true
                     }],
                     "pug": [{
                         "path": "/markup",
@@ -318,7 +318,7 @@ module.exports = {
                         "watch": "includes/**/*.scss",
                         "path": "/",
                         "name": "style.min.css",
-                        "minify": false
+                        "minify": true
                     }],
                     "pug": [{
                         "path": "/",

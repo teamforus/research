@@ -1,0 +1,38 @@
+extends layout/layout
+block content
+    .view
+        .view-header.view-header-blue
+            .view-nav
+                a(href="#"): em.mdi.mdi-arrow-left.icon-left
+                a(href="#"): em.mdi.mdi-account-outline.icon-right
+            .view-title 120,00
+            .view-subtitle Kindpakket
+            .view-header-buttons: .row
+                .col.col-2: a(href="#").button.button-wide.button-transparent-outline 
+                    | ZEND
+                    .mdi.mdi-chevron-up.pull-left
+                .col.col-2: a(href="#").button.button-wide.button-bright
+                    .mdi.mdi-chevron-down.pull-right
+                    | VRAAG
+            .view-searchbar: .view-searchbar-inner
+                | Zoek Valuta
+                .searchbar-icon.mdi.mdi-microphone
+
+        .view-content
+            .ul-transactions
+                .ul-transactions-title VANDAAG
+                
+                mixin ul_transaction_item(name, date, amount, dir)
+                    .li-transaction(class=(dir?'li-transaction-in':'li-transaction-out'))
+                        .li-transaction-icon: .mdi.mdi-earth
+                        .li-transaction-name #{name}
+                        .li-transaction-date #{date}
+                        .li-transaction-amount 
+                            | #{dir ? '+' : '-'}#{amount},
+                            small 00
+                
+                +ul_transaction_item("RMinds", "19 mei, 14:08", 4, true)
+                +ul_transaction_item("EBSIntegrator", "19 mei, 14:08", 6, false)
+                    
+
+        include layout/includes/main-footer

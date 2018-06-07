@@ -34,7 +34,7 @@ module.exports = {
                         data: data
                     });
                 }, function(res) {
-                    ctrl.form.errors = res.data;
+                    ctrl.form.errors = res.data.errors;
                 });
             };
         }

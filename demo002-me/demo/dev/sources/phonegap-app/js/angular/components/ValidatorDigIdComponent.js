@@ -14,12 +14,12 @@ module.exports = {
             var ctrl = this;
 
             if (!$stateParams.data ||
-                $stateParams.data.record.state != 'pending') {
+                $stateParams.data.record.valid) {
                 return $state.go('records');
             }
 
             ctrl.validate = function() {
-                AuthService.validateRecord($stateParams.data.record.key).then(function() {
+                AuthService.validateRecord($stateParams.data.record.id).then(function() {
                     $state.go('records');
                 });
             };

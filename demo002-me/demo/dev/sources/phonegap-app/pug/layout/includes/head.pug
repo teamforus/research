@@ -7,7 +7,7 @@ head
 
     //- fonts (roboto)
     link(href='https://fonts.googleapis.com/css?family=Roboto:400,900italic,900,700,700italic,500italic,500,400italic,300,100italic,100,300italic&subset=latin,cyrillic,latin-ext', rel='stylesheet', type='text/css')
-    meta(http-equiv="Content-Security-Policy" content="frame-src * gap://ready; default-src 'self' gap://ready file://* *; connect-src * blob: data:; style-src * 'unsafe-inline'; script-src * 'unsafe-eval' 'unsafe-inline'; img-src data: *")
+    meta(http-equiv="Content-Security-Policy" content="frame-src * gap://ready; default-src 'self' gap://ready file://* *; connect-src * blob: data:; style-src * 'unsafe-inline'; script-src * 'self' 'unsafe-eval' 'unsafe-inline'; img-src data: *; worker-src blob: data:")
 
     //- material design icons (by google)
     if (qdt_c.platform.libs.mdi)

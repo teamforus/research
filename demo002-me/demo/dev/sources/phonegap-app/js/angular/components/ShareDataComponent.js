@@ -4,10 +4,12 @@ module.exports = {
         '$state',
         '$stateParams',
         'IntentService',
+        'AuthService',
         function(
             $state,
             $stateParams,
-            IntentService
+            IntentService,
+            AuthService
         ) {
             var ctrl = this;
 
@@ -19,19 +21,15 @@ module.exports = {
             ctrl.showDeclined = false;
 
             ctrl.accept = function() {
-                IntentService.acceptToken($stateParams.data.token).then(function() {
+                AuthService.authorizeAuthToken($stateParams.data.value).then(function() {
                     ctrl.showAccepted = true;
                 }, function(res) {
                     alert(res.data.message);
                 });
             }
 
-            ctrl.decline = function() {
-                IntentService.declineToken($stateParams.data.token).then(function() {
-                    ctrl.showDeclined = true;
-                }, function() {
-                    alert(res.data.message);
-                });
+            ctrl.decline = function () {
+                ctrl.showDeclined = true;
             }
 
             ctrl.items = $stateParams.data.requested.items;

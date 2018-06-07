@@ -22,7 +22,10 @@ module.exports = {
             }
 
             (new QRCode("qrcode")).makeCode(
-                $stateParams.data.intent.token
+                JSON.stringify({
+                    type: 'intent',
+                    token: $stateParams.data.intent.token
+                })
             );
 
             interval = setInterval(function() {

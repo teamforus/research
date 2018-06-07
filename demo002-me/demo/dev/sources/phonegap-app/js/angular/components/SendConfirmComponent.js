@@ -16,9 +16,7 @@ module.exports = {
             ctrl.send = function() {;
                 TransactionService.send(ctrl.params).then(function(res) {
                     ctrl.showSuccess = true;
-                }, function(res) {
-                    // console.log(res.data);
-                });
+                }, console.log);
             }
 
             if (!$stateParams.data) {

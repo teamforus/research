@@ -12,15 +12,19 @@ module.exports = {
             var ctrl = this;
 
             ctrl.std = {
-                first_name: 'Jamal',
-                last_name: 'Vleij',
-                bsn: '12345678',
-                phone: '12345678',
+                records: {
+                    first_name: 'Jamal',
+                    last_name: 'Vleij',
+                    bsn: '12345678',
+                    phone: '12345678',
+                }
             };
 
             ctrl.form = {
                 errors: {},
-                values: {}
+                values: {
+                    type: 'personal'
+                }
             };
 
             var getRandomNumber = function getRandomInt(min, max) {
@@ -29,18 +33,24 @@ module.exports = {
 
             ctrl.fillStd = function() {
                 ctrl.form.values = JSON.parse(JSON.stringify(ctrl.std));
-                ctrl.form.values.email =  getRandomNumber(100000, 200000) + "@forus.io";
+                ctrl.form.values.type =  "personal";
+                ctrl.form.values.records.email =  getRandomNumber(100000, 200000) + "@forus.io";
             };
 
             ctrl.submit = function() {
                 AuthService.register(
                     ctrl.form.values
                 ).then(function(res) {
+                    CredentialsService.add(
+                        res.data.access_token, 
+                        ctrl.form.values.records.first_name + ' ' + ctrl.form.values.records.last_name
+                    );
                     CredentialsService.set(res.data.access_token);
+
                     ctrl.form.errors = {};
-                    $state.go('delegates');
+                    $state.go('auth-register-pincode');
                 }, function(res) {
-                    ctrl.form.errors = res.data;
+                    ctrl.form.errors = res.data.errors;
                 });
             };
         }

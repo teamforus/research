@@ -8,6 +8,16 @@ kindpakketApp.service('AuthService', [
         return new(function() {
             apiRequest = ApiRequest;
 
+            this.makeAuthToken = () => {
+                return ApiRequest.post('/identity/proxy/token');
+            };
+
+            this.checkAccessToken = (access_token) => {
+                return ApiRequest.get('/identity/status', {}, {
+                    'Authorization': 'Bearer ' + access_token
+                }, false);
+            };
+
             this.signOut = function(values) {
                 CredentialsService.set(null);
             };
@@ -17,11 +27,11 @@ kindpakketApp.service('AuthService', [
             };
 
             this.getVoucher = function() {
-                return ApiRequest.get('/user/voucher');
+                return ApiRequest.get('/identity/wallet/voucher');
             };
 
             this.getQrCode = function() {
-                return ApiRequest.get('/user/voucher/qr-code');
+                return ApiRequest.get('/identity/wallet/voucher/qr-code');
             };
 
             this.getIntentCode = function() {

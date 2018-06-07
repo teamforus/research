@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\Token;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use App\Http\Controllers\Controller;
@@ -12,9 +13,7 @@ class IntentController extends Controller
 {
     public function read(Request $request, $intentToken)
     {
-        $authUser = $request->get('auth_user');
-
-        $intent = Intent::where([
+        $intent = Intent::getModel()->where([
             'token' => $intentToken
         ])->first();
 
@@ -24,24 +23,22 @@ class IntentController extends Controller
             ], 404);
         }
 
-        if ($intent->type == 'voucher') {
+        /*if ($intent->type == 'voucher') {
             $response = collect($intent)->merge([
                 'voucher' => $authUser->voucher
             ]);
-        }
+        }*/
 
         if ($intent->type == 'ask') {
             $response = collect($intent)->merge([
-                'coin' => Coin::whereId($intent->metas()->where([
+                'coin' => Token::getModel()->where('id', $intent->metas()->where([
                     'key' => 'token_id'
                 ])->first()->value)->first(),
                 'amount' => number_format($intent->metas()->where([
                     'key' => 'amount'
                 ])->first()->value, 2),
             ]);
-        }
-
-        if ($intent->type == 'auth') {
+        } else {
             $response = $intent;
         }
 
@@ -50,9 +47,9 @@ class IntentController extends Controller
 
     public function accept(Request $request, $intentToken)
     {
-        $authUser = $request->get('auth_user');
+        $identityId = $request->get('identity');
 
-        $intent = Intent::where([
+        $intent = Intent::getModel()->where([
             'token' => $intentToken
         ])->first();
 
@@ -64,15 +61,15 @@ class IntentController extends Controller
             return response()->json([
                 'message' => 'Not pending.'
             ], 403);
-        } elseif ($intent->user_id && ($intent->user_id != $authUser->id)) {
+        } elseif ($intent->identity_id && ($intent->identity_id != $identityId)) {
             return response()->json([
                 'message' => 'Foreign token.'
             ], 403);
         }
 
-        if (!$intent->user_id) {
+        if (!$intent->identity_id) {
             $intent->update([
-                'user_id' => $authUser->id
+                'identity_id' => $identityId
             ]);
         }
 
@@ -80,7 +77,7 @@ class IntentController extends Controller
             'state' => 'authorized'
         ]);
 
-        if ($intent->type == 'voucher') {
+        /*if ($intent->type == 'voucher') {
             $userCoins = $intent->user->user_coins()->where([
                 'coin_id' => Coin::where('key', 'KDP')->first()->id
             ])->first();
@@ -91,7 +88,7 @@ class IntentController extends Controller
             ]);
 
             $userCoins->update();
-        }
+        }*/
 
         return $intent;
     }

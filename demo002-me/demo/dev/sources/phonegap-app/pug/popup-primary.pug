@@ -1,0 +1,37 @@
+extends layout/layout
+block content
+    .view
+        .view-header.view-header-blue
+            .view-nav
+                a(href="#"): em.mdi.mdi-arrow-left.icon-left
+                a(href="#"): em.mdi.mdi-account-outline.icon-right
+            .view-title Ask
+            .view-subtitle Fill in details of your request
+
+        .view-content
+            .form
+                .form-group
+                    label.form-label DESCRIPTION
+                    input(type="text" placeholder="Description Here").form-control
+                .form-group
+                    label.form-label AMOUNT
+                    input(type="text" placeholder="Fill in Amount").form-control
+
+        .view-footer
+            a(href="#").button.button-success.button-wide MAKE REQUEST
+
+    .popup.popup-primary
+        .popup-backdrop
+        .popup-content: .popup-content-inner
+            .popup-content-header
+                .popup-title Voucher delen
+                .popup-subtitle Vul het bedrag in om de voucher te delen
+                .popup-close Annuleren
+            .popup-content-body
+                .form
+                    .form-group
+                        label.form-label VUL HET BEDRAG IN
+                        input(type="text" placeholder="Bedrag").form-control
+            .popup-content-footer
+                a(href="#").button.button-success.button-wide BEVESTIGEN
+

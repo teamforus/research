@@ -10,13 +10,13 @@ use Illuminate\Database\Eloquent\Model;
  * @property String $title
  * @property String $description
  * @property String $state
- * @property Integer $user_id
+ * @property Integer $identity_id
  * @package App\Models
  */
 class Vote extends Model
 {
     protected $fillable = [
-        'title', 'description', 'state', 'user_id'
+        'title', 'description', 'state', 'identity_id'
     ];
 
     public function options() {

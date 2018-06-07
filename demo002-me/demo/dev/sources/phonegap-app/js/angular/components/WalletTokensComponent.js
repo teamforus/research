@@ -27,9 +27,7 @@ module.exports = {
 
             AuthService.tokens().then(function(res) {
                 ctrl.tokens = res.data;
-            }, function(res) {
-                console.log(res.data);
-            });
+            }, console.log);
         }
     ]
 };

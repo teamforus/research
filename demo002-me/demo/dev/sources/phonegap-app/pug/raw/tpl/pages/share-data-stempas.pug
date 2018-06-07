@@ -1,24 +1,26 @@
 .view-content
-    .text This app requests following information from your identity:
+    .text  Deze applicatie vraagt om toestemming voor het gebruik van de volgende:
     .list
         .list-item(ng-repeat="item in $ctrl.items")
             em.mdi.mdi-check.icon
             | {{ item }}
     .form
-        label.form-label ALLOW IT FOR
+        label.form-label TOESTAAN VOOR
         .form-group
             select.form-control
-                option(value="#") 1 hour
-                option(value="#") 6 hour
-                option(value="#") 12 hour
-                option(value="#") 1 day
-                option(value="#") 7 day
-                option(value="#") 1 month
-                option(value="#") 6 months
-                option(value="#") 1 year
-                option(value="#") 5 years
-                option(value="#") forever
+                option(value="#") 1 uur
+                option(value="#") 6 uur
+                option(value="#") 12 uur
+                option(value="#") 1 dag
+                option(value="#") 7 dag
+                option(value="#") 1 maand
+                option(value="#") 6 maanden
+                option(value="#") 1 jaar
+                option(value="#") 5 jaren
+                option(value="#") Altijd
+    
+    account-switcher
 
 .view-footer: .row
-    .col.col-2: a(href="#" ng-click="$ctrl.respond(false)").button.button-primary.button-wide DECLINE
-    .col.col-2: a(href="#" ng-click="$ctrl.respond(true)").button.button-success.button-wide ACCEPT
+    .col.col-2: a(href="#" ng-click="$ctrl.respond(false)").button.button-primary.button-wide WEIGEREN
+    .col.col-2: a(href="#" ng-click="$ctrl.respond(true)").button.button-success.button-wide TOESTAAN

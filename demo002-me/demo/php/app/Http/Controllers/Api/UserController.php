@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Services\Forus\Identity\Models\Identity;
 use Illuminate\Http\Request;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use App\Services\UUIDGeneratorService\Facades\UUIDGenerator;
@@ -13,10 +14,10 @@ class UserController extends Controller
 {
     public function user(Request $request)
     {
-        $authUser = $request->get('auth_user');
+        $identity = Identity::getModel()->find($request->get('identity'));
 
-        return collect($authUser)->only([
-            'public_address',
+        return collect($identity)->only([
+            'address',
             'stem_points'
         ]);
     }

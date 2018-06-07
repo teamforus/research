@@ -11,37 +11,60 @@ module.exports = {
         ) {
             var ctrl = this;
 
-            QrScannerService.scan().then(function(text) {
-                IntentService.readToken(text).then(function(res) {
-                    if (res.data.type == 'auth') {
-                        var data = JSON.parse(JSON.stringify(res.data));
-                        data.requested = {
-                            items: [
-                                "First name",
-                                "Last name",
-                                "BSN"
-                            ]
-                        };
+            QrScannerService.scan().then(function (code) {
+                QrScannerService.cancelScan();
 
-                        $state.go('share-data', {
-                            data: data
-                        });   
-                    } else if (res.data.type == 'voucher')  {
-                        var data = JSON.parse(JSON.stringify(res.data));
+                let res = {
+                    data: JSON.parse(code)
+                };
 
-                        $state.go('voucher-transaction', {
-                            data: data
-                        });   
-                    } else if (res.data.type == 'ask')  {
-                        var data = JSON.parse(JSON.stringify(res.data));
+                if (res.data.type == 'intent') {
+                    IntentService.readToken(res.data.token).then(function (res) {
+                        if (res.data.type == 'ask') {
+                            var data = JSON.parse(JSON.stringify(res.data));
 
-                        $state.go('ask-transaction-confirm', {
-                            data: data
-                        });   
-                    } else {
-                        alert('Unknown type: ' + res.data.type);
-                    }
-                });
+                            $state.go('ask-transaction-confirm', {
+                                data: data
+                            });
+                        } else if (res.data.type == 'voucher') {
+                            var data = JSON.parse(JSON.stringify(res.data));
+
+                            $state.go('voucher-transaction', {
+                                data: data
+                            });
+                        } else if (res.data.type == 'validate_record') {
+                            var data = JSON.parse(JSON.stringify(res.data));
+
+                            $state.go('validator-zuidhorn-confirm', {
+                                data: data
+                            });
+                        } else {
+                            alert('Unknown type: ' + res.data.type);
+                        }
+                    });
+                } else if (res.data.type == 'auth_token') {
+                    var data = JSON.parse(JSON.stringify(res.data));
+
+                    data.requested = {
+                        items: [
+                            "Voornaam",
+                            "Achternaam",
+                            "BSN"
+                        ]
+                    };
+
+                    $state.go('share-data', {
+                        data: data
+                    });
+                } else if (res.data.type == 'voucher') {
+                    var data = JSON.parse(JSON.stringify(res.data));
+
+                    $state.go('voucher-transaction', {
+                        data: data
+                    });
+                } else {
+                    alert('Unknown type: ' + res.data.type);
+                }
             }, function(err) {
                 if (typeof err != 'object') {
                     alert(err);
@@ -53,7 +76,7 @@ module.exports = {
             });
 
             ctrl.$onDestroy = function () {
-                QrScannerService.cancelScan(console.log);
+                QrScannerService.cancelScan();
             };
         }
     ]

@@ -18,7 +18,7 @@ class CreateVotesTable extends Migration
             $table->string('title', 200);
             $table->text('description');
             $table->string('state')->default('pending');
-            $table->integer('user_id')->unsigned();
+            $table->integer('identity_id')->unsigned();
             $table->timestamps();
         });
     }

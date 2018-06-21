@@ -16,7 +16,7 @@ module.exports = {
                     first_name: 'Jamal',
                     last_name: 'Vleij',
                     bsn: '12345678',
-                    phone: '12345678',
+                    phone: '0634566544',
                 }
             };
 

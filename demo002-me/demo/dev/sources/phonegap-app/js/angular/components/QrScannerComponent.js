@@ -10,9 +10,11 @@ module.exports = {
             IntentService,
         ) {
             var ctrl = this;
+            var scannerActive = true;
 
             QrScannerService.scan().then(function (code) {
                 QrScannerService.cancelScan();
+                scannerActive = false;
 
                 let res = {
                     data: JSON.parse(code)
@@ -76,7 +78,9 @@ module.exports = {
             });
 
             ctrl.$onDestroy = function () {
-                QrScannerService.cancelScan();
+                if (scannerActive) {
+                    QrScannerService.cancelScan();
+                }
             };
         }
     ]

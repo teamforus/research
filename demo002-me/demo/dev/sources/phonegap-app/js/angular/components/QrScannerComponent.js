@@ -23,12 +23,14 @@ module.exports = {
             QrScannerService.scan().then(function (code) {
                 QrScannerService.cancelScan();
                 scannerActive = false;
+                let res = {};
 
-                let res = {
-                    data: JSON.parse(code)
-                };
-
-                alert(JSON.stringify(res));
+                try {
+                    res.data = JSON.parse(code);
+                } catch (e) {
+                    alert('Invalid qr code.');
+                    ctrl.reloadState();
+                }
 
                 if (res.data.type == 'intent') {
                     IntentService.readToken(res.data.token).then(function (res) {

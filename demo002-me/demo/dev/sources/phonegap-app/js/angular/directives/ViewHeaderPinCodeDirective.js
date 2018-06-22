@@ -30,7 +30,7 @@ module.exports = [function() {
                         updateAndBroadcast();
                     }
                 }, 0);
-            }).focus();
+            });
         }]
     };
 }];

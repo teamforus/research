@@ -13,7 +13,9 @@ module.exports = {
             AuthService,
             IntentService
         ) {
-            var ctrl = this;
+            return $state.go('records');
+
+            /* var ctrl = this;
 
             if (!$stateParams.data ||
                 $stateParams.data.state != 'pending') {
@@ -30,7 +32,7 @@ module.exports = {
                 });
             }
 
-            ctrl.voucher = $stateParams.data.voucher;
+            ctrl.voucher = $stateParams.data.voucher; */
         }
     ]
 };

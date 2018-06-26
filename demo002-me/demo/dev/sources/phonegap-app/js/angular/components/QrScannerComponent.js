@@ -11,14 +11,26 @@ module.exports = {
         ) {
             var ctrl = this;
             var scannerActive = true;
+            
+            ctrl.notAvailableQr = false;
+
+            ctrl.reloadState = function() {
+                $state.go($state.$current.name, {}, {
+                    reload: true
+                });
+            };
 
             QrScannerService.scan().then(function (code) {
                 QrScannerService.cancelScan();
                 scannerActive = false;
+                let res = {};
 
-                let res = {
-                    data: JSON.parse(code)
-                };
+                try {
+                    res.data = JSON.parse(code);
+                } catch (e) {
+                    alert('Invalid qr code.');
+                    ctrl.reloadState();
+                }
 
                 if (res.data.type == 'intent') {
                     IntentService.readToken(res.data.token).then(function (res) {
@@ -29,11 +41,7 @@ module.exports = {
                                 data: data
                             });
                         } else if (res.data.type == 'voucher') {
-                            var data = JSON.parse(JSON.stringify(res.data));
-
-                            $state.go('voucher-transaction', {
-                                data: data
-                            });
+                            ctrl.notAvailableQr = true;
                         } else if (res.data.type == 'validate_record') {
                             var data = JSON.parse(JSON.stringify(res.data));
 
@@ -59,13 +67,9 @@ module.exports = {
                         data: data
                     });
                 } else if (res.data.type == 'voucher') {
-                    var data = JSON.parse(JSON.stringify(res.data));
-
-                    $state.go('voucher-transaction', {
-                        data: data
-                    });
+                    ctrl.notAvailableQr = true;
                 } else {
-                    alert('Unknown type: ' + res.data.type);
+                    ctrl.notAvailableQr = true;
                 }
             }, function(err) {
                 if (typeof err != 'object') {

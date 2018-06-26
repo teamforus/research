@@ -31,8 +31,14 @@
         <splash density="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
     </platform>
     <platform name="ios">
+        <icon height="20" platform="ios" src="www/res/icon/ios/icon-20.png" width="20" />
         <icon height="57" platform="ios" src="www/res/icon/ios/icon.png" width="57" />
         <icon height="114" platform="ios" src="www/res/icon/ios/icon@2x.png" width="114" />
+        <icon height="40" platform="ios" src="www/res/icon/ios/icon-40.png" width="40" />
+        <icon height="80" platform="ios" src="www/res/icon/ios/icon-40@2x.png" width="80" />
+        <icon height="83,5" platform="ios" src="www/res/icon/ios/icon-167.png" width="83,5" />
+        <icon height="50" platform="ios" src="www/res/icon/ios/icon-50.png" width="50" />
+        <icon height="100" platform="ios" src="www/res/icon/ios/icon-50@2x.png" width="100" />
         <icon height="60" platform="ios" src="www/res/icon/ios/icon-60.png" width="60" />
         <icon height="120" platform="ios" src="www/res/icon/ios/icon-60@2x.png" width="120" />
         <icon height="180" platform="ios" src="www/res/icon/ios/icon-60@3x.png" width="180" />
@@ -43,6 +49,7 @@
         <icon height="29" platform="ios" src="www/res/icon/ios/icon-small.png" width="29" />
         <icon height="58" platform="ios" src="www/res/icon/ios/icon-small@2x.png" width="58" />
         <icon height="87" platform="ios" src="www/res/icon/ios/icon-small@3x.png" width="87" />
+        <icon height="1024" platform="ios" src="www/res/icon/ios/icon-1024.png" width="1024" />
         <splash height="1136" platform="ios" src="www/res/screen/ios/Default-568h@2x~iphone.png" width="640" />
         <splash height="1334" platform="ios" src="www/res/screen/ios/Default-667h.png" width="750" />
         <splash height="2208" platform="ios" src="www/res/screen/ios/Default-736h.png" width="1242" />
@@ -52,6 +59,8 @@
         <splash height="2048" platform="ios" src="www/res/screen/ios/Default-Portrait@2x~ipad.png" width="1536" />
         <splash height="1024" platform="ios" src="www/res/screen/ios/Default-Portrait~ipad.png" width="768" />
         <splash height="960" platform="ios" src="www/res/screen/ios/Default@2x~iphone.png" width="640" />
+        <splash height="2436" platform="ios" src="www/res/screen/ios/Default@3x~iphone.png" width="1125" />
+        <splash height="1125" platform="ios" src="www/res/screen/ios/Default-Landscape@3x~iphone.png" width="2436" />
         <splash height="480" platform="ios" src="www/res/screen/ios/Default~iphone.png" width="320" />
     </platform>
     <platform name="wp8">
@@ -92,7 +101,8 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <engine name="browser" />
-    <engine name="android" spec="7.1.0" />
+    <engine name="android" spec="^7.1.0" />
+    <engine name="ios" spec="^4.5.4" />
     <plugin name="cordova-plugin-camera" spec="^2.4.1">
         <variable name="CAMERA_USAGE_DESCRIPTION" value=" " />
         <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value=" " />

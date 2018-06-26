@@ -592,7 +592,7 @@ module.exports = ['$stateProvider', function($stateProvider) {
             params: {
                 data: null
             }
-        })
+        })/* 
         .state({
             url: '/voucher-transaction',
             name: 'voucher-transaction',
@@ -606,7 +606,7 @@ module.exports = ['$stateProvider', function($stateProvider) {
             params: {
                 data: null
             }
-        })
+        }) */
         .state({
             url: '/ask-transaction-confirm',
             name: 'ask-transaction-confirm',

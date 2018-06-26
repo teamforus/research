@@ -3,13 +3,11 @@ module.exports = {
     controller: [
         '$scope',
         '$timeout',
-        '$rootScope',
         '$state',
         'AuthService',
         function(
             $scope,
             $timeout,
-            $rootScope,
             $state,
             AuthService
         ) {

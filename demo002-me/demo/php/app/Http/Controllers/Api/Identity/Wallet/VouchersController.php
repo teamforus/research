@@ -90,7 +90,10 @@ class VouchersController extends Controller
 
         $qr_code = base64_encode(QrCode::format('png')
             ->margin(1)->size(300)
-            ->generate($intent->token));
+            ->generate(json_encode([
+                'type' => 'intent',
+                'token' => $intent->token
+            ])));
 
         return "data:image/png;base64, " . $qr_code;
     }

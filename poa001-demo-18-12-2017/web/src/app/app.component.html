@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-6">
+    <a class="btn btn-success" routerLink="/request" routerLinkActive="active-link">Request</a>
+    <a class="btn btn-primary" routerLink="/provide" routerLinkActive="active-link">Provide</a>
+  </div>
+  <div class="col-6">
+    <a *ngIf="!userService.isLoggedin" class="btn btn-primary float-right" (click)="showLogin(loginwindow)">Login</a>
+    <span *ngIf="userService.isLoggedin" class="float-right">
+      <span class="align-middle mr-2">User ID: {{userService.ID}}</span>
+      <a class="btn btn-primary" (click)="logout()">Logout</a>
+    </span>
+  </div>
+</div>
+<router-outlet></router-outlet>
+
+
+<ng-template #loginwindow let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <label>Userid: <input [(ngModel)]="formUserid"></label>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="c()">Login</button>
+    <button type="button" class="btn btn-secondary" (click)="d()">Cancel</button>
+  </div>
+</ng-template>

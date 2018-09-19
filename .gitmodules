@@ -1,0 +1,9 @@
+[submodule "poc011-DigiD-oracle"]
+	path = poc011-DigiD-oracle
+	url = https://github.com/teamforus/rd-digid.git
+[submodule "poc012-eth-wallet"]
+	path = poc012-eth-wallet
+	url = https://github.com/teamforus/rd-ethereum-wallet.git
+[submodule "poc013-eth-eventhub"]
+	path = poc013-eth-eventhub
+	url = https://github.com/teamforus/rd-ethereum-eventhub.git

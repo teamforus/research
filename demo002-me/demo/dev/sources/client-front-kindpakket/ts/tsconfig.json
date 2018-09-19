@@ -1,9 +1,0 @@
-{
-    "compilerOptions": {
-        "target": "es2015",
-        "noImplicitAny": true
-    },
-    "files": [
-        "ts/app.ts"
-    ]
-}

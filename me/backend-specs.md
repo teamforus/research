@@ -15,17 +15,18 @@ The me app is designed to be an _identity_ application.
 **Ownership:** Something that is owned by an identity, but that can be transfered to another identity.
 
 ### Functionality
-* Wallet
+* Identity
+  * [Key storage]()
+  * [Identification]()
+* [Records]() (attributes)
+  * Storing
+  * Signing
+  * Exposing / Proofing
+* Wallet (ownership)
   * [Vouchers Forus]()
   * [Crypto assets]()
     * [Valuta]() ([Ether]())
     * [Tokens]() ([ERC20]())
     * [NFT's]() ([ERC721]())
-* Identity
-  * [Key storage]()
-  * [Identification]()
-* [Records]()
-  * Storing
-  * Signing
-  * Exposing / Proofing
+
 

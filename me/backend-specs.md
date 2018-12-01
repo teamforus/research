@@ -8,7 +8,7 @@ _This document serves as a preliminary outline of the requirements and options f
 ## Abstract:
 The me app is designed to be an _identity_ application. 
 
-**Identity:** something unique to be identified. In the me app an identity in it's essense is represented by a unique key.
+**Identity:** something unique to be identified. In the me app an identity is represented by a unique keypair.
 
 **Attributes:** Information about an identity, that can be verified by other identities but is not transferable.
 

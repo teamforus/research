@@ -5,6 +5,10 @@ _This document serves as a preliminary outline of the requirements and options f
 
 **current situation:** the functionality in the [me app](https://github.com/teamforus/me) is currenly provided by the [forus backend](https://github.com/teamforus/forus-backend/tree/master). This is the result of a pragmatic approach that offered the quickest way to get the application in the hands of users and start providing value for [Forus](https://github.com/teamforus/forus). The next step is to seperate the me app and forus so that they can be two seperate products. To achieve this me needs its own backend. There are different methods to do this. Research is needed before choosing a solution.
 
+**short term goal:** seperating the 2 backends so that the products can evolve more independantly  
+**intermediate term goal:** increasing the feature scope of me, from its current form to it's intended form (below)  
+**long term goal:** r&d into evolving me into a generic, self-sovereign identity
+
 ## Abstract:
 The me app is designed to be an _identity_ application. 
 

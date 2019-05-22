@@ -7,3 +7,6 @@
 [submodule "poc013-eth-eventhub"]
 	path = poc013-eth-eventhub
 	url = https://github.com/teamforus/rd-ethereum-eventhub.git
+[submodule "poc014-bigchaindb-me"]
+	path = poc014-bigchaindb-me
+	url = https://github.com/teamforus/NewMe.git

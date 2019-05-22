@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="x86"
+    api-level="28"
+    build-mode="COLD"
+    density="420dpi"
+    format="10"
+    ir-eligibility="COMPATIBLE"
+    plugin-version="3.3.0"
+    timestamp="1555978654231"
+    token="-2487687736267366804"
+    verifier="COLD_SWAP_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="1624" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="26" />
+    <task
+        name="verifier"
+        duration="4" />
+
+    <artifact
+        location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+        type="SPLIT" />
+
+    <build
+        build-mode="FULL"
+        timestamp="1555977397411"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
+            type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1555977748741"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
+            type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1555978654231"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/Alexander/Documents/Su Spring 2019/CS Capstone/NewMe-daniel-s_branch/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            type="SPLIT" />
+    </build>
+
+</instant-run>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: net.i2p.crypto:eddsa:0.2.0@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.i2p.crypto/eddsa/0.2.0/856a92559c4daf744cb27c93cd8b7eb1f8c4780/eddsa-0.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.i2p.crypto/eddsa/0.2.0/b79888279fd7f26fdea12234c41aaa506e9aed7e/eddsa-0.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

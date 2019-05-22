@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.bigchaindb:cryptoconditions:1.0@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.bigchaindb/cryptoconditions/1.0/54f02442d5eb4907971c6b88aea32fee72f75268/cryptoconditions-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.bigchaindb/cryptoconditions/1.0/7cce4b724a802d861efe3df711b1b14da5595249/cryptoconditions-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">New Me</string>
+    <string name="click_here">Click Here</string>
+    <string name="this_is_a_test">This is a test</string>
+    <!-- dummy data below -->
+    <string-array name="person">
+        <item>Walmart</item>
+        <item>HEB</item>
+        <item>Convenience Store</item>
+        <item>Natural Grocers</item>
+        <item>Whole Foods</item>
+        <item>item6</item>
+        <item>item7</item>
+        <item>item8</item>
+    </string-array>
+
+    <string-array name="description">
+        <item>$20.00</item>
+        <item>$12.23</item>
+        <item>$8.43</item>
+        <item>$19.14</item>
+        <item>$11.41</item>
+        <item>description6</item>
+        <item>description7</item>
+        <item>description8</item>
+    </string-array>
+
+    <string name="title_activity_make_account">MakeAccount</string>
+    <string name="title_activity_login">LoginActivity</string>
+</resources>

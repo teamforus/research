@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.bigchaindb:bigchaindb-driver:1.1@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.bigchaindb/bigchaindb-driver/1.1/bb5e5010411d0f7a8b9c3e165f2f55bc097cdfce/bigchaindb-driver-1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.bigchaindb/bigchaindb-driver/1.1/8f4d4954f7a8a73129ee1c7a62e2ae450fd19712/bigchaindb-driver-1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
